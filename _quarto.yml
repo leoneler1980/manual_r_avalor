@@ -2,8 +2,8 @@ project:
   type: book
 
 book:
-  title: "manual_avalor"
-  author: "Norah Jones"
+  title: "Manual de introducción a R"
+  author: "Creado por: Dr. Leonel Lerebours y Dr. Yunior Rosario </br> Editado por: Lic. Virginia Vallejo"
   date: "7/29/2025"
   chapters:
     - index.qmd
