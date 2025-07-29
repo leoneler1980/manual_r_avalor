@@ -5,20 +5,26 @@ book:
   title: "Manual de introducción a R"
   author: "Creado por: Dr. Leonel Lerebours y Dr. Yunior Rosario </br> Editado por: Lic. Virginia Vallejo"
   date: "7/29/2025"
+  
   chapters:
     - index.qmd
     - 01-instalacionR.qmd
     - 02-comanzandousandoR.qmd
-    - intro.qmd
-    - summary.qmd
+    - 03-operadoresR.qmd
+    - 04-objetosenr.qmd
+    - 05-excel_a_R_intro.qmd
+    - 06-analisisresultados.qmd
     - references.qmd
+
+    
+language: langu.yml
 
 bibliography: references.bib
 
 format:
   html:
     theme:
-      - cosmo
+      - journal
       - brand
   pdf:
     documentclass: scrreprt

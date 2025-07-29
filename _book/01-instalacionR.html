@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Preparación del ambiente de trabajo – Manual de introducción a R</title>
+<title>2&nbsp; Preparación del ambiente de trabajo – Manual de introducción a R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -74,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-03540c99dd1a34af77b4c54761d366e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -89,17 +89,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos coincidentes",
+    "search-copy-link-title": "Copiar enlace a la búsqueda",
+    "search-hide-matches-text": "Ocultar coincidencias adicionales",
+    "search-more-match-text": "más coincidencia en este documento",
+    "search-more-matches-text": "más coincidencias en este documento",
+    "search-clear-button-title": "Borrar",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 
@@ -112,13 +112,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar navegación de la barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-instalacionR.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preparación del ambiente de trabajo</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-instalacionR.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preparación del ambiente de trabajo</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar navegación de la barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -135,7 +135,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Buscar"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -143,37 +143,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01-instalacionR.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preparación del ambiente de trabajo</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preparación del ambiente de trabajo</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-comanzandousandoR.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Comenzar a trabajar con R y la interfaz de Rstudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Comenzar a trabajar con R y la interfaz de Rstudio</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  <a href="./03-operadoresR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Operadores en R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  <a href="./04-objetosenr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Objetos en R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-excel_a_R_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Transición desde Excel a R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-analisisresultados.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Análisis de datos usando R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+ <span class="menu-text">Referencias</span></a>
   </div>
 </li>
     </ul>
@@ -183,16 +195,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">Contenido</h2>
    
   <ul>
-  <li><a href="#como-se-instala-r-y-rstudio" id="toc-como-se-instala-r-y-rstudio" class="nav-link active" data-scroll-target="#como-se-instala-r-y-rstudio"><span class="header-section-number">1.1</span> Como se instala R y Rstudio®</a>
+  <li><a href="#como-se-instala-r-y-rstudio" id="toc-como-se-instala-r-y-rstudio" class="nav-link active" data-scroll-target="#como-se-instala-r-y-rstudio"><span class="header-section-number">2.1</span> Como se instala R y Rstudio®</a>
   <ul class="collapse">
-  <li><a href="#descargar-e-instalar-rstudio" id="toc-descargar-e-instalar-rstudio" class="nav-link" data-scroll-target="#descargar-e-instalar-rstudio"><span class="header-section-number">1.1.1</span> Descargar e instalar Rstudio</a></li>
+  <li><a href="#descargar-e-instalar-rstudio" id="toc-descargar-e-instalar-rstudio" class="nav-link" data-scroll-target="#descargar-e-instalar-rstudio"><span class="header-section-number">2.1.1</span> Descargar e instalar Rstudio</a></li>
   </ul></li>
-  <li><a href="#interfaz-de-rstudio" id="toc-interfaz-de-rstudio" class="nav-link" data-scroll-target="#interfaz-de-rstudio"><span class="header-section-number">1.2</span> Interfaz de Rstudio®</a></li>
-  <li><a href="#instalación-de-paquetes-librerías-de-funciones" id="toc-instalación-de-paquetes-librerías-de-funciones" class="nav-link" data-scroll-target="#instalación-de-paquetes-librerías-de-funciones"><span class="header-section-number">1.3</span> Instalación de Paquetes (librerías de funciones)</a></li>
-  <li><a href="#como-instalar-y-cargar-un-paquete-en-r" id="toc-como-instalar-y-cargar-un-paquete-en-r" class="nav-link" data-scroll-target="#como-instalar-y-cargar-un-paquete-en-r"><span class="header-section-number">1.4</span> Como instalar y cargar un paquete en R</a></li>
+  <li><a href="#interfaz-de-rstudio" id="toc-interfaz-de-rstudio" class="nav-link" data-scroll-target="#interfaz-de-rstudio"><span class="header-section-number">2.2</span> Interfaz de Rstudio®</a></li>
+  <li><a href="#instalación-de-paquetes-librerías-de-funciones" id="toc-instalación-de-paquetes-librerías-de-funciones" class="nav-link" data-scroll-target="#instalación-de-paquetes-librerías-de-funciones"><span class="header-section-number">2.3</span> Instalación de Paquetes (librerías de funciones)</a></li>
+  <li><a href="#como-instalar-y-cargar-un-paquete-en-r" id="toc-como-instalar-y-cargar-un-paquete-en-r" class="nav-link" data-scroll-target="#como-instalar-y-cargar-un-paquete-en-r"><span class="header-section-number">2.4</span> Como instalar y cargar un paquete en R</a></li>
   </ul>
 </nav>
     </div>
@@ -201,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preparación del ambiente de trabajo</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preparación del ambiente de trabajo</span></h1>
 </div>
 
 
@@ -218,8 +230,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="como-se-instala-r-y-rstudio" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="como-se-instala-r-y-rstudio"><span class="header-section-number">1.1</span> Como se instala R y Rstudio®</h2>
+<section id="como-se-instala-r-y-rstudio" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="como-se-instala-r-y-rstudio"><span class="header-section-number">2.1</span> Como se instala R y Rstudio®</h2>
 <p>El primer paso para esta tarea es descargar el programa R, que se encuentra en la página web <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a> . en esta hay varias versiones dependiendo que sistema operativo estás usando, ya sea Windows, macOS o Linux.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -235,8 +247,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <p>Aunque ya hayamos instalado R, al menos que seamos muy expertos en su uso, que conozcamos bien las sintaxis de las funciones, que <strong><em>objetos</em></strong> (más tarde veremos lo que son los objetos) están cargados en la memoria, entre otras cosas (¡también se puede usar como una simple calculadora!), es muy complicado usar solamente la consola, por lo que tenemos disponible aditamentos o accesorios que nos permiten trabajar más fácil con R, así como su aprendizaje. Para este manual el aditamento que usaremos es <strong>Rstudio</strong> de <a href="https://posit.co/" title="Página web donde descargar Rstudio">Posit®</a>.</p>
-<section id="descargar-e-instalar-rstudio" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="descargar-e-instalar-rstudio"><span class="header-section-number">1.1.1</span> Descargar e instalar Rstudio</h3>
+<section id="descargar-e-instalar-rstudio" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="descargar-e-instalar-rstudio"><span class="header-section-number">2.1.1</span> Descargar e instalar Rstudio</h3>
 <p>Ahora vamos a instalar Rstudio, para esto vamos a descargarlo de la siguiente página web, <a href="https://posit.co/download/rstudio-desktop/">Descarga de Rstudio</a> donde vamos a buscar la versión gratuita de escritorio para para el sistema operativo que estamos usando.</p>
 <p>En caso de que estés usando Linux, están las instrucciones en la página de como hacerlo, la versión de Windows y macOS es un ejecutable.</p>
 <p>Luego de descargar la ultima versión disponible procedemos a instalar Rstudio, haciendo clic en el ejecutable, la instalación (en la versión de Windows por ejemplo) es muy similar a cualquier otro software que donde te pregunta el lugar donde será instalado y varias ventanas donde se ve el progreso de instalación. Si todo salió bien, es decir que se instaló sin errores, pues tendremos disponible en la barra de acceso directo y en el escritorio, (si elegimos esta opción durante la instalación) también tendremos un acceso directo.</p>
@@ -257,8 +269,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="interfaz-de-rstudio" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="interfaz-de-rstudio"><span class="header-section-number">1.2</span> Interfaz de Rstudio®</h2>
+<section id="interfaz-de-rstudio" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="interfaz-de-rstudio"><span class="header-section-number">2.2</span> Interfaz de Rstudio®</h2>
 <p>Para facilitar el aprendizaje y uso de R, vamos a usar RStudio que es un entorno de desarrollo integrado o IDE (Integrated Development Environment) y tiene la gran ventaja de que hay mucha documentación sobre su uso, es muy cómoda de trabajar porque nos ayuda con la escritura de los códigos, la organización de los archivos, tiene varios visores o paneles para ver los códigos, las salidas, los objetos cargados y otras ayudas más (Figura 5). RStudio ha permitido la difusión del uso de R, lo que ha permitido la propagación de su uso en todas las áreas donde se hace análisis de datos.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -287,14 +299,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </section>
-<section id="instalación-de-paquetes-librerías-de-funciones" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="instalación-de-paquetes-librerías-de-funciones"><span class="header-section-number">1.3</span> Instalación de Paquetes (librerías de funciones)</h2>
+<section id="instalación-de-paquetes-librerías-de-funciones" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="instalación-de-paquetes-librerías-de-funciones"><span class="header-section-number">2.3</span> Instalación de Paquetes (librerías de funciones)</h2>
 <p>Los paquetes son extensiones para añadir más funcionalidades a R. Es quizás la razón por la cual R es ahora mismo una de las mejores herramientas para trabajar con datos dada la cantidad de paquetes específicos para realizar tareas como hacer tablas por ejemplo. En la literatura, los paquetes se identifican con { }, ejemplo: <strong>{tidyverse}</strong> y los logos son una figura dentro de un hexágono.</p>
 <p>Con respecto a la instalación de paquetes, usualmente estos deben estar publicados en CRAN (<a href="https://cran.r-project.org/web/packages/">Aquí el enlace</a>) y se instalan desde el panel de paquetes (“Packages”).</p>
 <p><img src="imagenes/01packages3.png" class="img-fluid"></p>
 </section>
-<section id="como-instalar-y-cargar-un-paquete-en-r" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="como-instalar-y-cargar-un-paquete-en-r"><span class="header-section-number">1.4</span> Como instalar y cargar un paquete en R</h2>
+<section id="como-instalar-y-cargar-un-paquete-en-r" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="como-instalar-y-cargar-un-paquete-en-r"><span class="header-section-number">2.4</span> Como instalar y cargar un paquete en R</h2>
 <p>Después de instalar R, Rstudio solo tenemos las funcionalidades que trae <strong>R base</strong>, que nos permiten hacer muchas cosas sin tener que instalar nada más, pero podemos hacer que R sea más completo, ahora vamos a ver que es un paquete y su importancia.</p>
 <p>Como R es un lenguaje de programación por lo tanto podemos crear programas o conjunto de funciones y estos programas podemos exportarlos para luego usarlos más adelante.</p>
 <p>Estos programas o complementos aumentan la capacidad de R a través de funciones o comandos, por ejemplo, <strong>R base</strong>, no nos permite exportar directamente los resultados o salidas en formato Excel o crear tablas con formato de forma directa. Por lo tanto, los paquetes o subprogramas hacen que R sea más que solo un lenguaje de programación.</p>
@@ -328,7 +340,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Escribe o copia y pega el siguiente comando (recuerda, para ejecutar un comando o varios selecciona estos y presiona Ctrl+Enter o clic en “Run”):</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(<span class="st">"tidyverse"</span>, <span class="st">"janitor"</span>, <span class="st">"gtsummary"</span>, <span class="st">"epikit"</span>,<span class="st">"here"</span>,                <span class="st">"epitools"</span>, <span class="st">"lubridate"</span>, <span class="st">"openxlsx"</span>, <span class="st">"readxl"</span>, <span class="st">"rio"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(<span class="st">"tidyverse"</span>, <span class="st">"janitor"</span>, <span class="st">"gtsummary"</span>, <span class="st">"epikit"</span>,<span class="st">"here"</span>,                <span class="st">"epitools"</span>, <span class="st">"lubridate"</span>, <span class="st">"openxlsx"</span>, <span class="st">"readxl"</span>, <span class="st">"rio"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Espera un momento si es la primera vez que se ejecuta para que así se instalen los paquetes que están en el comando.. Antes de continuar, vamos a explicar el comando anterior:</p>
 <p>En Rstudio, en el editor de rutinas o en la misma consola, cuando queremos ver las funciones o comandos disponibles en un paquete podemos escribir el nombre del paquete seguido de dos puntos nos aparecerá una ventana con un listado de dichas funciones, por ejemplo, este último comando usamos el paquete <strong>pacman</strong> y dentro de este paquete usamos la función de <strong><em>p_load</em></strong> (para cargar paquetes, que también los instala si no están ya instalados)</p>
@@ -342,7 +354,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Los paquetes que hemos instalado hasta este momento no los vamos a detallar por ahora, sino que, en la medida que vayamos haciendo los ejercicios, vamos a ir explicando para qué sirven a través de las funciones que traen cada uno. Es oportuno señalar que, dentro de los paquetes disponibles en R, existen paquetes útiles para facilitar el proceso de importar y exportar funciones específicas para las tareas del epidemiólogo, para hacer reportes y para facilitar el proceso de la gestión de los datos.</p>
 <p>Para ver que paquetes tenemos cargados podemos escribir en la consola <strong><em>search()</em></strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">search</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">search</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] ".GlobalEnv"        "package:rio"       "package:readxl"   
  [4] "package:openxlsx"  "package:epitools"  "package:here"     
@@ -404,12 +416,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "¡Copiado!");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "¡Copiado!");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -780,13 +792,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="./index.html" class="pagination-link" aria-label="Introducción">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./02-comanzandousandoR.html" class="pagination-link" aria-label="Comenzar a trabajar con R y la interfaz de Rstudio">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Comenzar a trabajar con R y la interfaz de Rstudio</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Comenzar a trabajar con R y la interfaz de Rstudio</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

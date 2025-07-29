@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5&nbsp; Objetos en R – Manual de introducción a R</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./05-excel_a_R_intro.html" rel="next">
+<link href="./03-operadoresR.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-03540c99dd1a34af77b4c54761d366e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos coincidentes",
+    "search-copy-link-title": "Copiar enlace a la búsqueda",
+    "search-hide-matches-text": "Ocultar coincidencias adicionales",
+    "search-more-match-text": "más coincidencia en este documento",
+    "search-more-matches-text": "más coincidencias en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar navegación de la barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-objetosenr.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Objetos en R</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar navegación de la barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Manual de introducción a R</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-instalacionR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preparación del ambiente de trabajo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-comanzandousandoR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Comenzar a trabajar con R y la interfaz de Rstudio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-operadoresR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Operadores en R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-objetosenr.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Objetos en R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-excel_a_R_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Transición desde Excel a R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-analisisresultados.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Análisis de datos usando R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Referencias</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contenido</h2>
+   
+  <ul>
+  <li><a href="#vectores" id="toc-vectores" class="nav-link active" data-scroll-target="#vectores"><span class="header-section-number">5.1</span> Vectores</a></li>
+  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices"><span class="header-section-number">5.2</span> Matrices</a></li>
+  <li><a href="#dataframes" id="toc-dataframes" class="nav-link" data-scroll-target="#dataframes"><span class="header-section-number">5.3</span> Dataframes</a></li>
+  <li><a href="#listas" id="toc-listas" class="nav-link" data-scroll-target="#listas"><span class="header-section-number">5.4</span> Listas</a></li>
+  <li><a href="#funciones" id="toc-funciones" class="nav-link" data-scroll-target="#funciones"><span class="header-section-number">5.5</span> Funciones</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Objetos en R</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Otro elemento de suma importancia a conocer cuando se trabaja con R (así como vimos la importancia de las rutinas) son los objetos y sus diferentes tipos, dado que es con esto que trabajamos, son básicamente los contenedores de los datos (que R los almacena en la memoria del computador) es decir, a partir de estos es que haremos nuestras salidas como tablas, gráficos, reportes a través de la transformación (declarar, nombrar, filtrar reemplazar). Básicamente los objetos son el fundamento de todo.</p>
+<p>&nbsp;En R hay 5 tipos de objetos de datos y se dividen en dos grupos de objetos, los que son de un solo tipo de dato (atómicos) o los que tienen varios tipos de datos (recursivos)</p>
+<section id="vectores" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="vectores"><span class="header-section-number">5.1</span> Vectores</h2>
+<p>Dentro de los objetos atómicos tenemos <strong>los vectores</strong>, que no tienen dimensión, es decir, filas o columnas y pueden ser de clase numérico (entero y decinal), integer (números enteros solamente), carácter o texto, lógico (TRUE, FALSE) y factor (jerarquía en los valores). Un ejemplo de creación de un vector es el siguiente:</p>
+<p><img src="imagenes/05vector.png" class="img-fluid"></p>
+<p><img src="imagenes/05vector2.png" class="img-fluid"></p>
+<p>Para los vectores que son de caracteres o texto cuando los creamos si ponemos números sin comillas, estos cuando lo llamemos serán reconocidos como texto, por lo tanto no se pueden hacer operaciones matemáticas con estos aunque tengan números.</p>
+<p>Si escribes “x” (o el nombre que hayas usado para crear el vector) y presionas <strong>Enter,</strong> en la consola observaras los elementos contenidos en este vector.</p>
+<p>Una de las funcionalidades más interesantes de R es que por ejemplo en el caso de vectores numéricos, si haces una operación matemática, ejemplo 5 + <strong>x</strong> (nombre del vector), la operación se hará en todos los elementos del vector, es decir, el 5 se sumara con cada uno de los números. Si haces esto con un vector de texto o carácter, en la consola observaras un error que es una operación entre un argumento no numérico contra otro numérico.</p>
+<p>A medida que avancemos con el desarrollo de los productos vamos a ver que los vectores los usamos de forma constante, un ejemplo común es crear un vector con los nombres de las provincias o municipios de interés para luego cuando vamos a filtrar la base con la que estamos trabajando podemos hacer este filtro invocamos el dicho vector. También combinando varios tipos de vectores, con las mismas dimensiones, es decir el mismo numero de elementos podemos “unirlos” y formar un nuevo objeto como un <strong>dataframe</strong> o una lista.</p>
+</section>
+<section id="matrices" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="matrices"><span class="header-section-number">5.2</span> Matrices</h2>
+<p>Otro tipo de objeto atómico o que solo admite un tipo de valor es <strong>la matriz</strong> que es básicamente un vector pero con dos dimensiones (columnas y filas) se crean usando la función <strong>matrix()</strong> y se le debe agregar el parámetro del total de filas así como el total de columnas por ejemplo de la siguiente forma:</p>
+<p><img src="imagenes/05matrix.png" class="img-fluid"></p>
+<p>No entraré mucho en detalle con los objetos de tipo matriz porque estos objetos tienen sus usos bien específicos y no vamos a usarlos de forma constante como los vectores.</p>
+</section>
+<section id="dataframes" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="dataframes"><span class="header-section-number">5.3</span> Dataframes</h2>
+<p>Ahora vamos a ver uno de los objetos más importantes que vamos a usar que son los <strong>dataframes</strong>, que es un objeto de tipo recursivo o que admite varios tipos de datos (texto, numérico, lógico) y es idéntico a una tabla, es decir, tiene dos dimensiones, columnas y filas. Las columnas se pueden ver como si fueran variables y las filas son los valores contenidos en esta variable.</p>
+<p>Para los trabajos que vamos a realizar, este será el tipo de objeto quizás más nos sentiremos familiarizados dado que lo más parecido a un dataframe es una base de datos, ya sea en Excel u otro tipo de programa.</p>
+<p>Una de las ventajas que tiene Rstudio es que nos ayuda a fácilmente ver la estructura del objeto dataframe, (cuantas variables o columnas y cuantas filas u observaciones) también para visualizar el contenido.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagenes/05dataframe.png" class="img-fluid figure-img"></p>
+<figcaption>Panel de ambiente de trabajo en Rstudio donde podemos ver los objetos de datos disponibles, en esta imagen podemos ver dos dataframes (tab_dim_ej y tabla_resultado) y debajo, en la categoría de values, 3 vectores, (edades, x y “y”) . Rstudio nos permite diferencial rápidamente también ver los atributos de cada elemento. Para saber más sobre los tipos de objetos podemos usar dos funciones str() y class(), la primera para ver la estructura y la segunda para ver que clase de objeto es.</figcaption>
+</figure>
+</div>
+<p>Para comenzar a usar los <strong>dataframes</strong> tenemos dos formas de hacerlo, primero es creándolo directamente, es decir, a través de escribir los datos que usaremos combinando varios vectores como el siguiente ejemplo, para crear una pequeña base de datos o tabla:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a> var1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"maria"</span>, <span class="st">"pedro"</span>, <span class="st">"juan"</span>, <span class="st">"jose"</span>) <span class="co">#creamos un vector con nombres por ejemplo</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a> var2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">40</span>, <span class="dv">30</span>, <span class="dv">35</span>) <span class="co">#creamos otro vector con las edades</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a> var3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>, <span class="st">"M"</span>) <span class="co">#creamos otro vector con el sexo</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a> var4 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"LR"</span>, <span class="st">"SD"</span>, <span class="st">"SC"</span>, <span class="st">"PP"</span>) <span class="co"># creamos otro vector con la procedencia</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a> tabla <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">nombre=</span>var1, <span class="at">edad=</span>var2, <span class="at">sexo=</span>var3, <span class="at">prov=</span>var4)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>tabla</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  nombre edad sexo prov
+1  maria   25    F   LR
+2  pedro   40    M   SD
+3   juan   30    M   SC
+4   jose   35    M   PP</code></pre>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagenes/05dataframe2.png" class="img-fluid figure-img"></p>
+<figcaption>Anatomía de la función data.frame() para crear un dataframe. en R las funciones vienen con valores en los parámetros de forma predeterminada, incluso no hay que escribirlos. Un ejemplo es en esta función de <strong>data.frame()</strong> el parámetro <strong><em>check.names=TRUE</em></strong> viene predeterminado y por ende no hay que escribirlo.</figcaption>
+</figure>
+</div>
+<p>Entonces si corremos las líneas anteriores vamos a tener como resultado un dataframe nuevo con 4 variables y 4 observaciones, <strong>Ojo</strong>, los vectores deben de tener la misma cantidad de elementos o sino vemos el siguiente error, <strong><em>“Error in data.frame(nombre = var1, edad = var2, sexo = var3, prov = var4) :&nbsp; arguments imply differing number of rows: 4, 3”</em></strong>que significa que uno de los vectores no tiene la misma cantidad de elementos.</p>
+<p>Para corregir esto, si el valor es desconocido en el vector que nos falta un elemento, solo agregamos un elemento nuevo llamado <strong><em>NA,</em></strong> sin comillas, que es una forma de decirle a R que el valor es desconocido y corremos de nuevo las líneas donde hicimos el cambio para actualizar.</p>
+<p>Este abordaje puede ser útil para tablas pequeñas, pero cuando tenemos que trabajar con bases de datos que tienen cientos o miles de observaciones entonces creamos un dataframe importando los datos desde diferentes fuentes, como archivos de Excel, desde archivos de texto, incluso archivos nativos de otros programas de estadísticas como SPSS o STATA.</p>
+<p>En Rstudio podemos sin necesidad de escribir una expresión o comando usando el botón de “<strong>import Dataset”</strong> en el panel de ambiente de trabajo y al hacer clic se nos despliega un menú para diferentes tipos de formatos de bases de datos como Excel, csv o txt, SPSS, SAS, Stata.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagenes/05importdatagrame.png" class="img-fluid figure-img"></p>
+<figcaption>Botón para importar bases de datos de otras fuentes</figcaption>
+</figure>
+</div>
+<p>Después de hacer clic en uno de los formatos, (ejemplo Excel) se abre una ventana para seleccionar el archivo de la base de datos, que variables o columnas vamos a incluir además de otros parámetros.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagenes/05importdatagrame2.png" class="img-fluid figure-img"></p>
+<figcaption>Pasos para importar un dataframe usando Rstudio</figcaption>
+</figure>
+</div>
+<p>Por ejemplo de forma predeterminada en el nombre del objeto o dataframe estará el nombre del archivo de la base de datos, puedes cambiarlo a un nombre más amigable (ejemplo bd o base) también si estás usando una base de Excel y esta contiene varias hojas, puedes especificar cual hoja usaras en <strong>“sheet”</strong>, incluso el rango, es decir, si solo usaras hasta ciertas filas, también puedes poner desde que fila se leerá el archivo, a veces en las bases de datos de Excel se les coloca títulos y los datos se comienzan a digitar a partir de la 3ra o 4ta fila entonces puedes en <strong>“skip”</strong> omitir la filas que no son necesaria.</p>
+<p>Por último, si este proceso lo vas a usar repetidamente, debes copiar el código que está en el campo inferior derecho de la ventana y pegarlo en el panel de editor de rutinas para que lo tengas en tu rutina. Incluso luego de que lo tengas ya en tu rutina, puedes modificarlo de ser necesario (realmente este es un aditamento visual dado que Rstudio está generando un código para que no tengas que escribirlo, básicamente Rstudio está cargando el paquete readxl, luego usando la función de importar archivos de Excel llamada <strong>read_excel()</strong>.</p>
+<p>Otra forma para cargar bases de datos muy parecido a lo que vimos anteriormente es usando el paquete <strong>rio (input/output)</strong> y el paquete <strong>here</strong> usando la función <strong>import()</strong> en combinación y la función <strong>here()</strong> (que nos ahorra escribir toda la ruta del archivo de la base de datos cuando estamos en un proyecto en Rstudio) , aquí un ejemplo:</p>
+<p>La base que voy a importar está ubicada en la carpeta de Base de datos, solo necesito saber el nombre del archivo que voy a usar, en este caso “base de dato se de datos ejemplo.xlsx”</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mi_base_ejemplo <span class="ot">&lt;-</span> <span class="fu">import</span>(<span class="fu">here</span>(<span class="st">"Bases de datos"</span>, <span class="st">"base de datos ejemplo.xlsx"</span>), <span class="at">setclass=</span>”tibble”)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Luego podemos ver la base con la función <strong>View()</strong> para invocar el visor de datos o simplemente <strong>head()</strong> para ver las primeras observaciones del dataframe en la consola. Como buena práctica, después de importar la base de datos en un dataframe es ver su estructura para determinar si las columnas se importaron bien, podemos hacerlo viendo en el panel de ambiente de trabajo desplegando la flecha a la izquierda del nombre del dataframe o escribiendo en la consola la función <strong>str()</strong> donde vamos a ver el nombre de la variable, de que clase es (chr si es texto, num si es numérico, logi si es lógico (true/false , int si es interger), factor, etc..</p>
+<p>Si vemos por ejemplo que una variable que sabemos de antemano que es una fecha está como tipo numérica, luego podemos transformarla a su tipo original. Más adelante veremos cómo se hace.</p>
+<table class="caption-top table">
+<caption><strong>Funciones que nos sirven para revisar un dataframe (solo debemos poner el nombre del dataframe dentro de los paréntesis)</strong></caption>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 79%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Función</th>
+<th>Efecto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>head()</td>
+<td>Muestra las 6 primeras filas</td>
+</tr>
+<tr class="even">
+<td>tail()</td>
+<td>Muestra las ultimas 6 filas</td>
+</tr>
+<tr class="odd">
+<td>dim()</td>
+<td>Nos muestra las dimensiones del dataframe, total de observaciones y total de columnas</td>
+</tr>
+<tr class="even">
+<td>nrow()</td>
+<td>Nos muestra el total de filas u observaciones</td>
+</tr>
+<tr class="odd">
+<td>ncol()</td>
+<td>Nos muestra el total de columnas</td>
+</tr>
+<tr class="even">
+<td>str()</td>
+<td>Nos hace un resumen de la estructura del dataframe, columna por columna</td>
+</tr>
+<tr class="odd">
+<td>names() o colnames()</td>
+<td>Nos muestra los nombres de las columnas</td>
+</tr>
+</tbody>
+</table>
+<p>Los resultados que arrojan estas funciones podemos guardarlas en un objeto (ej.vector) por ejemplo si queremos comparar el total de columna de un dataframe vs otro (por ejemplo un corte de la base de datos de una fecha vs otro corte) podemos crear el vector col_dataframe_1 &lt;- ncol(dataframe1) y el vector col_dataframe_2 &lt;- ncol(dataframe2) y luego comparar: col_dataframe1 ==col_dataframe2, si tenemos el resultado TRUE, pues ambos dataframes tienen la misma cantidad de columnas, de lo contrario, uno de los dataframes tiene de menos o de más columnas.</p>
+<p>Por igual se hacemos el mismo ejercicio para ver cuantas filas ha crecido una base de datos podemos usar la función nrow() y restar el vector del dataframe2 – dataframe1 para obtener la diferencias de filas.</p>
+<p>Esto es un ejemplo muy sencillo pero muchos procedimientos de transformación de datos usamos estas funciones.</p>
+</section>
+<section id="listas" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="listas"><span class="header-section-number">5.4</span> Listas</h2>
+<p>Otro tipo de objeto que usa R son las listas, que es un tipo de objeto recursivo o que admite diferentes formatos de elementos. Las listas básicamente son objetos que combinan varios objetos que pueden ser matrices, vectores, dataframes sin restricciones. En resumen, las listas son mini contenedores, se usan mucho para las funciones cuando necesitamos “pegar” o usar objetos de diferentes formatos para obtener un solo resultado. También cuando hacemos <strong>“for loops”</strong> o bucles (una forma de hacer tareas repetitivas) se usan mucho las listas. El manejo de listas es un poco avanzado para comenzar a trabajar en R, pero son muy importantes.</p>
+<p>Cuando tratamos de visualizar una lista el resultado que vemos en la consola son primero el orden del objeto dentro de doble corchete y luego el contenido del objeto, así (copia y pega en la consola el siguiente texto):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#vamos a crear varios objetos </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>vect1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>vect2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>))</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>vect3 <span class="ot">&lt;-</span> letters</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>vect4 <span class="ot">&lt;-</span> mtcars[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>]</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#vamos a crear una lista de objetos</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>lista <span class="ot">&lt;-</span> <span class="fu">list</span>(vect1, vect2, vect3, vect4)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Si desde la misma consola llamamos al objeto lista que creamos (solo escribiendo el nombre del objeto, “lista” en este caso tendremos el siguiente resultado:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>lista</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] "a" "b" "c"
+
+[[2]]
+ [1]  1  2  3  4  5  6  7  8  9 10
+
+[[3]]
+ [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s"
+[20] "t" "u" "v" "w" "x" "y" "z"
+
+[[4]]
+                  cyl disp
+Mazda RX4           6  160
+Mazda RX4 Wag       6  160
+Datsun 710          4  108
+Hornet 4 Drive      6  258
+Hornet Sportabout   8  360</code></pre>
+</div>
+</div>
+<p>También desde el panel del ambiente de trabajo en Rstudio podemos ver los objetos tipo listas, cuantos elementos tiene y si desplegamos podemos ver sus elementos, así como también el tipo de elemento y características.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imagenes/05listas.png" class="img-fluid figure-img"></p>
+<figcaption>Si queremos llamar un objeto dentro de una lista simplemente escribimos el nombre de la lista abrimos doble corchete y ponemos dentro el numero de orden que corresponde el elemento que queremos,</figcaption>
+</figure>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>lista[[<span class="dv">1</span>]] <span class="co">#nos nos arroja el resultado de todo el contenido del elemento 1, que en este caso es un vector</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "a" "b" "c"</code></pre>
+</div>
+</div>
+<p>Dentro de los ejercicios que vamos a hacer usaremos las listas, por ejemplo, con estas podemos cargar múltiples archivos como objetos desde una carpeta para facilitar el proceso de importación.</p>
+</section>
+<section id="funciones" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="funciones"><span class="header-section-number">5.5</span> Funciones</h2>
+<p>Otro tipo de objeto que no necesariamente almacena datos pero a través de esto si creamos objetos de datos son las funciones y si te has dado cuenta hasta ahora se han mencionado mucho dado que todo el código que vamos a ir escribiendo mayormente se hace con funciones, de hecho, como se mencionó arriba, la mayoría de los paquetes son una compilación de funciones. Nosotros podemos crear funciones que usan funciones ya sean de R base o incluso de otros paquetes.</p>
+<p>Las funciones nos ayudan a agilizar el trabajo dado que son un set de instrucciones dentro de nuestra rutina. Un ejemplo podemos crear una función que nos produzca un gráfico de curva epidémica de un periodo y un lugar determinados (tenemos un resultado, el gráfico, y dos parámetros, el periodo y el lugar).</p>
+<p>Para crear una función usamos la siguiente sintaxis:</p>
+<p><img src="imagenes/05funcion.png" class="img-fluid"></p>
+<p>Vamos hacer un ejercicio simple para entender mejor una función:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#una funcion para calcular el indice de masa corporal</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>mi_funcion <span class="ot">&lt;-</span> <span class="cf">function</span>(peso, altura){ </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  resultado <span class="ot">&lt;-</span> <span class="fu">round</span>(peso<span class="sc">/</span>(altura<span class="sc">/</span><span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span>,<span class="dv">2</span>) <span class="co">#asigna al elemento resultado el la operación entre peso y altura y luego redondear el valor</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Formula: "</span>,peso,<span class="st">"kg./"</span>,altura<span class="sc">/</span><span class="dv">100</span>,<span class="st">"(m)2"</span>)) <span class="co"># retorna un texto con el peso y la altura</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"El indice de masa corporal es "</span>, resultado)) <span class="co"># retorna el en un solo texto el indice de masa corporal obtenido</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="fu">mi_funcion</span>(<span class="at">peso=</span><span class="dv">115</span>,<span class="at">altura=</span><span class="dv">180</span>) <span class="co">#llamamos la funcion y escribimos los parametros</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Formula: 115kg./1.8(m)2"
+[1] "El indice de masa corporal es 35.49"</code></pre>
+</div>
+</div>
+<p>Entonces, para entender mejor como trabaja una función, usando el ejemplo anterior, luego del nombre de la función y el operador de asignación, escribimos la función function(){ } y dentro de los paréntesis escribimos el nombre que queramos usar para los parámetros, separados por comma (como hicimos en el ejemplo anterior, usamos peso y altura) luego dentro de las llaves vamos a proceder a escribir las expresiones para obtener un resultado, para esta función del cálculo del índice de masa corporal creamos un vector que es el resultado de la operación de la fórmula del IMC, donde el parámetro 1, el peso es dividido entre el parámetro 2, la altura que a su vez es dividida entre 100 y luego elevada al cuadrado, después la siguiente expresión presenta un texto con los parámetros y luego presenta otro texto con el resultado del IMC.<br>
+De las funciones se pueden escribir libros, hay una vasta documentación de como trabajar con ellas, básicamente son el pilar para lo que es la programación en R.</p>
+<p>Mi gran sugerencia es cuando te sientas más familiarizado y tengas más experiencia en R, puedes dedicarle tiempo a aprender sobre como trabajar más profundamente con las funciones. Por ahora vamos a enfocarnos en los paquetes que tienen funciones que nos facilitan el trabajo para análisis de datos.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "¡Copiado!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "¡Copiado!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./03-operadoresR.html" class="pagination-link" aria-label="Operadores en R">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Operadores en R</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./05-excel_a_R_intro.html" class="pagination-link" aria-label="Transición desde Excel a R">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Transición desde Excel a R</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

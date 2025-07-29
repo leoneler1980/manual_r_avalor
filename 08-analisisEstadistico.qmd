@@ -1,0 +1,183 @@
+# Apendice-Análisis de variables continuas - Estadistica (Ejemplos de gráficos con ggplot)
+
+```{r setup02, echo=TRUE, warning=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE)
+
+#install.packages("readxl")
+#install.packages("tidyverse")
+#install.packages("knitr")
+#install.packages("kableExtra")
+#install.packages("ggpubr")
+#install.packages("dplyr")
+#install.packages("DescTools")
+
+
+library(readxl)
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+library(DescTools)
+library(janitor)
+
+## Se recomienda ubicar aqui la lectura de los archivos y las librerias en este chunk.
+## It is recomended to put here the code to read the files and the libraries in this chunk.
+## VoÇe pode escrever a leitura dos arquivos e as livrarias nesse chunk.
+
+# Configurar la dirección de lectura de archivos.
+# Set the WORKING DIRECTORY
+#setwd("C:/Users/Julian/Documents/R/ANALISIS DE VAR CONTINUAS")
+#data <- read_xlsx("AROMATICAS (Para desarrollar).xlsx")
+
+
+data <- read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vT_gIgjfKwvUOPAbK4kAa7rpRHFbQqm1wNoLAHhT4fJEZNLonTuysf3pYhU1MpEKg/pub?output=csv", dec = ",")
+# Mirar la línea 87 para cambiar los nombres de las variables.
+
+#Nota:En los siguientes enlaces, encuentra información sobre gráficos mejorados para analizar datos, principalmente relacionados con variables continuas.
+ # https://github.com/z3tt/beyond-bar-and-box-plots/blob/main/README.md?s=03
+#https://www.cedricscherer.com/slides/USGS-2021-beyond-bar-and-box-plots.pdf
+
+```
+
+
+## TABLA RESUMEN
+
+En estas líneas puede escribir tu análisis.
+
+```{r SummaryTable, echo=TRUE}
+
+#Ejemplo para interpretar boxplot
+#https://rpubs.com/angiescetta/ejemplo-boxplot
+
+data_limpia <- data %>% 
+  clean_names() %>% 
+  rename(Variable_continua=velocidad,
+         Categoria=ciudad)
+
+glimpse(data_limpia)
+
+summary(data_limpia)
+
+data_limpia %>% group_by(Categoria) %>%
+  summarise(count = n(),
+  mode = Mode(Variable_continua),
+  mean_media = round(mean(Variable_continua, na.rm = TRUE), digits = 2),
+  min =  min(Variable_continua),max = max(Variable_continua),
+  range = max - min, 
+  Q1 = quantile(Variable_continua, 0.25),
+  median_mediana = median(Variable_continua, na.rm = TRUE),
+  Q3 = quantile(Variable_continua, 0.75),
+  IRC = Q3 - Q1,
+  var = round(var(Variable_continua),digits = 2),
+  sd = round(sd(Variable_continua, na.rm = TRUE), digits = 2),
+  vc = round(sd(Variable_continua, na.rm = TRUE) / mean(Variable_continua, na.rm = TRUE),digits = 3),
+  P1 = round((mean(Variable_continua, na.rm = TRUE) - mode)/sd(Variable_continua, na.rm = TRUE),digits = 3),
+  P2 = round((3*(mean(Variable_continua, na.rm = TRUE) - median_mediana))/sd(Variable_continua, na.rm = TRUE),digits=3)) %>% 
+  kbl(caption = "Medidas de tendencia central y dispersion",
+      align = "lccrr") %>% 
+  kable_classic(full_width = F, html_font = "Cambria")
+
+```
+
+## GRÁFICO DE CAJAS - BOX PLOT
+
+
+```{r BOXPLOT, echo=TRUE}
+
+# En este y los demas "chunks" que cree ubicara el codigo para procesar los datos y generar las tablas y graficos.
+
+#Nota:En los siguientes enlaces, encuentra información sobre gráficos mejorados para analizar datos, principalmente relacionados con variables continuas.
+ # https://github.com/z3tt/beyond-bar-and-box-plots/blob/main/README.md?s=03
+#https://www.cedricscherer.com/slides/USGS-2021-beyond-bar-and-box-plots.pdf
+
+## La siguiente forma de realizar el BOXPLOT permite filtrar los datos más facil, está escrito en modo de sintaxis TYDIVERSE y facilita la manipulación del gráfico.
+data_limpia %>% 
+  ggplot(aes(y= Variable_continua , x= Categoria))+
+    geom_boxplot()+
+  labs(title = "Gráfico de cajas para la variable continua de acuerdo a la categoria",
+       caption = "El diamante negro representa la ubicación de la media")
+
+```
+
+## GRÁFICOS DE DENSIDAD
+En estas líneas puede escribir sus análisis.
+
+```{r DENSITY, echo=TRUE}
+
+# En este y los demas "chunks" que cree ubicara el codigo para procesar los datos y generar las tablas y graficos.
+
+
+data_limpia %>% 
+  ggplot(aes(x= Variable_continua))+
+  geom_density() +
+  labs(title = "Gráfico de densidad",
+       subtitle = "Por categorias") +
+  facet_grid(Categoria ~. )
+  
+#Estas lineas sirven para crear el gráfico de densidad para una categoria individual
+#data %>% 
+# filter(Categoria == "MENTA") %>% 
+# ggplot(aes(x= Variable_continua))+
+# geom_density()+
+# labs(title = "MENTA",
+# subtitle = "Gráfico de densidad")
+  
+
+```
+
+## HISTOGRAMAS
+En estas líneas puede escribir sus análisis.
+
+
+```{r HISTOGRAMA, echo=TRUE, message=TRUE, warning=TRUE}
+
+#Estas lineas sirven para crear el histograma para una categoria individual
+  #Con el binwidth se puede ajustar el ancho de las barras, puede explorar
+  # un poco con los anchos, aunque.
+  # La ley de STURGES permite calcular el número de clases y así el ancho de clase adecuado para    #gráficar un histograma de   manera técnica.
+
+data_limpia %>% 
+  ggplot(aes(x= Variable_continua))+
+  geom_histogram(binwidth = 2.5)+
+  labs(title = "HIERBA BUENA",
+       subtitle = "Histograma")+
+  facet_grid(Categoria ~. )
+
+
+#Estas lineas sirven para crear el histograma para una categoria individual
+# data %>% 
+#   filter(Categoria == "MENTA") %>% 
+#   ggplot(aes(x= Variable_continua))+
+#   geom_histogram(binwidth = 1)+
+#   labs(title = "MENTA",
+#   subtitle = "Histograma")
+
+
+```
+
+
+## HISTOGRAMAS Y GRÁFICOS DE DENSIDAD.
+En estas líneas puede escribir sus análisis.
+
+```{r DENSITY_HIS, echo=TRUE, message=TRUE, warning=TRUE}
+
+data_limpia %>% 
+  ggplot(aes(x= Variable_continua, y= ..density..))+
+  geom_histogram(binwidth = 2)+
+  geom_density()+
+  facet_grid(Categoria ~. )
+
+#Estas lineas sirven para crear el histograma para una categoria individual
+  #Con el binwidth se puede ajustar el ancho de las barras, puede explorar
+  # un poco con los anchos, aunque.
+  # La ley de STURGES permite calcular el número de clases y así el ancho de clase adecuado para    #gráficar un histograma de   manera técnica.
+  
+#data %>% 
+#filter(Categoria == "MENTA") %>% 
+#ggplot(aes(x= Variable_continua, y= ..density..))+
+#geom_histogram(binwidth = 1.5)+
+#geom_density()
+
+```

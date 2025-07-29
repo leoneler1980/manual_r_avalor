@@ -1,13 +1,47 @@
-# Preface {.unnumbered}
+# Introducción
 
-This is a Quarto book.
+### Consideraciones y recomendaciones de como mejorar el autoaprendizaje en R (¡y en otra herramienta similar!)
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+Este manual es muy específico para el entrenamiento de análisis de datos en salud, tanto para el nivel básico como intermedio, y tiene como propósito introducir el uso de R para ayudarte a facilitar el proceso de desarrollo de tus productos de investigación. Con esto dicho, hay temas que bien pudieran estar contenidos en un documento como este, pero por lo específicos que son, no aparecen detallados en este manual; por ejemplo, no abordaremos conceptos estadísticos básicos como las medidas de tendencia central, por tanto, partimos del supuesto de que ya tienes cierta familiaridad con estos temas.
 
-```{r, eval=FALSE}
-1 + 1
-```
+El enfoque principal es que puedas comenzar a usar R, primero adaptándote al formato de comandos en vez del formato orientado a objetos, (que es la manera como aprendiste Excel o SPSS) y luego haciendo las tareas más comunes que se realizan rutinariamente tanto en el entrenamiento como en la práctica, es decir, hacer tablas, gráficos, exportar reportes, etc.; todo esto a un nivel introductorio.
 
-```{r, echo=FALSE}
-2+2
-```
+El mundo de R es bien grande, (¡y qué bueno que es así!) y al principio pudiera ser tedioso para ti aprender a usarlo, sin embargo, desde que se comiences a producir resultados, notarás lo rápido que avanzarás. Una de las razones por las que R es una solución muy robusta para el análisis de grandes volúmenes de datos y para la elaboración de reportes, es que hay una comunidad muy vasta de personas que van aportando sus conocimientos y experiencia para hacer más fácil el aprendizaje y el uso de R.
+
+En nuestros inicios, antes de ser instructores, fueron muchos intentos de ensayo y error, es decir, era agotador buscar en la web, “googlear” operaciones bien básicas del tipo “Cómo importar una base de datos de Excel a R”, o “Como hacer una tabla 2x2 en R”, o “Cómo calcular la diferencia en días de una misma columna de una variable fecha en un dataframe” (esta última en Excel es bien fácil, pero cuando hay que hacerlo con una base de datos bien grande, Excel colapsa mientras que con R es más rápido); otra tarea de apoyo en nuestros inicios era leer tutoriales, aplicarlos, obtener resultados erróneos, corregir, preguntar… en fin, dar muchas vueltas hasta dar con lo que andábamos buscando.
+
+Este tipo de esfuerzos en la actualidad es muy diferente actualmente debido al uso de la inteligencia artificial como una plataforma que provee facilidades para avanzar rápido con el aprendizaje de cualquier lenguaje informático. Lo que ha sido un común denominador es que siempre hay respuestas, y muchas, de cómo hacerlo de diferentes formas, cualquier cosa (¡Relacionada al análisis de datos!). En pocas palabras, cualquier problema o tarea que quieras hacer en R es muy probable que ya alguien la haya hecho.
+
+Este manual es un ejemplo de eso, pues aprendimos a usar este lenguaje que literalmente es difícil, sin embargo, lo hemos simplificado para ti, ayudándote a reducir considerablemente el tiempo de búsqueda en tutoriales y Chat GPT, combinando el lenguaje de R y el lenguaje clínico. Lo más interesante de aprender a usar R con este estilo de ensayo y error es que aprendimos cosas que no teníamos la menor idea de que existían, por ejemplo, la teoría de los colores, la gramática de los gráficos, ejercicios estadísticos que pensábamos eran imposibles hacer en R, sin embargo, por la cantidad de tutoriales, ayudas, videos, cursos (la gran mayoría gratuitos o de muy bajo costo), hemos tenido la oportunidad de aprender más allá de lo esperado y te lo traemos resumido y bajo una metodología práctica, para que puedas aplicarlo de inmediato en tus tareas cotidianas.
+
+De una forma u otra, el mundo de R representa un gran avance donde converge la tecnología y la buena voluntad de muchas personas, sin fines de lucro, que realmente creen en el crecimiento social a través de la información; por herramientas como R se ha popularizado el uso de la ciencia de datos, que es muy usada en muchas profesiones incluyendo la epidemiología, y ha facilitado mucho el proceso de difundir información, como las publicaciones de artículos. Entonces, como parte de la experiencia de comenzar a usar R es el autoaprendizaje, te invitamos como primera tarea o ejercicio a que “busques” qué es R, quiénes lo crearon, para qué lo crearon, y haciendo esta actividad te vas a dar cuenta lo mencionado en las líneas anteriores sobre la vasta cantidad de información disponible en cuanto al uso de R para la gestión de datos.
+
+Por último, el ingrediente principal para aprender este lenguaje es tener en qué usarlo, es decir, una necesidad, en este caso, sobre procesamiento, análisis y reporte de datos. Esperamos que te motives a implementar esta herramienta y que te sea de provecho este manual, para que puedas seguir aprendiendo más de lo que esperas aprender durante este curso.
+
+### Definiciones claves
+
+-   **Objetos:** Son elementos que almacenan información y pueden ser de diferentes tipos como un valor simple (numérico o caracter), un dataframe, un vector, una función, una lista, gráficos entre otros. De forma abstracta un objeto es un contenedor que puede almacenar uno o varios elementos. Estos se "almacenan" en el ambiente de trabajo que reside en la memoria de la PC. Los objetos se crean usando el operador de asignación "**\<-**" o signo "=".
+
+-   **Dataframe:** Es el equivalente a una base de datos en formato de tabla o listado, donde cada columna es una variable y cada fila es una observación.
+
+-   **Vector:** Un vector es un objeto que consiste una lista de elementos que son del mismo tipo.
+
+-   **Rutina:** Es un conjunto de comandos o códigos que cumplen con una tarea en específico, ejemplo la importación de una base de datos y su limpieza (en inglés se le dice *script*)
+
+-   **Paquete:** Son varios archivos que contienen funciones, documentación, bases de datos. Son fundamentales para añadir funcionalidad a R. También es la vía como se comparte códigos re-producibles (funciones). A modo de analogía un paquete vendría siendo una herramienta (destornillador, martillo) y R sería la mesa de trabajo, donde cada vez que necesitas una herramienta (paquete) la traes a la mesa de trabajo.
+
+-   **Proyecto:** "Un proyecto es una carpeta de trabajo designado con un archivo .RProj. Al abrir un proyecto (usando Archivo -\> Abrir proyecto en RStudio o haciendo doble clic en el archivo .Rproj fuera de R), la carpeta de trabajo se establecerá automáticamente en el directorio donde se encuentra el archivo .RProj.
+
+-   **Bases de datos** en diferentes formatos, preferiblemente en .csv, pero en Excel u otros formatos comunes se pueden trabajar)
+
+-   **Operadores :** Según en el libro de R para principiantes de Juan Bosco Mendoza [@vega]: *"Son los símbolos que le indican a R que debe realizar una tarea. Combinando datos y operadores es que logramos que R haga su trabajo. Existen operadores específicos para cada tipo de tarea. Los tipos de operadores principales son los siguientes: Aritméticos, Relacionales, Lógicos y De asignación."*
+
+-   **Expresión:** En programación, una expresión es una combinación de constantes, variables o funciones, que es interpretada de acuerdo a las normas particulares de precedencia y asociación para un lenguaje de programación en particular.
+
+-   **Código:** son los signos y símbolos que tienen un significado o en sus diferentes combinaciones se pueden interpretar como un lenguaje
+
+-   **Función:** es un bloque de código reutilizable que realiza una tarea específica, tomando argumentos como entrada y devolviendo un resultado, lo que facilita la organización y reutilización del código.
+
+-   **Argumento:** es un valor o variable que se pasa a una función para que la función pueda realizar su tarea específica
+
+-   **Variable:** es un nombre que se le asigna a un valor o objeto, que puede ser de diferentes tipos (números, texto, etc.) y que se almacena en la memoria de la computadora.

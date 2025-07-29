@@ -1,0 +1,41 @@
+# Transición desde Excel a R
+
+En el aprendizaje de hacer análisis de datos usualmente se comienza usado hojas de cálculo como Microsoft Excel® para hacer tareas comunes como tablas, gráficos y cálculos estadísticos de forma general.
+
+Si ya estás trabajando con datos de forma regular, es muy probable que también te hayas expuesto a a Excel, o lo usas constantemente en tu día a día como parte de las herramientas para procesar datos, analizar y presentar datos.
+
+En mi caso, incluso sabiendo de la existencia de R me sentía que con Excel podía hacer todo, resolver cualquier situación relacionada a los datos dado que MS Excel tiene muchas funcionalidades y es una herramienta muy completa como hoja de cálculo.
+
+A pesar de lo robusto que puede ser Excel u otra hoja de cálculo, hay límites donde la funcionalidad de R va más allá, como por ejemplo la cantidad de datos que se pueden cargar, en Excel por ejemplo tiene un límite de 1,048,576 filas por hoja y 16,384 columnas (aunque se puede usar Power Query para tener más filas y columnas), y se hacen muy "pesados" o "lentos" para trabajar cuando se usan cierta cantidad de filas y/o columnas). R por su parte puede manejar bases mucho más grandes más rápidamente, dependiendo de la memoria RAM instalada del PC (busca en la web como aumentar la memoria RAM de mi computadora).
+
+Una hoja de cálculo en general es muy intuitivo y fácil de aprender, solo con abrir una hoja podemos comenzar a escribir agregando datos, escribir funciones para cálculos, gráficos todo en un entorno guiado a través de los clics del ratón.
+
+En cambio, R, como es un lenguaje de programación, es basado en comandos, sintaxis, donde mayormente todo debe de ser escrito y realmente es poco intuitivo al momento de comenzar a usarlo debido a lo complejo que resulta ser aprender un lenguaje nuevo.
+
+Esta forma de R de proceder a través de texto mayormente también tiene sus ventajas cuando vamos a realizar una tarea dado que debemos tener de una forma u otro definido lo que vamos a hacer y cuales comandos deben de ser ejecutados para lograr las mismas.
+
+De hecho, de forma general, así es que debemos de trabajar, primero tener un plan en mente, como será ejecutado y definir cada paso. La idea de lo dicho anterior es que el cambio de ambiente (de usar más el ratón que escribir para hacer tareas) puede ser un poco difícil al principio y uno sentirse frustrado, pero con la constante exposición a un nuevo ambiente, uno se va adaptando, se le hace fácil al cerebro a medida que vamos practicando cada vez más y más.
+
+En pocas palabras estar un poco "abierto" a cosas nuevas; darse la oportunidad de aprender y esforzarse más
+
+## Tareas que se realizan en Excel (u otras hojas de cálculos) y su equivalente en R
+
+Entrando en el tema de que cosas podemos hacer muy parecidas en R que se hacen con Excel, que son muy propias de lo que hacemos en epidemiología cuando analizamos datos es la exploración, en R podemos al igual que Excel podemos ver las bases de datos en un formato muy parecido a Excel, por ejemplo, podemos usar el comando ***View()*** (con V mayúscula) puedes escribir en la consola ***View(mtcars)[[1]](#_ftn1)*** y se nos abrirá una ventana una tabla (no editable por cierto) pero nos sirve para ver los datos y filtrar muy parecido a Excel.
+
+Otra tarea muy común que realizamos en Excel son las "pivot tables" o tablas dinámicas, que nos permiten hacer tablas resúmenes de una base de datos con unos cuantos clics de ratón, en R, podemos hacer lo mismo con varios comandos.
+
+![Comparación entre Excel y R, tablas dinámicas](imagenes/06pivottables.png)
+
+Se pudiera ver que en R es más complicado porque hay que escribir lo que se va a realizar, pero tomando en cuenta que nuestro trabajo de día a día como investigadores hacemos muchas tablas resúmenes, en Excel hacer varias tablas resúmenes, o actualizar realmente toma tiempo, sin embargo, en R quizás solo nos tome tiempo hacer la primera tabla resumen, pero luego podemos reusar el código solo cambiando algunos parámetros (como las variables) y nos ahorra mucho tiempo.
+
+En Excel también usamos mucho las funciones y fórmulas para hacer cálculos, un ejemplo común es crear grupos de edades a partir de una variable numérica que representa edad, (que de una forma u otra usar funciones es escribir códigos, para que veas que ya tienes experiencia codificando); en R, gracias a la disponibilidad de tantos paquetes (como por ejemplo el **epikit**) tenemos funciones que son específicamente para esto que se requiere menos esfuerzo.
+
+En resumen, hay una vasta documentación disponible sobre como adaptarse al uso de R para usuarios de Excel, cuáles son las diferencias entre R y Excel y como se complementan. Cuando veamos sobre exportación de datos, veremos un buen ejemplo de usar Excel.
+
+En la web hay mucha documentación acerca de como acostumbrarse a realizar analisis de datos con R para usuarios de otros programas, te recomiendo que hagas una búsqueda sobre el tema para que vayas adaptandote.
+
+Mi mayor recomendación es que comiences a practicar con R haciendo lo que ya sabes hacer con Excel. También puedes fácilmente ver la documentación de una función ecribiendo el signo de interrogración (**?**) delaante de la función que quieres así : **?sum()** y luego en el panel de ayuda vas a ver cuales son los argumentos y también un ejemplo. En caso de no entender, busca en internet (probablemente te has dado cuenta de que hago mucho enfasís en ***"Buscar en la web"*** esa es la mayor ventaja que tiene R como lenguaje de programación para análisis de datos, la comunidad de apoyo.
+
+[[1]](#_ftnref1) mtcars es una base de datos que trae R internamente como ejemplo sobre carros, para saber más de esta escribe en la consola help("mtcars")[^05-excel_a_r_intro-1]
+
+[^05-excel_a_r_intro-1]: **mtcars** es una base de datos que trae R internamente como ejemplo sobre carros, para saber más de esta escribe en la consola help("mtcars")

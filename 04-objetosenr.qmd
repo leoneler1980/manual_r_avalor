@@ -1,0 +1,170 @@
+# Objetos en R
+
+Otro elemento de suma importancia a conocer cuando se trabaja con R (así como vimos la importancia de las rutinas) son los objetos y sus diferentes tipos, dado que es con esto que trabajamos, son básicamente los contenedores de los datos (que R los almacena en la memoria del computador) es decir, a partir de estos es que haremos nuestras salidas como tablas, gráficos, reportes a través de la transformación (declarar, nombrar, filtrar reemplazar). Básicamente los objetos son el fundamento de todo.
+
+ En R hay 5 tipos de objetos de datos y se dividen en dos grupos de objetos, los que son de un solo tipo de dato (atómicos) o los que tienen varios tipos de datos (recursivos)
+
+## Vectores
+
+Dentro de los objetos atómicos tenemos **los vectores**, que no tienen dimensión, es decir, filas o columnas y pueden ser de clase numérico (entero y decinal), integer (números enteros solamente), carácter o texto, lógico (TRUE, FALSE) y factor (jerarquía en los valores). Un ejemplo de creación de un vector es el siguiente:
+
+![](imagenes/05vector.png)
+
+![](imagenes/05vector2.png)
+
+Para los vectores que son de caracteres o texto cuando los creamos si ponemos números sin comillas, estos cuando lo llamemos serán reconocidos como texto, por lo tanto no se pueden hacer operaciones matemáticas con estos aunque tengan números.
+
+Si escribes "x" (o el nombre que hayas usado para crear el vector) y presionas **Enter,** en la consola observaras los elementos contenidos en este vector.
+
+Una de las funcionalidades más interesantes de R es que por ejemplo en el caso de vectores numéricos, si haces una operación matemática, ejemplo 5 + **x** (nombre del vector), la operación se hará en todos los elementos del vector, es decir, el 5 se sumara con cada uno de los números. Si haces esto con un vector de texto o carácter, en la consola observaras un error que es una operación entre un argumento no numérico contra otro numérico.
+
+A medida que avancemos con el desarrollo de los productos vamos a ver que los vectores los usamos de forma constante, un ejemplo común es crear un vector con los nombres de las provincias o municipios de interés para luego cuando vamos a filtrar la base con la que estamos trabajando podemos hacer este filtro invocamos el dicho vector. También combinando varios tipos de vectores, con las mismas dimensiones, es decir el mismo numero de elementos podemos "unirlos" y formar un nuevo objeto como un **dataframe** o una lista.
+
+## Matrices
+
+Otro tipo de objeto atómico o que solo admite un tipo de valor es **la matriz** que es básicamente un vector pero con dos dimensiones (columnas y filas) se crean usando la función **matrix()** y se le debe agregar el parámetro del total de filas así como el total de columnas por ejemplo de la siguiente forma:
+
+![](imagenes/05matrix.png)
+
+No entraré mucho en detalle con los objetos de tipo matriz porque estos objetos tienen sus usos bien específicos y no vamos a usarlos de forma constante como los vectores.
+
+## Dataframes
+
+Ahora vamos a ver uno de los objetos más importantes que vamos a usar que son los **dataframes**, que es un objeto de tipo recursivo o que admite varios tipos de datos (texto, numérico, lógico) y es idéntico a una tabla, es decir, tiene dos dimensiones, columnas y filas. Las columnas se pueden ver como si fueran variables y las filas son los valores contenidos en esta variable.
+
+Para los trabajos que vamos a realizar, este será el tipo de objeto quizás más nos sentiremos familiarizados dado que lo más parecido a un dataframe es una base de datos, ya sea en Excel u otro tipo de programa.
+
+Una de las ventajas que tiene Rstudio es que nos ayuda a fácilmente ver la estructura del objeto dataframe, (cuantas variables o columnas y cuantas filas u observaciones) también para visualizar el contenido.
+
+![Panel de ambiente de trabajo en Rstudio donde podemos ver los objetos de datos disponibles, en esta imagen podemos ver dos dataframes (tab_dim_ej y tabla_resultado) y debajo, en la categoría de values, 3 vectores, (edades, x y "y") . Rstudio nos permite diferencial rápidamente también ver los atributos de cada elemento. Para saber más sobre los tipos de objetos podemos usar dos funciones str() y class(), la primera para ver la estructura y la segunda para ver que clase de objeto es.](imagenes/05dataframe.png)
+
+Para comenzar a usar los **dataframes** tenemos dos formas de hacerlo, primero es creándolo directamente, es decir, a través de escribir los datos que usaremos combinando varios vectores como el siguiente ejemplo, para crear una pequeña base de datos o tabla:
+
+```{r 09}
+ var1 <- c("maria", "pedro", "juan", "jose") #creamos un vector con nombres por ejemplo
+ var2 <- c(25, 40, 30, 35) #creamos otro vector con las edades
+ var3 <- c("F", "M", "M", "M") #creamos otro vector con el sexo
+ var4 <- c("LR", "SD", "SC", "PP") # creamos otro vector con la procedencia
+ tabla <- data.frame(nombre=var1, edad=var2, sexo=var3, prov=var4)
+ 
+tabla
+
+```
+
+![Anatomía de la función data.frame() para crear un dataframe. en R las funciones vienen con valores en los parámetros de forma predeterminada, incluso no hay que escribirlos. Un ejemplo es en esta función de **data.frame()** el parámetro ***check.names=TRUE*** viene predeterminado y por ende no hay que escribirlo.](imagenes/05dataframe2.png)
+
+Entonces si corremos las líneas anteriores vamos a tener como resultado un dataframe nuevo con 4 variables y 4 observaciones, **Ojo**, los vectores deben de tener la misma cantidad de elementos o sino vemos el siguiente error, ***"Error in data.frame(nombre = var1, edad = var2, sexo = var3, prov = var4) :  arguments imply differing number of rows: 4, 3"***que significa que uno de los vectores no tiene la misma cantidad de elementos.
+
+Para corregir esto, si el valor es desconocido en el vector que nos falta un elemento, solo agregamos un elemento nuevo llamado ***NA,*** sin comillas, que es una forma de decirle a R que el valor es desconocido y corremos de nuevo las líneas donde hicimos el cambio para actualizar.
+
+Este abordaje puede ser útil para tablas pequeñas, pero cuando tenemos que trabajar con bases de datos que tienen cientos o miles de observaciones entonces creamos un dataframe importando los datos desde diferentes fuentes, como archivos de Excel, desde archivos de texto, incluso archivos nativos de otros programas de estadísticas como SPSS o STATA.
+
+En Rstudio podemos sin necesidad de escribir una expresión o comando usando el botón de "**import Dataset"** en el panel de ambiente de trabajo y al hacer clic se nos despliega un menú para diferentes tipos de formatos de bases de datos como Excel, csv o txt, SPSS, SAS, Stata.
+
+![Botón para importar bases de datos de otras fuentes](imagenes/05importdatagrame.png)
+
+Después de hacer clic en uno de los formatos, (ejemplo Excel) se abre una ventana para seleccionar el archivo de la base de datos, que variables o columnas vamos a incluir además de otros parámetros.
+
+![Pasos para importar un dataframe usando Rstudio](imagenes/05importdatagrame2.png)
+
+Por ejemplo de forma predeterminada en el nombre del objeto o dataframe estará el nombre del archivo de la base de datos, puedes cambiarlo a un nombre más amigable (ejemplo bd o base) también si estás usando una base de Excel y esta contiene varias hojas, puedes especificar cual hoja usaras en **"sheet"**, incluso el rango, es decir, si solo usaras hasta ciertas filas, también puedes poner desde que fila se leerá el archivo, a veces en las bases de datos de Excel se les coloca títulos y los datos se comienzan a digitar a partir de la 3ra o 4ta fila entonces puedes en **"skip"** omitir la filas que no son necesaria.
+
+Por último, si este proceso lo vas a usar repetidamente, debes copiar el código que está en el campo inferior derecho de la ventana y pegarlo en el panel de editor de rutinas para que lo tengas en tu rutina. Incluso luego de que lo tengas ya en tu rutina, puedes modificarlo de ser necesario (realmente este es un aditamento visual dado que Rstudio está generando un código para que no tengas que escribirlo, básicamente Rstudio está cargando el paquete readxl, luego usando la función de importar archivos de Excel llamada **read_excel()**.
+
+Otra forma para cargar bases de datos muy parecido a lo que vimos anteriormente es usando el paquete **rio (input/output)** y el paquete **here** usando la función **import()** en combinación y la función **here()** (que nos ahorra escribir toda la ruta del archivo de la base de datos cuando estamos en un proyecto en Rstudio) , aquí un ejemplo:
+
+La base que voy a importar está ubicada en la carpeta de Base de datos, solo necesito saber el nombre del archivo que voy a usar, en este caso "base de dato se de datos ejemplo.xlsx"
+
+```{r 10, eval=FALSE, echo=TRUE}
+mi_base_ejemplo <- import(here("Bases de datos", "base de datos ejemplo.xlsx"), setclass=”tibble”)
+```
+
+Luego podemos ver la base con la función **View()** para invocar el visor de datos o simplemente **head()** para ver las primeras observaciones del dataframe en la consola. Como buena práctica, después de importar la base de datos en un dataframe es ver su estructura para determinar si las columnas se importaron bien, podemos hacerlo viendo en el panel de ambiente de trabajo desplegando la flecha a la izquierda del nombre del dataframe o escribiendo en la consola la función **str()** donde vamos a ver el nombre de la variable, de que clase es (chr si es texto, num si es numérico, logi si es lógico (true/false , int si es interger), factor, etc..
+
+Si vemos por ejemplo que una variable que sabemos de antemano que es una fecha está como tipo numérica, luego podemos transformarla a su tipo original. Más adelante veremos cómo se hace.
+
+| Función              | Efecto                                                                                |
+|----------------------|---------------------------------------------------------------------------------------|
+| head()               | Muestra las 6 primeras filas                                                          |
+| tail()               | Muestra las ultimas 6 filas                                                           |
+| dim()                | Nos muestra las dimensiones del dataframe, total de observaciones y total de columnas |
+| nrow()               | Nos muestra el total de filas u observaciones                                         |
+| ncol()               | Nos muestra el total de columnas                                                      |
+| str()                | Nos hace un resumen de la estructura del dataframe, columna por columna               |
+| names() o colnames() | Nos muestra los nombres de las columnas                                               |
+
+: **Funciones que nos sirven para revisar un dataframe (solo debemos poner el nombre del dataframe dentro de los paréntesis)**
+
+Los resultados que arrojan estas funciones podemos guardarlas en un objeto (ej.vector) por ejemplo si queremos comparar el total de columna de un dataframe vs otro (por ejemplo un corte de la base de datos de una fecha vs otro corte) podemos crear el vector col_dataframe_1 \<- ncol(dataframe1) y el vector col_dataframe_2 \<- ncol(dataframe2) y luego comparar: col_dataframe1 ==col_dataframe2, si tenemos el resultado TRUE, pues ambos dataframes tienen la misma cantidad de columnas, de lo contrario, uno de los dataframes tiene de menos o de más columnas.
+
+Por igual se hacemos el mismo ejercicio para ver cuantas filas ha crecido una base de datos podemos usar la función nrow() y restar el vector del dataframe2 -- dataframe1 para obtener la diferencias de filas.
+
+Esto es un ejemplo muy sencillo pero muchos procedimientos de transformación de datos usamos estas funciones.
+
+## Listas
+
+Otro tipo de objeto que usa R son las listas, que es un tipo de objeto recursivo o que admite diferentes formatos de elementos. Las listas básicamente son objetos que combinan varios objetos que pueden ser matrices, vectores, dataframes sin restricciones. En resumen, las listas son mini contenedores, se usan mucho para las funciones cuando necesitamos "pegar" o usar objetos de diferentes formatos para obtener un solo resultado. También cuando hacemos **"for loops"** o bucles (una forma de hacer tareas repetitivas) se usan mucho las listas. El manejo de listas es un poco avanzado para comenzar a trabajar en R, pero son muy importantes.
+
+Cuando tratamos de visualizar una lista el resultado que vemos en la consola son primero el orden del objeto dentro de doble corchete y luego el contenido del objeto, así (copia y pega en la consola el siguiente texto):
+
+```{r 11, eval=TRUE, echo=TRUE}
+#vamos a crear varios objetos 
+
+vect1 <- c("a", "b", "c")
+vect2 <- c(seq(1:10))
+vect3 <- letters
+vect4 <- mtcars[1:5,2:3]
+#vamos a crear una lista de objetos
+
+lista <- list(vect1, vect2, vect3, vect4)
+```
+
+Si desde la misma consola llamamos al objeto lista que creamos (solo escribiendo el nombre del objeto, "lista" en este caso tendremos el siguiente resultado:
+
+```{r 12}
+lista
+```
+
+También desde el panel del ambiente de trabajo en Rstudio podemos ver los objetos tipo listas, cuantos elementos tiene y si desplegamos podemos ver sus elementos, así como también el tipo de elemento y características.
+
+![Si queremos llamar un objeto dentro de una lista simplemente escribimos el nombre de la lista abrimos doble corchete y ponemos dentro el numero de orden que corresponde el elemento que queremos,](imagenes/05listas.png)
+
+```{r 13, echo=TRUE, eval=TRUE}
+lista[[1]] #nos nos arroja el resultado de todo el contenido del elemento 1, que en este caso es un vector
+
+```
+
+Dentro de los ejercicios que vamos a hacer usaremos las listas, por ejemplo, con estas podemos cargar múltiples archivos como objetos desde una carpeta para facilitar el proceso de importación.
+
+## Funciones
+
+Otro tipo de objeto que no necesariamente almacena datos pero a través de esto si creamos objetos de datos son las funciones y si te has dado cuenta hasta ahora se han mencionado mucho dado que todo el código que vamos a ir escribiendo mayormente se hace con funciones, de hecho, como se mencionó arriba, la mayoría de los paquetes son una compilación de funciones. Nosotros podemos crear funciones que usan funciones ya sean de R base o incluso de otros paquetes.
+
+Las funciones nos ayudan a agilizar el trabajo dado que son un set de instrucciones dentro de nuestra rutina. Un ejemplo podemos crear una función que nos produzca un gráfico de curva epidémica de un periodo y un lugar determinados (tenemos un resultado, el gráfico, y dos parámetros, el periodo y el lugar).
+
+Para crear una función usamos la siguiente sintaxis:
+
+![](imagenes/05funcion.png)
+
+Vamos hacer un ejercicio simple para entender mejor una función:
+
+```{r 14, eval=TRUE, echo=TRUE}
+#una funcion para calcular el indice de masa corporal
+mi_funcion <- function(peso, altura){ 
+  
+  resultado <- round(peso/(altura/100)^2,2) #asigna al elemento resultado el la operación entre peso y altura y luego redondear el valor
+  
+  print(paste0("Formula: ",peso,"kg./",altura/100,"(m)2")) # retorna un texto con el peso y la altura
+  
+  print(paste0("El indice de masa corporal es ", resultado)) # retorna el en un solo texto el indice de masa corporal obtenido
+  
+}
+
+mi_funcion(peso=115,altura=180) #llamamos la funcion y escribimos los parametros
+
+```
+
+Entonces, para entender mejor como trabaja una función, usando el ejemplo anterior, luego del nombre de la función y el operador de asignación, escribimos la función function(){ } y dentro de los paréntesis escribimos el nombre que queramos usar para los parámetros, separados por comma (como hicimos en el ejemplo anterior, usamos peso y altura) luego dentro de las llaves vamos a proceder a escribir las expresiones para obtener un resultado, para esta función del cálculo del índice de masa corporal creamos un vector que es el resultado de la operación de la fórmula del IMC, donde el parámetro 1, el peso es dividido entre el parámetro 2, la altura que a su vez es dividida entre 100 y luego elevada al cuadrado, después la siguiente expresión presenta un texto con los parámetros y luego presenta otro texto con el resultado del IMC.\
+De las funciones se pueden escribir libros, hay una vasta documentación de como trabajar con ellas, básicamente son el pilar para lo que es la programación en R.
+
+Mi gran sugerencia es cuando te sientas más familiarizado y tengas más experiencia en R, puedes dedicarle tiempo a aprender sobre como trabajar más profundamente con las funciones. Por ahora vamos a enfocarnos en los paquetes que tienen funciones que nos facilitan el trabajo para análisis de datos.

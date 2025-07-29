@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -75,7 +41,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-03540c99dd1a34af77b4c54761d366e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -90,17 +56,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos coincidentes",
+    "search-copy-link-title": "Copiar enlace a la búsqueda",
+    "search-hide-matches-text": "Ocultar coincidencias adicionales",
+    "search-more-match-text": "más coincidencia en este documento",
+    "search-more-matches-text": "más coincidencias en este documento",
+    "search-clear-button-title": "Borrar",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 
@@ -113,13 +79,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar navegación de la barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar navegación de la barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -136,7 +102,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Buscar"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -144,37 +110,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01-instalacionR.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preparación del ambiente de trabajo</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preparación del ambiente de trabajo</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-comanzandousandoR.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Comenzar a trabajar con R y la interfaz de Rstudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Comenzar a trabajar con R y la interfaz de Rstudio</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  <a href="./03-operadoresR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Operadores en R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  <a href="./04-objetosenr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Objetos en R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-excel_a_R_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Transición desde Excel a R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-analisisresultados.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Análisis de datos usando R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+ <span class="menu-text">Referencias</span></a>
   </div>
 </li>
     </ul>
@@ -184,10 +162,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">Contenido</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción"><span class="header-section-number">1</span> Introducción</a>
+  <ul class="collapse">
+  <li><a href="#consideraciones-y-recomendaciones-de-como-mejorar-el-autoaprendizaje-en-r-y-en-otra-herramienta-similar" id="toc-consideraciones-y-recomendaciones-de-como-mejorar-el-autoaprendizaje-en-r-y-en-otra-herramienta-similar" class="nav-link" data-scroll-target="#consideraciones-y-recomendaciones-de-como-mejorar-el-autoaprendizaje-en-r-y-en-otra-herramienta-similar"><span class="header-section-number">1.0.1</span> Consideraciones y recomendaciones de como mejorar el autoaprendizaje en R (¡y en otra herramienta similar!)</a></li>
+  <li><a href="#definiciones-claves" id="toc-definiciones-claves" class="nav-link" data-scroll-target="#definiciones-claves"><span class="header-section-number">1.0.2</span> Definiciones claves</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -204,14 +186,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title-meta">
 
     <div>
-    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Autor</div>
     <div class="quarto-title-meta-contents">
              <p>Creado por: Dr.&nbsp;Leonel Lerebours y Dr.&nbsp;Yunior Rosario <br> Editado por: Lic. Virginia Vallejo </p>
           </div>
   </div>
     
     <div>
-    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-heading">Publicado</div>
     <div class="quarto-title-meta-contents">
       <p class="date">July 29, 2025</p>
     </div>
@@ -225,20 +207,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>This is a Quarto book.</p>
-<p>To learn more about Quarto books visit <a href="https://quarto.org/docs/books" class="uri">https://quarto.org/docs/books</a>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
-</div>
-</div>
+<section id="introducción" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introducción</h1>
+<section id="consideraciones-y-recomendaciones-de-como-mejorar-el-autoaprendizaje-en-r-y-en-otra-herramienta-similar" class="level3" data-number="1.0.1">
+<h3 data-number="1.0.1" class="anchored" data-anchor-id="consideraciones-y-recomendaciones-de-como-mejorar-el-autoaprendizaje-en-r-y-en-otra-herramienta-similar"><span class="header-section-number">1.0.1</span> Consideraciones y recomendaciones de como mejorar el autoaprendizaje en R (¡y en otra herramienta similar!)</h3>
+<p>Este manual es muy específico para el entrenamiento de análisis de datos en salud, tanto para el nivel básico como intermedio, y tiene como propósito introducir el uso de R para ayudarte a facilitar el proceso de desarrollo de tus productos de investigación. Con esto dicho, hay temas que bien pudieran estar contenidos en un documento como este, pero por lo específicos que son, no aparecen detallados en este manual; por ejemplo, no abordaremos conceptos estadísticos básicos como las medidas de tendencia central, por tanto, partimos del supuesto de que ya tienes cierta familiaridad con estos temas.</p>
+<p>El enfoque principal es que puedas comenzar a usar R, primero adaptándote al formato de comandos en vez del formato orientado a objetos, (que es la manera como aprendiste Excel o SPSS) y luego haciendo las tareas más comunes que se realizan rutinariamente tanto en el entrenamiento como en la práctica, es decir, hacer tablas, gráficos, exportar reportes, etc.; todo esto a un nivel introductorio.</p>
+<p>El mundo de R es bien grande, (¡y qué bueno que es así!) y al principio pudiera ser tedioso para ti aprender a usarlo, sin embargo, desde que se comiences a producir resultados, notarás lo rápido que avanzarás. Una de las razones por las que R es una solución muy robusta para el análisis de grandes volúmenes de datos y para la elaboración de reportes, es que hay una comunidad muy vasta de personas que van aportando sus conocimientos y experiencia para hacer más fácil el aprendizaje y el uso de R.</p>
+<p>En nuestros inicios, antes de ser instructores, fueron muchos intentos de ensayo y error, es decir, era agotador buscar en la web, “googlear” operaciones bien básicas del tipo “Cómo importar una base de datos de Excel a R”, o “Como hacer una tabla 2x2 en R”, o “Cómo calcular la diferencia en días de una misma columna de una variable fecha en un dataframe” (esta última en Excel es bien fácil, pero cuando hay que hacerlo con una base de datos bien grande, Excel colapsa mientras que con R es más rápido); otra tarea de apoyo en nuestros inicios era leer tutoriales, aplicarlos, obtener resultados erróneos, corregir, preguntar… en fin, dar muchas vueltas hasta dar con lo que andábamos buscando.</p>
+<p>Este tipo de esfuerzos en la actualidad es muy diferente actualmente debido al uso de la inteligencia artificial como una plataforma que provee facilidades para avanzar rápido con el aprendizaje de cualquier lenguaje informático. Lo que ha sido un común denominador es que siempre hay respuestas, y muchas, de cómo hacerlo de diferentes formas, cualquier cosa (¡Relacionada al análisis de datos!). En pocas palabras, cualquier problema o tarea que quieras hacer en R es muy probable que ya alguien la haya hecho.</p>
+<p>Este manual es un ejemplo de eso, pues aprendimos a usar este lenguaje que literalmente es difícil, sin embargo, lo hemos simplificado para ti, ayudándote a reducir considerablemente el tiempo de búsqueda en tutoriales y Chat GPT, combinando el lenguaje de R y el lenguaje clínico. Lo más interesante de aprender a usar R con este estilo de ensayo y error es que aprendimos cosas que no teníamos la menor idea de que existían, por ejemplo, la teoría de los colores, la gramática de los gráficos, ejercicios estadísticos que pensábamos eran imposibles hacer en R, sin embargo, por la cantidad de tutoriales, ayudas, videos, cursos (la gran mayoría gratuitos o de muy bajo costo), hemos tenido la oportunidad de aprender más allá de lo esperado y te lo traemos resumido y bajo una metodología práctica, para que puedas aplicarlo de inmediato en tus tareas cotidianas.</p>
+<p>De una forma u otra, el mundo de R representa un gran avance donde converge la tecnología y la buena voluntad de muchas personas, sin fines de lucro, que realmente creen en el crecimiento social a través de la información; por herramientas como R se ha popularizado el uso de la ciencia de datos, que es muy usada en muchas profesiones incluyendo la epidemiología, y ha facilitado mucho el proceso de difundir información, como las publicaciones de artículos. Entonces, como parte de la experiencia de comenzar a usar R es el autoaprendizaje, te invitamos como primera tarea o ejercicio a que “busques” qué es R, quiénes lo crearon, para qué lo crearon, y haciendo esta actividad te vas a dar cuenta lo mencionado en las líneas anteriores sobre la vasta cantidad de información disponible en cuanto al uso de R para la gestión de datos.</p>
+<p>Por último, el ingrediente principal para aprender este lenguaje es tener en qué usarlo, es decir, una necesidad, en este caso, sobre procesamiento, análisis y reporte de datos. Esperamos que te motives a implementar esta herramienta y que te sea de provecho este manual, para que puedas seguir aprendiendo más de lo que esperas aprender durante este curso.</p>
+</section>
+<section id="definiciones-claves" class="level3" data-number="1.0.2">
+<h3 data-number="1.0.2" class="anchored" data-anchor-id="definiciones-claves"><span class="header-section-number">1.0.2</span> Definiciones claves</h3>
+<ul>
+<li><p><strong>Objetos:</strong> Son elementos que almacenan información y pueden ser de diferentes tipos como un valor simple (numérico o caracter), un dataframe, un vector, una función, una lista, gráficos entre otros. De forma abstracta un objeto es un contenedor que puede almacenar uno o varios elementos. Estos se “almacenan” en el ambiente de trabajo que reside en la memoria de la PC. Los objetos se crean usando el operador de asignación “<strong>&lt;-</strong>” o signo “=”.</p></li>
+<li><p><strong>Dataframe:</strong> Es el equivalente a una base de datos en formato de tabla o listado, donde cada columna es una variable y cada fila es una observación.</p></li>
+<li><p><strong>Vector:</strong> Un vector es un objeto que consiste una lista de elementos que son del mismo tipo.</p></li>
+<li><p><strong>Rutina:</strong> Es un conjunto de comandos o códigos que cumplen con una tarea en específico, ejemplo la importación de una base de datos y su limpieza (en inglés se le dice <em>script</em>)</p></li>
+<li><p><strong>Paquete:</strong> Son varios archivos que contienen funciones, documentación, bases de datos. Son fundamentales para añadir funcionalidad a R. También es la vía como se comparte códigos re-producibles (funciones). A modo de analogía un paquete vendría siendo una herramienta (destornillador, martillo) y R sería la mesa de trabajo, donde cada vez que necesitas una herramienta (paquete) la traes a la mesa de trabajo.</p></li>
+<li><p><strong>Proyecto:</strong> “Un proyecto es una carpeta de trabajo designado con un archivo .RProj. Al abrir un proyecto (usando Archivo -&gt; Abrir proyecto en RStudio o haciendo doble clic en el archivo .Rproj fuera de R), la carpeta de trabajo se establecerá automáticamente en el directorio donde se encuentra el archivo .RProj.</p></li>
+<li><p><strong>Bases de datos</strong> en diferentes formatos, preferiblemente en .csv, pero en Excel u otros formatos comunes se pueden trabajar)</p></li>
+<li><p><strong>Operadores :</strong> Según en el libro de R para principiantes de Juan Bosco Mendoza <span class="citation" data-cites="vega">(<a href="references.html#ref-vega" role="doc-biblioref"><strong>vega?</strong></a>)</span>: <em>“Son los símbolos que le indican a R que debe realizar una tarea. Combinando datos y operadores es que logramos que R haga su trabajo. Existen operadores específicos para cada tipo de tarea. Los tipos de operadores principales son los siguientes: Aritméticos, Relacionales, Lógicos y De asignación.”</em></p></li>
+<li><p><strong>Expresión:</strong> En programación, una expresión es una combinación de constantes, variables o funciones, que es interpretada de acuerdo a las normas particulares de precedencia y asociación para un lenguaje de programación en particular.</p></li>
+<li><p><strong>Código:</strong> son los signos y símbolos que tienen un significado o en sus diferentes combinaciones se pueden interpretar como un lenguaje</p></li>
+<li><p><strong>Función:</strong> es un bloque de código reutilizable que realiza una tarea específica, tomando argumentos como entrada y devolviendo un resultado, lo que facilita la organización y reutilización del código.</p></li>
+<li><p><strong>Argumento:</strong> es un valor o variable que se pasa a una función para que la función pueda realizar su tarea específica</p></li>
+<li><p><strong>Variable:</strong> es un nombre que se le asigna a un valor o objeto, que puede ser de diferentes tipos (números, texto, etc.) y que se almacena en la memoria de la computadora.</p></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -285,12 +286,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "¡Copiado!");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "¡Copiado!");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -664,7 +665,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./01-instalacionR.html" class="pagination-link" aria-label="Preparación del ambiente de trabajo">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preparación del ambiente de trabajo</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preparación del ambiente de trabajo</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
