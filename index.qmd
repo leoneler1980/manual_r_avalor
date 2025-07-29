@@ -1,0 +1,13 @@
+# Preface {.unnumbered}
+
+This is a Quarto book.
+
+To learn more about Quarto books visit <https://quarto.org/docs/books>.
+
+```{r, eval=FALSE}
+1 + 1
+```
+
+```{r, echo=FALSE}
+2+2
+```
