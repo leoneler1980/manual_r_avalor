@@ -8,6 +8,7 @@ book:
   chapters:
     - index.qmd
     - 01-instalacionR.qmd
+    - 02-comanzandousandoR.qmd
     - intro.qmd
     - summary.qmd
     - references.qmd
