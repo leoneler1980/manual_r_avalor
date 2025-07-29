@@ -1,0 +1,738 @@
+# Análisis de datos usando R
+
+## Tareas que se deben de hacer para llevar a cabo un proyecto de analisis de datos
+
+Es posible que ya tienes conocimiento sobre la estructura del documento que debes desarrollar sobre analizar datos ya sea para toma de decisiones, u otros tipos como el trabajo final, aquí nos enfocaremos en la sección de resultados, donde tienes que realizar tablas, gráficos y análisis estadísticos. Aquí un listado de los elementos requeridos en la sección de resultado (ejemplos):
+
+-   Proporciona número de casos, incidencia o prevalencia del evento
+
+-   Características clínicas, por ejemplo, síntomas comunes, porcentaje de hospitalizados o fallecidos, resultados de laboratorio como porcentaje de confirmados o distribución por especie o subtipo (generalmente presentados en una tabla)
+
+-   Tiempo, por ejemplo, casos por año, mes, semana u otro intervalo apropiado, para mostrar patrones o cambios a lo largo del tiempo. Puede estratificarse por grupo de edad, sexo, región o característica de persona o lugar (generalmente se presenta en un gráfico). Señale cambios importantes, tendencias estacionales, aberraciones (p. Ej., Brotes) u otros patrones inusuales.
+
+-   Lugar, por ejemplo, por área geográfica (generalmente se presenta con un mapa o una tabla). Los números y las tasas son igualmente importantes.
+
+-   Persona, por ejemplo, por grupo de edad, sexo y otras características relevantes (generalmente presentadas en una tabla). Los números y las tasas son importantes.
+
+-   Otros resultados destacados que no se incluyen en las categorías enumeradas anteriormente. Por ejemplo, muchos informes resumidos de vigilancia incluyen datos sobre la integridad y puntualidad de los informes de cada fuente de informes.
+
+Con una base de datos de ejemplo vamos a realizar los pasos en R para producir los requerimientos sugeridos anteriormente. Vamos a usar como fuente de datos para este ejercicio una base de datos de casos de VIH positivos notificados. (Esta base está disponible en el siguiente **link**).
+
+Esta base de datos (o la que vayas a usar) debes de colocarla en la subcarpeta de **"Bases de datos"** dentro de la carpeta del **proyecto** (ejemplo la mi carpeta donde está el proyecto de Rstudio se llama trabajos de campo)**.** A modo de refrescamiento, ver la siguiente imagen de la estructura de sub-carpetas de un proyecto, su jerarquía.
+
+![Estructura básica recomendada para un proyecto en rstudio.](imagenes/07estructuraex.png)
+
+### Organización general antes de comenzar
+
+Como refrescamiento, antes de comenzar recuerda crear el proyecto (ver la sección de Comenzar a trabajar con R y la interfaz de Rstudio)\@ref(comenzar-a-trabajar-con-r-y-la-interfaz-de-rstudio).
+
+**Procesamiento de datos (cargar, editar, transformar *dataframes*)**
+
+-   Crear un documento de rutina de R, (Ctrl+shift+N o en File, R script),
+
+-   Comentar al menos el título del trabajo que estas haciendo (escribir \# , que es el carácter para hacer comentarios, después de este puedes escribir cualquier cosa y no será interpretado como código).
+
+-   Instalar el paquete [**pacman**](http://trinker.github.io/pacman/vignettes/Introduction_to_pacman.html)(luego nos permitirá con mayor facilidad instalar el resto)
+
+-   Cargar los siguientes paquetes:
+
+1.  [**rio**](https://cran.r-project.org/web/packages/rio/vignettes/rio.html) (para cargar archivos excel y otros formatos)
+
+2.  [**tidyverse**](https://cran.r-project.org/web/packages/tidyverse/vignettes/paper.html) (para transformar, revisar la base de datos)
+
+3.  [**janitor**](https://cran.r-project.org/web/packages/janitor/vignettes/janitor.html) (para tablas y limpieza de datos)
+
+4.  [**flextable**](https://cran.r-project.org/web/packages/flextable/index.html) (para formato de presentación de las tablas)
+
+5.  [**lubridate**](https://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html) (para trabajar con funciones con variables de formatos de fecha)
+
+6.  [**skimr**](https://cran.r-project.org/web/packages/skimr/vignettes/skimr.html) (para revisar la base de datos)
+
+7.  [**here**](https://cran.r-project.org/web/packages/here/vignettes/here.html) (para ayudarnos a encontrar los archivos que vamos a usar, también a guardarlos)
+
+8.  [**gtsummary**](https://www.danieldsjoberg.com/gtsummary/ "gtsummary") (para hacer tablas presentables y cálculos que usamos con frecuencia en epidemiología)
+
+Para cargar estos paquetes procedemos a usar la función de p_load del paquete pacman, luego de terminar la instalación de pacman, en el panel editor de rutinas, en la nueva rutina escribes la siguiente función:
+
+```{r 16, echo=TRUE, eval=FALSE, message=FALSE, warning=FALSE}
+install.packages("pacman") #para instalar el paquete pacman (solo una vez)
+
+```
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+pacman::p_load(rio, 
+               tidyverse, 
+               janitor, 
+               lubridate, 
+               skimr, 
+               here,
+               flextable,
+               gtsummary) #para instalar y cargar los paquetes necesarios
+```
+
+
+Algo a tomar en cuenta que para instalar estos paquetes debes tener internet, después que estén instalados no se necesita instalar de nuevo (al menos que re-instales o actualices Rstudio).
+
+Luego cargar todos los paquetes puedes hacerlo desde una sola línea de código o de forma individual con la función de R base **library()**.
+
+Antes de continuar, presiona **Ctrl+S** para guardar el archivo de rutina en la carpeta de tu proyecto "rutinas" o ya sea en el icono de guardar o desde file, recuerda, **Ctrl+R** al final de la línea de cógido o en "run" para ejecutarlo.
+
+Ahora para cargar la base de datos al panel de área de trabajo tenemos dos formas, escribiendo directamente o como vimos cuando explicamos los **dataframes** en el capítulo de objetos de R \@ref(objetos-en-r) usando la interfaz de rstudio o simplemente por comandos.
+
+Recuerda tener tus bases de datos en la carpeta de "datos" dentro de tu carpeta del proyecto, esto es muy importante para facilitar el trabajo.
+
+De todas formas, vamos a ver como sería el código para cargar un archivo Excel:
+
+```{r 17, echo=TRUE, warning=FALSE}
+
+#para crear un objeto dataframe (nuestra base)
+base <- import(here("datos", "sinave_vih.xlsx")) %>% 
+         clean_names()
+
+```
+
+Explicando un poco el código anterior, estamos creando un nuevo objeto llamado **"base",** a través de la función de **import** del paquete **rio**, que sirve para cargar archivos tipo .xls, .xlsx. y con la finalidad de localizar la ruta del archivo de la forma más sencilla posible usamos la función **here()** del paquete **here** escribiendo los parámetros de la sub-carpeta donde está la base de datos y el segundo parámetro, después de una coma, el nombre del archivo (ambos parámetros dentro de comillas). Luego sigue un operador pipe (%\>%) que significa "luego" a través de la función **clean_names()** del paquete **janitor** con el propósito de "normalizar" los nombres de las columnas o variables (poner todas en minúsculas, quitar caracteres poco comunes y espacios).
+
+Si hiciste los pasos correctamente debes de tener una imagen similar:
+
+![](imagenes/07cargarbase.png)
+
+Donde puedes ver a la derecha que ya tienes un objeto dataframe cargado (la base de datos) que tiene 25,227 filas y 71 variables o columnas.
+
+#### **Exploración de la base de datos, (ver la base de datos antes de comenzar el procesamiento).**
+
+Entonces, primera pregunta, ¿Cuál es el próximo paso por seguir? Realmente debería ser el análisis, pero primero, seria bueno revisar la base para ver los datos "malos" es decir, por ejemplo, valores anormales, campos vacíos o datos que se cargaron mal, como pasa a veces con las fechas.
+
+El paquete de **rio** con la fórmula de **import()** hace un intento de determinar el tipo de variable que carga desde el archivo de Excel, pero a veces falla y es usualmente con las fechas porque sin querer había una fecha escrita en un formato no reconocido y el resto como número.
+
+Para "explorar" la base de datos podemos hacerlo de forma directa haciendo clic en el panel de ambiente de trabajo en el objeto base (o el nombre que le hayas dado) o puedes escribir en la consola de comandos **View(base)** para cargar el visor de datos.
+
+Otra forma más completa de explorar la base de datos es a través de la función **skim()** o **skim_tee()** (ambas producen el mismo reporte) del paquete **skimr** [@waring2022], para proveernos un resumen de cada variable, que tipo de variable es y nos muestra el total de campos vacíos, valores únicos por ejemplo.
+
+Ya estamos entrando de lleno en el análisis, siempre el primer paso es ver, verificar los datos, valores extremos, datos faltantes, esto es una buena práctica (obligatoria diría yo) cuando estamos haciendo análisis, luego viene la limpieza de los datos.
+
+Luego de escribir en tu rutina el último comando, debes tener escrito el siguiente código y obtener este resultado:
+
+```{r 18, echo=TRUE, eval=TRUE, warning=FALSE}
+base <- import(here("datos", "sinave_vih.xlsx")) %>% 
+  clean_names()
+
+skimr::skim_tee(base) #para genera un mini reporte de la base
+
+```
+
+En el ejemplo anterior:
+
+-   ¿Cuántas variables de texto, numéricas, lógicas (si/no, 1/0), de fechas se cargaron?
+
+-   ¿Cuantas de las variables están en blanco o tienen muchos valores vacíos, cómo es la distribución de las variables numéricas y fechas, (valores extremos)?
+
+-   ¿Hay variables que se importaron incorrectamente? Variables que son de un formato y se importaron de otro tipo (fechas que se importan como texto o número por ejemplo)
+
+Estas son las preguntas que debemos hacernos a partir de este resumen para ir viendo la data y hacer la limpieza de datos como por ejemplo excluir columnas o variables, filtrar valores extremos o editarlos, cambiar o corregir el formato.
+
+En el ejemplo anterior vemos que tenemos 4 tablas de tipo de variables ("Column type frequency:")
+
+![](imagenes/07skimr2.png)
+
+Luego debajo veremos en detalle por cada tipo de variable una tabla con el nombre de la variable, el total de campos vacíos, la tasa de completitud, valores mínimos, máximos, promedios y valores únicos.
+
+![]()
+
+![Resaltado podemos ver los detalles que la función skim() nos brinda como es un inventario de las variables de un dataframe por tipo de variable.](imagenes/07skimr.png)
+
+En general, después de este resumen se pueden definir próximos pasos para el análisis, incluir en tu reporte, en anexos, un resumen como este, añade más "confianza" a tus hallazgos y conclusiones porque estás mostrando de forma rápida la "salud" de tus datos.
+
+Esta exploración inicial de datos puedes hacerlo de diferentes maneras, te muestro esta de usar el paquete **skimr** porque es más "amigable", detallada y rápida.
+
+A medida que vamos avanzando con este ejercicio, vamos a explicar en más detalles los tipos de campos/variables que identifica R.
+
+#### Limpieza /re-structuración de datos
+
+Este paso vamos a tomar la base original y modificarla para preparar nuestro análisis. Tomando en cuenta que debes de preparar un plan de análisis y que este se enfocará en un análisis tipo descriptivo (en tiempo, lugar y persona) y hacer los siguientes pasos:
+
+-   Vamos a revisar el listado de variables que obtuvimos del resumen del ejercicio anterior (resumen de variables) y seleccionar las que necesitamos para el análisis.
+
+-   Vamos a re-codificar variables que necesiten cambios o hacer ajustes.
+
+-   Vamos a excluir o modificar los valores de las variables de interés.
+
+Una de las características "poderosas" y deseadas de R es que puedes crear un nuevo objeto a partir de otro, dado que puedes hacer múltiples versiones del original.
+
+Particularmente para este análisis vamos a crear un nuevo objeto dataframe (lo podemos llamar base_arreglada) donde este solo tendrá las variables o columnas para nuestro análisis y trataremos de excluir los valores no deseados y crear nuevas variables a partir de las que tenemos.
+
+Agrega a tu rutina el siguiente código:
+
+```{r 19, echo=TRUE, warning=FALSE}
+
+base_arreglada <- base %>% #creamos un nuevo elemento
+
+  select(fecha_notificacion, #seleccionamos las variables que necesitamos
+         fecha_atencion,
+         mes_atencion,
+         ano_atencion,
+         semana_atencion,
+         sexo,
+         pais_procedencia,
+         grupo_edad,
+         edad1,
+         nivel_educativo,
+         provincia,
+         das_dps_residencia,
+         das_dps_establecimiento,
+         clasf_final,
+         condicion) %>% 
+  
+  filter(!is.na(edad1)) %>%  #filtramos aquellos casos que no tienen edad
+  
+  mutate(provincia_establecimiento=case_when(
+             str_detect(das_dps_establecimiento, "SD-Area")~"Santo Domingo",
+             str_detect(das_dps_establecimiento, "Santiago I")~"Santiago",
+             str_detect(das_dps_establecimiento, "DN-Area ")~"Distrito Nacional",
+             TRUE~das_dps_establecimiento), #crear una nueva variable para combinar las areas de salud en la provincia del establecimiento
+         provincia_caso=str_sub(provincia, 4,-1L), #crear una nueva variable de provincia del caso pero sin la numeracion)
+         diagnosticado_misma_prov=case_when(
+              provincia_caso==provincia_establecimiento~1,
+                                            TRUE~0))
+  
+  head(base_arreglada) #para ver un ejemplo de la nueva base
+
+```
+
+Vamos a explicar el código anterior, el primer paso crear un nuevo objeto (base_arregada)  a partir del dataframe "base" usando el operador de asignación y luego o "entonces" (operador pipe o %\>%) usamos la función **select()** de **tidyverse** para especificar las variables que vamos a usar en el análisis, luego (operador pipe) usamos la función **filter** para excluir aquellas observaciones que no tienen edad a través del operador ! (operador de negación) y la función **is.na()**  de R base. Luego vamos usamos la función de **mutate()** para renombrar variable de *provincia_establecimiento*  y también la variable *provincia_caso*  para poder fusionar las áreas de salud en provincia a través de la función **case_when()** de **tidyverse**.  Después para ver el nuevo dataframe (base_arreglada) usamos la función **head()** de **utils** para ver las primeras 6 observaciones.
+
+Ya con este nuevo dataframe podemos comenzar a trabajar en nuestro análisis.
+
+## Análisis de tiempo
+
+Ahora vamos a comenzar a hacer tablas usando algunas de las funciones de **janitor** para hacer nuestra exploración de datos.
+
+Recordando que vamos a ir explicando los diferentes tipos de formatos de las variables o campos, en esta sección vamos a ver un formato muy común que son las fechas, las cual usamos para poder ver en el tiempo el comportamiento de algún evento. Cuando usamos la función de **import()** del paquete **rio** esta hace lo mejor posible de detectar que tiempo de campo es en base a su contenido, de forma predeterminada como formato o clase *POCIXct* o tiempo calendario,que es un formato especial de R para almacenar números en formato de fecha desde 1970-01-01. A veces los campos de fechas pueden importarse como texto y por lo tanto debemos transformar estos para poder hacer cálculos usando fechas. También para los gráficos la clase *Date* es mejor (veremos más con el uso del paquete **ggplot**) por lo que una recomendación es transformar los campos de fecha POCIXct a Date (si se importaron correctamente claro). Una forma para ver de forma rápida e individuar a que formato o clase pertenece una variable podemos usar la función **class()** de R base, por ejemplo: **class(*base_arreglada\$fecha_atencion)*** si la queremos transformar puedes incluir en el ejercicio anterior, dentro de la función de **mutate** el cambio de las variable de fecha usando la función **as.Date**(). Para ver que clase o formato son todas las variables (muy parecido al uso de la función **skim()** ) de forma rápida, podemos usar la función **str()** de R base.
+
+```{r 20, echo=TRUE, warning=FALSE}
+
+base_arreglada <- base %>%
+
+  select(fecha_notificacion,
+         fecha_atencion,
+         mes_atencion,
+         ano_atencion,
+         semana_atencion,
+         sexo,
+         pais_procedencia,
+         grupo_edad,
+         edad1,
+         nivel_educativo,
+         provincia,
+         das_dps_residencia,
+         das_dps_establecimiento,
+         clasf_final,
+         condicion) %>% 
+  
+  filter(!is.na(edad1)) %>%  
+  
+  mutate(provincia_establecimiento=case_when(
+             str_detect(das_dps_establecimiento, "SD-Area")~"Santo Domingo",
+             str_detect(das_dps_establecimiento, "Santiago I")~"Santiago",
+             str_detect(das_dps_establecimiento, "DN-Area ")~"Distrito Nacional",
+             TRUE~das_dps_establecimiento),
+         provincia_caso=str_sub(provincia, 4,-1L), 
+         
+         diagnosticado_misma_prov=case_when(
+              provincia_caso==provincia_establecimiento~1,
+                                            TRUE~0),
+         fecha_notificacion=as.Date(fecha_notificacion), #Agregamos el cambio de tipo POSIXct a Date para ambas variables fecha.
+         fecha_atencion=as.Date(fecha_atencion))
+  
+  str(base_arreglada) #para ver las clases de todas las variables en el dataframe
+
+```
+
+Para este análisis nos interesaría ver el comportamiento mensual de cada año de los casos reportados y aunque ya tenemos esta variables, mes y año de reporte y estas se pueden "fusionar" a veces es mejor hacer una transformación del formato dado que hacer esta fusión de la variable año y mes puede alterar el orden si no se hace de forma correcta. Con menos cantidad de código es más fácil transformar una fecha a otro tipo de presentación.
+
+Veamos en acción lo que acabo de explicar:
+
+```{r 21, echo=TRUE, warning=FALSE}
+
+base_arreglada %>% 
+  
+  mutate(a_mes_atencion=format(fecha_atencion, "%Y-%m")) %>% #Con esta línea de codigos creamos una nueva variable con el mes y año de atención
+  
+  tabyl(a_mes_atencion) #hacemos una tabla simple con la nueva variable
+
+```
+
+Como podemos ver en la salida anterior tenemos 5 años completos y el primer mes del 2022, si vamos a centrarnos en los últimos 3 años y podemos hacerlo con la función **filter()**:
+
+```{r 22, echo=TRUE, warning=FALSE}
+
+base_arreglada %>% 
+  
+  mutate(a_mes_atencion=format(fecha_atencion, "%Y-%m")) %>% 
+ 
+   filter(fecha_atencion>="2019-01-01", fecha_atencion<"2022-01-01") %>%  #Especificamos hasta donde queremos el periodo 
+  
+  tabyl(a_mes_atencion) #hacemos una tabla simple con la nueva variable
+```
+
+En los parámetros de **filter()** llamamos la variable dos veces usando los operadores mayor (\>) e igual (=) para que se incluya el valor más antiguo seguido de una coma y para el valor más reciente usamos menor que (\<) con un valor que no vamos a necesitar. Cuando especificamos el valor de una fecha siempre debe de ir entre comillas (" "). Todavía en el ejercicio anterior no hemos creado un nuevo objeto, para esto podemos hacer lo siguiente:
+
+```{r, echo=TRUE, warning=FALSE}
+
+tabla_01 <- base_arreglada %>%  #Nuevo objeto
+  
+  mutate(a_mes_atencion=format(fecha_atencion, "%Y-%m")) %>% 
+ 
+   filter(fecha_atencion>="2019-01-01", fecha_atencion<"2022-01-01") %>% 
+  
+  tabyl(a_mes_atencion)
+
+
+```
+
+Ahora vamos a ver esta distribución mensual por condición de egreso:
+
+```{r 23, echo=TRUE, warning=FALSE}
+
+tabla_01 <- base_arreglada %>% 
+  
+  mutate(a_mes_atencion=format(fecha_atencion, "%Y-%m")) %>% 
+ 
+   filter(fecha_atencion>="2019-01-01", fecha_atencion<"2022-01-01") %>% 
+  
+  tabyl(a_mes_atencion,
+        condicion)  %>%  #Agragamos la variable nueva o de columna
+  adorn_totals(c("col", "row")) %>% #A partir de esta línea, se usan funciones de "adorn_" para agregar detalles a la tabla
+  adorn_percentages() %>% 
+  adorn_pct_formatting() %>% 
+  adorn_ns()
+  
+
+tabla_01
+```
+
+Luego de ver el código anterior, también del paquete **janitor**, implementamos varias funciones asociadas con la función **tabyl()** para tablas con la finalidad de agregar totales y porcentajes.
+
+Si queremos presentar la tabla en un formato exportable, podemos usar la función **flextable()** del paquete **flextable** y nuestra primera tabla quedaría así:
+
+```{r 24, echo=TRUE, warning=FALSE}
+
+tabla_01 <- base_arreglada %>% 
+  
+  mutate(a_mes_atencion=format(fecha_atencion, "%Y-%m")) %>% 
+ 
+   filter(fecha_atencion>="2019-01-01", fecha_atencion<"2022-01-01") %>% 
+  
+  tabyl(a_mes_atencion,
+        condicion)  %>%  #Agragamos la variable nueva o de columna
+  adorn_totals(c("col", "row")) %>% #A partir de esta línea, se usan funciones de "adorn_" para agregar detalles a la tabla
+  adorn_percentages() %>% 
+  adorn_pct_formatting() %>% 
+  adorn_ns() %>% 
+  flextable::flextable() # Con esta función creamos una versión presentable de la tabla
+
+tabla_01
+
+```
+
+Con esta tabla podemos ir haciendo nuestro análisis de como los casos nuevos de VIH se han comportado en estos últimos 3 años. Podemos ir agregando en nuestro reporte *"El total de casos reportados desde enero del 2019 hasta diciembre del 2021 fueron 16,374"* por ejemplo. Otro dato que nos llama la atención es la proporción de fallecidos desde el inicio del periodo de análisis fue menor de 1% pero en los meses de abril-mayo del 2020 y septiembre y diciembre del 2020 fue mayor de lo esparado (estos son los puntualizaciones a tomar en cuenta para reportar y generar preguntas).
+
+Un detalle a resaltar es, en esta tabla (tabla_01) le agregamos un formato de presentación ya no la podemos usar para hacer otros análisis, como por ejemplo sacar el promedio de casos reportados por mes (u otras medidas de tendencia central). Digamos que quisiéramos reportar estos valores, simplemente podemos crear un objeto a partir de esta tabla original
+
+```{r 25, echo=TRUE, warning=FALSE}
+
+resumen_med_ten_cent <- base_arreglada %>%  #nuevo objeto, un dataframe
+  
+  mutate(a_mes_atencion=format(fecha_atencion, "%Y-%m")) %>% 
+ 
+   filter(fecha_atencion>="2019-01-01", fecha_atencion<"2022-01-01") %>%
+  
+  tabyl(a_mes_atencion, condicion) %>%  
+  
+  adorn_totals("col") %>% #añadiendo total de columna
+  
+  reframe(casos_fallecidos_min=min(Muerto, na.rm = T), #funcion para resumir datos
+          casos_fallecidos_pro=mean(Muerto, na.rm = T),
+          casos_fallecidos_sd=sd(Muerto, na.rm = T),
+          casos_fallecidos_median=median(Muerto, na.rm=T),
+          casos_fallecidos_max=max(Muerto, na.rm = T),
+          
+          casos_vivos_min=min(Vivo, na.rm = T),
+          casos_vivos_pro=mean(Vivo, na.rm = T),
+          casos_vivos_sd=sd(Vivo, na.rm = T),
+          casos_vivos_median=median(Vivo, na.rm=T),
+          casos_vivos_max=max(Vivo, na.rm = T),
+
+          casos_total_min=min(Total, na.rm = T),
+          casos_total_pro=mean(Total, na.rm = T),
+          casos_total_sd=sd(Total, na.rm = T),
+          casos_total_median=median(Total, na.rm=T),
+          casos_total_max=max(Total, na.rm = T)) %>% 
+  pivot_longer(1:ncol(.), names_to = "medida", values_to = "resultado")
+
+
+  
+resumen_med_ten_cent
+```
+
+El código anterior pudiera parecer cargado (y lo es) pero es una buena forma de ver los detalles de los valores que queremos obtener y también el uso de otras funciones que tienen mucho peso cuando manejamos datos como es **reframe()**, **pivot\_()** de **tidyverse** que sirven para crear objetos con resumen de nuestros datos.
+
+Con el objeto *resumen_med_ten_cent* podemos ver que el promedio de casos totales por mes fue de 454 casos reportados, con un mínimo de 97 casos y un máximo de 618.
+
+Otro abordaje para obtener estos resultados y también en un formato presentable es usando la función **summary** de R base, nos ahorra muchos pasos. Aquí un ejemplo :
+
+```{r 26, echo=TRUE, warning=FALSE}
+
+base_arreglada %>%
+  
+  mutate(a_mes_atencion=format(fecha_atencion, "%Y-%m")) %>% 
+ 
+   filter(fecha_atencion>="2019-01-01", fecha_atencion<"2022-01-01") %>% 
+  
+  tabyl(a_mes_atencion, condicion) %>% 
+  
+  adorn_totals("col") %>% 
+  
+  summary() #Esta función se puede usar en los dataframes como en las matrices y vectores.
+  
+  
+
+```
+
+El único detalle que no tenemos la desviación estándar, pero es un resumen bien completo para los valores numéricos.
+
+En fin, tenemos una primera parte, vamos a ver la versión gráfica, usando las funciones del **ggplot2** de **tydiverse**. Estas funciones se basan en las reglas de "gramática de gráficos" y haciendo una explicación bien resumida, esta gramática son reglas que similarmente tenemos en los idiomas como el español e inglés, también en los gráficos se aplican. Un gráfico es un compuesto de varios elementos como son la estética, el texto que lleva, los ejes, los formatos y se van construyendo por capas (layers en inglés). Hay libros dedicados a este tema que ayuda mucho a como construir de forma más estructurada un gráfico para analizar datos.
+
+La ventaja de escribir código para crear gráficos es que permite automatizar el proceso y muchas veces podemos tomar prestado el código para no comenzar desde 0.
+
+La mejor forma de explicar el código o lenguaje de gramática de gráficos (en adelante ggplot) es haciendo un ejercicio (así fue como pude entenderla y hacer los gráficos en R). También antes de hacer el gráfico, es bueno planear en base a los datos que se tienen que tipo de gráficos puede ser usado.
+
+![Tipos de gráficos a ser usado en base los datos](imagenes/07tablagrafp.png)
+
+Veamos un ejemplo usando la tabla que hemos venido trabajando:
+
+```{r 27, echo=TRUE, warning=FALSE}
+
+
+base_arreglada %>%
+  
+  mutate(a_mes_atencion=format(fecha_atencion, "%Y-%m")) %>% 
+ 
+   filter(fecha_atencion>="2019-01-01", fecha_atencion<"2022-01-01") %>% 
+  
+  tabyl(a_mes_atencion, condicion) %>% 
+  
+  adorn_totals("col") %>%
+ggplot(aes(x=a_mes_atencion, y=Total))+ #Espacificamos lo que vamos a graficar
+  geom_col() #Agregamos una capa de columnas
+```
+
+¡Tenemos nuestro primer gráfico!, pero como puedes ver, puede ser mejorado con el fin de ser presentado en un reporte. Lo primero que vemos que está alterado es el **eje x**, o el año y la fecha de la notificación. Una forma de corregir esto es rotando a 90 grados el texto. A tomar en cuenta, cuando transformamos datos, usamos el operador pipe **(%\>%)**, en ggplot, el equivalente es el signo de suma (**+**).
+
+```{r 28, echo=TRUE, warning=FALSE}
+base_arreglada %>%
+  
+  mutate(a_mes_atencion=format(fecha_atencion, "%Y-%m")) %>% 
+ 
+   filter(fecha_atencion>="2019-01-01", fecha_atencion<"2022-01-01") %>% 
+  
+  tabyl(a_mes_atencion, condicion) %>% 
+  
+  adorn_totals("col") %>%
+ggplot(aes(x=a_mes_atencion, y=Total))+ #Espacificamos lo que vamos a graficar
+  geom_col(color="black", fill="white")+ #Agregamos una capa de columnas y cambiamos el color del borde y del llenado
+  theme(axis.text.x = element_text(angle=90, vjust=0.5),
+        panel.background = element_rect(fill="white")) #en esta sección cambiamos parametros de cada elemento del gráfico, color, tamaño, etc. de elementos generales, Solo estamos modificando el texto del eje x y el color de fondo del panel.
+```
+
+Hemos cambiado varios elementos como el color de las barras, la presentación del texto del eje x y el color de fondo del panel. Ahora vamos a agregar los títulos, como el título del gráfico y los de los ejes. Para esto insertamos el comando de **labs()** que significa labels o etiquetas.
+
+```{r 29, echo=TRUE, warning=FALSE}
+
+base_arreglada %>%
+  
+  mutate(a_mes_atencion=format(fecha_atencion, "%Y-%m")) %>% 
+ 
+   filter(fecha_atencion>="2019-01-01", fecha_atencion<"2022-01-01") %>% 
+  
+  tabyl(a_mes_atencion, condicion) %>% 
+  
+  adorn_totals("col") %>%
+ggplot(aes(x=a_mes_atencion, y=Total))+ #Espacificamos lo que vamos a graficar
+  geom_col(color="grey75", fill="white")+ #Agregamos una capa de columnas y cambiamos el color del borde y del llenado
+  labs(title="Distribución de casos de VIH notificados",
+       subtitle = "Rep. Dominicana, 2019-2021",
+       x="Año y mes de diagnostico",
+       y="Casos notificados")+#Aquí especificamos el título, subtitulo y nombres de los ejes.
+  theme(axis.text.x = element_text(angle=90, vjust=0.5),
+        panel.background = element_rect(fill="white")) #en esta sección cambiamos parametros de cada elemento del gráfico, color, tamaño, etc. de elementos generales, Solo estamos modificando el texto del eje x y el color de fondo del panel.
+```
+
+Si comparas el primer gráfico con este se nota mucho la diferencia, (aunque todavía le falta mucho, este se puede presentar). Este seria nuestro histograma, de hecho, hay un **geom\_** específico para los histogramas, pero como mencioné anteriormente, para el paquete de ggplot hay mucha documentación que básicamente se requiere un entrenamiento aparte. Fijandote en los códigos de ejemplos y también buscando ejemplos en la red, (ejemplo: "como hacer un gráfico de línea con ggplot) vas a ir aprendiendo de forma rutinaria el uso de ggplot.
+
+También a considerar, a diferencias de las tablas, los gráficos podemos directamente (en caso de necesitar) ya sea al clipboard o guardarlos como imagen desde el menú de "plots" en el panel de archivos, gráficos, paquetes, ayuda y visor. Para esto podemos hacer clic donde dice "Export" en el menú y seleccionar ya sea guardar como imagen, como pdf o al clipboard para pegarlo en un documento de Word o Excel o una presentación. Si quieres cambiar el tamaño puede primero usar el zoom o la lupa y aquí manualmente cambiar el tamaño del gráfico y hacer un clic derecho y seleccionar guardar como (igual que desde una página web).
+
+![Para exportar los gráficos de forma manual con Rstudio](imagenes/07saveimg.png)
+
+## Análisis de lugar
+
+Ya tenemos una tabla y un gráfico sencillo para describir el comportamiento de los casos notificados del evento (en este caso, VIH) y una salida para hacer un resumen descriptivo de los casos a través del tiempo. Ahora vamos a ver como ha sido la distribución por zona geográfica, en este caso las provincias de residencia de los casos. Para explorar, vamos a construir una tabla que nos será más sencilla y tambien para mostrar otra forma de como hacer tablas con detalles y listas para presentar usando el paquete **gtsummary**. Esta tabla tendrá como columnas de la provincia de residencia y otra con el total de casos por provincia. Podemos tomar el código que usamos para el análisis de tiempo pero con alguna variación, veamos:
+
+```{r 30,  echo=TRUE, warning=FALSE}
+
+tabla_02 <- base_arreglada %>%
+  
+  mutate(a_mes_atencion=format(fecha_atencion, "%Y-%m")) %>% 
+ 
+   filter(fecha_atencion>="2019-01-01", fecha_atencion<"2022-01-01") %>% 
+  
+  select(provincia_caso, condicion) %>% #solo seleccionamos las variables que vamos a presentar en la tabla
+  
+  tbl_summary(by=condicion, sort = all_categorical() ~ "frequency") %>% #este es la función más básica de gtsummary (tbl_summary), los parametros que usamos fue separar la columna condicion en sus categorias y ordenamos según la frecuencia de casos usando el parametro sort.
+  
+  add_overall() #con esta funcion de gtsummary agregamos una columna de total
+
+tabla_02
+```
+
+Como puedes ver en la tabla anterior, el 23% de los casos son de la provincia Santo Domingo, durante los 3 años que estamos describiendo.
+
+Para tener una tabla más acabada, como por ejemplo cambiar el idioma de los títulos a español, así como agregar una nota de pie y el título vamos añadiendo estas funciones del paquete de **gtsummary**.
+
+```{r 32, echo=TRUE, warning=FALSE}
+
+ theme_gtsummary_language(language = "es", decimal.mark = ".") #esta funcion global es para decirle al paquete gtsummary que idioma usar para las tablas
+ 
+
+
+tabla_02 <- base_arreglada %>%
+  
+  mutate(a_mes_atencion=format(fecha_atencion, "%Y-%m")) %>% 
+ 
+  filter(fecha_atencion>="2019-01-01", fecha_atencion<"2022-01-01") %>% 
+  
+  select(provincia_caso, condicion) %>% 
+  
+  tbl_summary(by=condicion, sort = all_categorical() ~ "frequency",
+              
+              provincia_caso~"Provincia de residencia del caso") %>%  #En la segunda linea, le cambiamos el nombre a la variable por otro nombre usando ~
+  
+  add_overall() %>% 
+  
+  modify_caption("**Tabla 2. Distribución de casos por provincia de residencia**") %>% #con este comando agregamos el título a la tabla
+  
+  bold_labels() # Con este ponemos en negritas los títulos de las categorías
+
+
+
+
+tabla_02
+
+
+```
+
+En caso de que la variable de lugar que queramos usar es región de salud por ejemplo, con solo cambiar la variable a región (claro, hay que incluirla, dado que en dataframe *base_arreglada* no está seleccionada) o si a DPS/DAS que reporta también. El paquete **gtsummary** tiene muchos parámetros que nos facilita tanto para hacer el resumen como para presentar los datos.
+
+En el siguiente [Tutorial](https://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html "tablas de resumen de gtsummary") puedes ver en más detalles todos las opciones para generar una tabla usando **gtsummary.** Si usas Chrome o Edge, puedes traducir sin problemas al español dado que está solo en inglés.
+
+## Análisis de persona
+
+En esta sección vamos a usar de nuevo la función **tbl_summary** del paquete **gtsummary** para hacer el resumen de persona, en este paso toma en cuenta que desde que creamos el dataframe *base_arreglada* tomamos las variables que vamos a usar, si nos hacen falta, solo tenemos que actualizar este objeto. Las variables a usar serian el *sexo*, la *edad*, el *país de procedencia*, el *grupo de edad* y la *condición de egreso*, que para los pasos anteriores la hemos usado con la finalidad de ver el comportamiento de la letalidad. Algo que es importante recalcar, que vaya usando como buena práctica, ve nombrando los objetos de forma que sea fácil para identificar e integrar en tu informe luego, por ejemplo para las tablas he usado la nomenclatura "tabla\_" así será más fácil asociar el orden como quisiera ir presentando en el informe.
+
+```{r 33, echo=TRUE, warning=FALSE}
+
+tabla_03 <- base_arreglada %>% 
+  
+mutate(a_mes_atencion=format(fecha_atencion, "%Y-%m")) %>% 
+ 
+   filter(fecha_atencion>="2019-01-01", fecha_atencion<"2022-01-01") %>% 
+  
+  select(sexo, grupo_edad,edad1, pais_procedencia, condicion) %>%  # las variables para describir la poblacion
+
+  tbl_summary(by=sexo,
+             label = list(grupo_edad~"Grupo de edad", #Cuando tenemos dos o más variables que renombrar, debemos poner estas dentro de una lista
+              edad1~"Edad en años",
+              grupo_edad~"Grupo de edad en años",
+              pais_procedencia~"Nacionalidad",
+              condicion~"Condición de Egreso")) %>% 
+  add_overall() %>% 
+  modify_caption("**Tabla 3. Distribución de casos según características**") %>% 
+  bold_labels()
+
+tabla_03
+```
+
+Algo a notar cuando generamos la tabla es que las nacionalidades son varias y con pocas observaciones, vamos a volver al proceso de "limpieza" para aquellas categorías que tienen pocas observaciones, agruparlas en la categoría de "otras"
+
+```{r 34, echo=TRUE, warning=FALSE}
+
+
+tabla_03 <- base_arreglada %>% 
+  
+mutate(a_mes_atencion=format(fecha_atencion, "%Y-%m"),
+       
+       pais_procedencia=case_when(pais_procedencia=="República Dominicana"~"Dominicana",
+                                  pais_procedencia=="Haití"~"Haitiana",
+                                  TRUE~"Otra Nacionalidad")) %>% #como vimos en la tabla anterior, dos nacionalidades sobresalen con respecto a la frecuencia, con la funcion case_when() podemos re-codificar
+ 
+   filter(fecha_atencion>="2019-01-01", fecha_atencion<"2022-01-01") %>%
+  
+  
+  select(sexo, grupo_edad,edad1, pais_procedencia, condicion) %>%  # las variables para describir la poblacion
+
+  tbl_summary(by=sexo,
+             label = list(grupo_edad~"Grupo de edad", #Cuando tenemos dos o más variables que renombrar, debemos poner estas dentro de una lista
+              edad1~"Edad en años",
+              grupo_edad~"Grupo de edad en años",
+              pais_procedencia~"Nacionalidad",
+              condicion~"Condición de Egreso")) %>% 
+  add_overall() %>% 
+  modify_caption("**Tabla 3. Distribución de casos según características**") %>% 
+  bold_labels()
+
+tabla_03
+
+```
+
+En este ejercicio anterior tuvimos que ajustar el país de procedencia o nacionalidad con la finalidad de hacer la tabla más presentable, de nuevo vamos a usar la función **case_when()** del paquete de **tidyverse** para re-codificar las categoría en base a los valores originales (los números en variables de texto se organizan de forma diferente). Otro cambio que podemos hacer usando esta función es el grupo de edad (*grupo_edad*) donde podemos ver que hay una categoría que no sale en orden (5_9a) para corregir esto como funciona case_when es valor actual (grupo_edad=="5_9") seguido de una virgulilla (\~) y el nuevo valor (sugerencia: "05_09") y para el último valor ya sea mantener el resto de los valores se usa TRUE \~ nombre de la variable :
+
+```{r 35, eval=FALSE, echo=TRUE}
+
+table_edad_reco <- base_arreglada %>% 
+  mutate(grupo_edad=case_when(grupo_edad=="1_4"~"01_04",
+                              grupo_edad=="5_9"~"05_09",
+                              TRUE~grupo_edad)) %>% 
+  select(grupo_edad, sexo) %>% 
+tbl_summary(by=sexo)
+
+table_edad_reco
+```
+
+Ahora con esta mismo resumen que usamos para la tabla anterior, vamos a hacer un gráfico de grupos de edades por sexo, que usamos de forma común para describir la población de cualquier evento. Continuando un poco con **ggplot**
+
+![Anatomía de la función de ggplot](imagenes/07ggplot.png)
+
+También aparte de lo presentado en la imagen anterior hay otras funciones complementarias (**scale\_**) que ayudan al ajuste del gráfico, pero como sea, solo vamos a enfocarnos en lo básico.
+
+El el gráfico que hicimos de tiempo, solo presentamos una variable, en este ejemplo vamos a presentar una variable con dos o más categorías para mostrar una funcionalidad muy importante de la función de **ggplot**.
+
+```{r 36, eval=TRUE, warning=FALSE, echo=TRUE}
+
+#primero hacemos una tabla resumen con solo grupo edad y sexo
+grafico_edad_reco <- base_arreglada %>% 
+  mutate(grupo_edad=case_when(grupo_edad=="1_4"~"01_04",
+                              grupo_edad=="5_9"~"05_09",
+                              TRUE~grupo_edad)) %>% 
+  select(grupo_edad, sexo) %>%
+  group_by(grupo_edad, sexo) %>%  #agrupamos por estas dos variables
+  count() %>%  #realizamos una cuenta de estas dos variables, el resultado es un dataframe con 3 variables (grupo_edad, sexo y n o cuenta)
+  ggplot(aes(x=grupo_edad, y=n, fill=sexo))+ # como estamos conectando el resumen con la función de ggplot, no necesitamos especificar el parametro data= o fuente de datos
+geom_col()
+
+#veamos el gráfico 
+grafico_edad_reco
+```
+
+Al igual con el ejemplo anterior, antes de usar este gráfico para presentar podemos hacer cambios, ejemplo, las barras que representa cada sexo por separado, el color de relleno también.
+
+```{r 37, eval=TRUE, warning=FALSE, echo=TRUE}
+
+grafico_edad_reco <- base_arreglada %>% 
+  mutate(grupo_edad=case_when(grupo_edad=="1_4"~"01_04",
+                              grupo_edad=="5_9"~"05_09",
+                              TRUE~grupo_edad)) %>% 
+  select(grupo_edad, sexo) %>%
+  group_by(grupo_edad, sexo) %>% 
+  count() %>%  
+  ggplot(aes(x=grupo_edad, 
+             y=n, 
+             fill=sexo))+ #fill es relleno, 
+geom_col(color="black",     #agregamos color al borde
+         position = "dodge")+ #especificamos que la variable sexo será en columnas separadas, no apiladas
+scale_fill_manual(values=c("Femenino"="white",
+                           "Masculino"="grey"))+#con esta función de ayuda podemos manualmente cambiar los colores de relleno, con el parametro values=creamos un vector con las categorias y le asignamos un color.
+theme_minimal() #este es un tema (theme) que trae ggplot, hay paquetes que tienen temas mucho más acabado, 
+grafico_edad_reco
+
+```
+
+Todavía hay muchos elementos que cambiar pero te dejo de tarea que busques lo siguiente:
+
+-   ¿Cómo agregar un separador de miles al número del eje y?
+
+-   ¿Cómo cambiar los títulos de los ejes y agregar título del gráfico?. (ver ejemplo del análisis de tiempo)
+
+-   ¿Cómo puedo cambiar los colores del relleno de las barras?. ¿Cómo puedo remover o agregar las líneas guía en el fondo del gráfico?
+
+La idea es que puedas también ir desarrollando la habilidad de usar las referencias que están disponible. Realmente no debes de aprenderte todos los comandos y funciones, lo que debes de tomar siempre en cuenta es definir bien **que es lo que necesitas o quieres** para luego tratar de procesarlo, esto lo mencioné al inicio de este manual.
+
+Ahora que tenemos algunos elementos para comenzar un análisis descriptivo podemos comenzar a trabajar como ponerlos en un mismo documento usando **rmarkdown**.
+
+## Evaluando si existe relación entre la variable dependiente e independiente
+
+En este ejercicio en los pasos anteriores pudimos hacer un poco de analisis exploratorio, descriptivo, ahora brevemente vamos a realizar un análisis de estadística inferencial usando regresión lineal. Para esto bien sabes que la regresión lineal es un método aplicable en muchas situaciones en las que se estudia la relación entre dos o más variables o predecir un comportamiento, y para esto vamos a usar dos variables que sean **continuas**.
+
+Vamos a evaluar si existe relación entre el año de ocurrencia de casos y la cantidad de casos y tambien predecir la cantidad de casos para años futuros, para esto tenemos que hacer una transformación de los datos. Primero vamos a crear un nuevo dataframe o una tabla resumen a partir del dataframe de la base arreglada:
+
+```{r 38, eval=TRUE, warning=FALSE, echo=TRUE}
+
+casos_por_ann <- base_arreglada %>% #nueva tabla
+  group_by(ano_atencion) %>%        #agrupamos por año del caso
+  count()                           #hacemos un conteo de casos (cada fila) por año
+
+
+casos_por_ann
+
+
+```
+
+Como podemos ver tenemos una nueva tabla que tiene dos columnas, la de los años (ano_atencion o variable independiente) y la del total de casos (n o variable dependiente). Ahora vamos a construir un nuevo objeto que tendrá el resumen del análisis de la regresión lineal, para esto vamos a usar la función **lm()** del paquete {base} de R. Los argumentos para esta formula son la base de datos, la variable independiente seguida del simbolo "\~" o virgulilla y luego las variables independientes, cada una separada por el simbolo "+" en caso de ser más de una variable independiente. Luego de crear el objeto de regresión lineal o lm, para ver los resultados usamos la función **summary()** para ver los resultados con más detalles del modelo de regresión.
+
+```{r 39, eval=TRUE, warning=FALSE, echo=TRUE}
+
+modelo_reg_lin <- lm(data=casos_por_ann, n~ano_atencion) 
+
+summary(modelo_reg_lin)
+
+```
+
+Según la salida que nos muestra la consola tenemos que por cada año que pasa, la variable dependiente (casos) aumenta en `r modelo_reg_lin$coefficients[2]` casos y el valor de R al cuadrado (coeficiente de correlación) es de **`r summary(modelo_reg_lin)$adj.r.squared`** que significa que el 77% de la variable dependiente se puede explicar por la variable independiente. Verifica el valor de p, este al parecer es menor de 0.05, lo que si hubiesemos planteado una hipótesis nula (no hay relación entre ambas variables) podemos rechazarla y quedarnos con la hipótesis alterna (hay relación significativa entre ambas variables).
+
+Supongamos que ahora quisieramos saber en los años posteriores a los que tenemos en la base resumen de los casos por año, digamos que en los próximos 5 años, como se comportarian los casos reportados, pudieramos usar la función **predict()** de {base}. Primero vamos a crear un nuevo dataframe con los años futuros y luego vamosa usar el modelo de regresión lineal y le pasamos este nuevo dataframe, así:
+
+```{r 40, eval=TRUE, warning=FALSE, echo=TRUE}
+
+#nuevo dataframe (5 años)
+
+ann_futuros <- data.frame(ano_atencion=c(2022:2026))
+
+# prediccion
+
+prediccion <- predict(modelo_reg_lin, ann_futuros)
+
+names(prediccion) <- ann_futuros$ano_atencion #para agregar el nombre o el año
+
+prediccion
+
+
+
+
+```
+
+Si queremos agregar las predicciones al dataframe resumen de los años y casos, debemos convertir el vector *prediccion* en dataframe (usando la función data.frame) y luego unirlo al dataframe resumen.
+
+```{r 41, eval=TRUE, warning=FALSE, echo=TRUE}
+
+pred_df <- data.frame(prediccion) %>% 
+  rownames_to_column() %>%  #aplicamos la función rownames_to_columns para agregar la columna de años
+  rename(ano_atencion=1, n=2) %>%  #corregimos los nombres (importante antes de unir las tablas)
+  mutate(ano_atencion=as.numeric(ano_atencion)) #convertimos a tipo numerico la columna de años
+
+nuevo_df <- casos_por_ann %>%  #la base original
+  bind_rows(pred_df) #unimos la base nueva con las predicciones
+
+nuevo_df
+
+```
+
+Esta es una muestra de como podemos hacer un análisis de estadistica inferencial. Hay muchos otros que podemos hacer, te recomiendo que revises los temas que te interesan dominar sobre analisis estadístico y busca como puedes llevarlos a cabo usando R, vas a encontrar una gran cantidad de ejemplos. Este que vimos es un solo abordaje, y depndiendo de tus objetivos puede aplicar otros.

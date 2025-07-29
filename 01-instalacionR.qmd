@@ -20,7 +20,7 @@ En caso de que estés usando Linux, están las instrucciones en la página de co
 
 Luego de descargar la ultima versión disponible procedemos a instalar Rstudio, haciendo clic en el ejecutable, la instalación (en la versión de Windows por ejemplo) es muy similar a cualquier otro software que donde te pregunta el lugar donde será instalado y varias ventanas donde se ve el progreso de instalación. Si todo salió bien, es decir que se instaló sin errores, pues tendremos disponible en la barra de acceso directo y en el escritorio, (si elegimos esta opción durante la instalación) también tendremos un acceso directo.
 
-Si tienes Windows, te compartimos el paso a paso en [este video](https://1drv.ms/v/c/e5de2b13338e6a60/ERlqk9CSPdpLs58edQq_s4kB_mIE4vURE-BxuRT3p6K-8Q?e=BNB7q9) para descargar e instalar R y también R Studio Desktop.
+Si tienes Windows, te compartimos el paso a paso en [este video](https://www.youtube.com/watch?v=M1iibA3gou8) para descargar e instalar R y también R Studio Desktop.
 
 ![En Windows, la barra de inicio o las aplicaciones y si se creó el acceso directo (derecha) en el escritorio](imagenes/01conorstudio.png)
 
