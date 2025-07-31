@@ -486,8 +486,8 @@ directo y en el escritorio, (si elegimos esta opción durante la
 instalación) también tendremos un acceso directo.
 
 Si tienes Windows, te compartimos el paso a paso en
-\href{https://1drv.ms/v/c/e5de2b13338e6a60/ERlqk9CSPdpLs58edQq_s4kB_mIE4vURE-BxuRT3p6K-8Q?e=BNB7q9}{este
-video} para descargar e instalar R y también R Studio Desktop.
+\href{https://www.youtube.com/watch?v=M1iibA3gou8}{este video} para
+descargar e instalar R y también R Studio Desktop.
 
 \begin{figure}[H]
 
@@ -1154,27 +1154,29 @@ movernos entre las rutinas sin usar el ratón)}
 
 \chapter{Operadores en R}\label{operadores-en-r}
 
-Antes de seguir debemos conocer algunos conceptos básicos para poder
-trabajar con R, y son los operadores como los de comunes de matemáticas
-(como suma, división), de asignación, booleanos entre otros. Todos los
-lenguaje de programación usan operadores.
+Antes de continuar con los paquetes y funciones, debemos conocer algunos
+conceptos básicos para poder trabajar con R. Se trata de los operadores,
+los de uso común en matemáticas (como suma, resta, multiplicación y
+división), los de asignación, los booleanos, entre otros. Es bueno que
+sepas, si acaso no lo sabes, que todos los lenguajes de programación
+usan operadores.
 
 Los operadores son los que nos permiten escribir las expresiones que
-usaremos en nuestras rutinas y las funciones.
+usaremos en nuestras rutinas y las funciones. En R, hay operadores que
+se usan constantemente para crear nuestro código.
 
-En R hay operadores que se usan muy constantemente para crear nuestro
-código, R desde que se tiene abierto puede servir como una calculadora
-(muy avanzada, por cierto), es decir, si escribes en la consola 2+2 y
-presionas \textbf{Enter} tendrás un resultado, pero si queremos correr
-varias veces esta misma operación podemos guardarla en un
-\textbf{objeto} y en vez de escribir de nuevo la operación (el 2+2)
-podemos simplemente llamar este \textbf{objeto} con solo escribirlo y
-vamos a obtener el mismo resultado. manejar los objetos nos agiliza
-mucho el trabajo.
+Desde que abres R, puedes utilizarlo como una calculadora (muy avanzada,
+por cierto), es decir, si escribes en la consola 2+2 y presionas
+\textbf{Enter} tendrás un resultado, pero si queremos correr varias
+veces esta misma operación podemos guardarla en un \textbf{objeto} y en
+vez de escribir de nuevo la operación (el 2+2) podemos simplemente
+llamar este \textbf{objeto} con solo escribirlo y vamos a obtener el
+mismo resultado. manejar los objetos nos agiliza mucho el trabajo.
 
-Dentro de las funciones podemos ver si un valor está presente o un
-objeto, así como también reasignar un valor o proceder hacer operaciones
-matemáticas.
+Dentro de las funciones podemos ver si un valor o un objeto está
+presente, así como también reasignar un valor o hacer operaciones
+matemáticas. A continuación, te mostramos los operadores que
+utilizaremos con más frecuencia.
 
 \subsection{\texorpdfstring{\textbf{Resumen de los operadores más usados
 para la escritura de las expresiones en
@@ -1292,65 +1294,66 @@ segundo elemento y luego una coma & y \textless- c(``a''\textbf{,}
 ggplot(data=df, aes(x=var1\textbf{,} y=var2\textbf{,} fill=cat1)) \\
 \end{longtable}
 
-A medida que vayas practicando los operadores se van haciendo familiares
-y más fácil de entender. Siempre hay que tomar en cuenta que un operador
-mal usado dará error cuando ejecutamos un comando o código (es muy común
-dejar de escribir el último paréntesis, o cerrar comillas).
+En la medida que vayas practicando los operadores se irán haciendo
+familiares y más fácil de entender. Siempre hay que tomar en cuenta que
+un operador mal usado dará error cuando ejecutamos un comando o código,
+verás que te ocurrirá a menudo dejar de escribir el último paréntesis, o
+cerrar comillas.
 
 \bookmarksetup{startatroot}
 
 \chapter{Objetos en R}\label{objetos-en-r}
 
-Otro elemento de suma importancia a conocer cuando se trabaja con R (así
-como vimos la importancia de las rutinas) son los objetos y sus
-diferentes tipos, dado que es con esto que trabajamos, son básicamente
-los contenedores de los datos (que R los almacena en la memoria del
-computador) es decir, a partir de estos es que haremos nuestras salidas
+Otro elemento de suma importancia a conocer cuando se trabaja con R, así
+como vimos la importancia de las rutinas, son los objetos y sus
+diferentes tipos, dado que es con esto que trabajamos. Son básicamente
+los contenedores de los datos, que R los almacena en la memoria del
+computador, es decir, a partir de estos es que haremos nuestras salidas
 como tablas, gráficos, reportes a través de la transformación (declarar,
-nombrar, filtrar reemplazar). Básicamente los objetos son el fundamento
-de todo.
+nombrar, filtrar reemplazar), entre otras. Básicamente los objetos son
+el fundamento de todo.
 
-~En R hay 5 tipos de objetos de datos y se dividen en dos grupos de
-objetos, los que son de un solo tipo de dato (atómicos) o los que tienen
-varios tipos de datos (recursivos)
+En R, hay 5 tipos de objetos de datos y se dividen en dos grupos de
+objetos: los que son de un solo tipo de dato (atómicos) o los que tienen
+varios tipos de datos (recursivos). Empecemos con los atómicos.
 
 \section{Vectores}\label{vectores}
 
-Dentro de los objetos atómicos tenemos \textbf{los vectores}, que no
-tienen dimensión, es decir, filas o columnas y pueden ser de clase
-numérico (entero y decinal), integer (números enteros solamente),
-carácter o texto, lógico (TRUE, FALSE) y factor (jerarquía en los
-valores). Un ejemplo de creación de un vector es el siguiente:
+Dentro de los objetos atómicos tenemos \textbf{los vectores}, los cuales
+no tienen dimensión, es decir, no están compuestos por filas o columnas
+como un dataframe, y pueden ser de clase numérica (entero y decimal),
+integer (números enteros solamente), caracter o texto, lógico (TRUE,
+FALSE) y factor (jerarquía en los valores). Un ejemplo de creación de un
+vector es el siguiente:
 
 \pandocbounded{\includegraphics[keepaspectratio]{imagenes/05vector.png}}
 
 \pandocbounded{\includegraphics[keepaspectratio]{imagenes/05vector2.png}}
 
-Para los vectores que son de caracteres o texto cuando los creamos si
-ponemos números sin comillas, estos cuando lo llamemos serán reconocidos
-como texto, por lo tanto no se pueden hacer operaciones matemáticas con
-estos aunque tengan números.
+Para los vectores que son de \emph{caracteres o texto}, si al crearlos
+les ponemos números sin comillas, cuando los llamemos serán reconocidos
+como texto, por lo tanto, no se pueden hacer operaciones matemáticas con
+estos vectores aunque sean números.
 
 Si escribes ``x'' (o el nombre que hayas usado para crear el vector) y
 presionas \textbf{Enter,} en la consola observaras los elementos
 contenidos en este vector.
 
-Una de las funcionalidades más interesantes de R es que por ejemplo en
-el caso de vectores numéricos, si haces una operación matemática,
-ejemplo 5 + \textbf{x} (nombre del vector), la operación se hará en
-todos los elementos del vector, es decir, el 5 se sumara con cada uno de
-los números. Si haces esto con un vector de texto o carácter, en la
-consola observaras un error que es una operación entre un argumento no
-numérico contra otro numérico.
+Una de las funcionalidades más interesantes de R es que, en el caso de
+vectores numéricos, si haces una operación matemática como 5 +
+\textbf{x} (nombre del vector), la operación se hará en todos los
+elementos del vector, es decir, el 5 se sumará con cada uno de los
+números. Si haces esto con un vector de texto o carácter, en la consola
+observarás un error que es una operación entre un argumento no numérico
+contra otro numérico.
 
 A medida que avancemos con el desarrollo de los productos vamos a ver
-que los vectores los usamos de forma constante, un ejemplo común es
+que los vectores los usamos de forma constante; un ejemplo común es
 crear un vector con los nombres de las provincias o municipios de
-interés para luego cuando vamos a filtrar la base con la que estamos
-trabajando podemos hacer este filtro invocamos el dicho vector. También
-combinando varios tipos de vectores, con las mismas dimensiones, es
-decir el mismo numero de elementos podemos ``unirlos'' y formar un nuevo
-objeto como un \textbf{dataframe} o una lista.
+interés para luego poder hacer un filtro invocando dicho vector. También
+se puede hacer combinando varios tipos de vectores con las mismas
+dimensiones, es decir, el mismo número de elementos podemos ``unirlos''
+y formar un nuevo objeto como un \textbf{dataframe} o una lista.
 
 \section{Matrices}\label{matrices}
 
@@ -1362,26 +1365,27 @@ columnas por ejemplo de la siguiente forma:
 
 \pandocbounded{\includegraphics[keepaspectratio]{imagenes/05matrix.png}}
 
-No entraré mucho en detalle con los objetos de tipo matriz porque estos
+No entraremos detalles ahora con los objetos de tipo matriz porque estos
 objetos tienen sus usos bien específicos y no vamos a usarlos de forma
-constante como los vectores.
+constante como lo haremos con los vectores.
 
-\section{Dataframes}\label{dataframes}
+\section{Dataframes (conjunto de
+datos)}\label{dataframes-conjunto-de-datos}
 
-Ahora vamos a ver uno de los objetos más importantes que vamos a usar
-que son los \textbf{dataframes}, que es un objeto de tipo recursivo o
-que admite varios tipos de datos (texto, numérico, lógico) y es idéntico
-a una tabla, es decir, tiene dos dimensiones, columnas y filas. Las
-columnas se pueden ver como si fueran variables y las filas son los
-valores contenidos en esta variable.
+Ahora vamos a ver uno de los objetos más importantes que vamos a usar,
+los \textbf{dataframes}, que es un objeto de tipo recursivo o que admite
+varios tipos de datos (texto, numérico, lógico) y es idéntico a una
+tabla, es decir, tiene dos dimensiones, columnas y filas. Las columnas
+se pueden ver como si fueran variables y las filas son los valores
+contenidos en esta variable.
 
-Para los trabajos que vamos a realizar, este será el tipo de objeto
-quizás más nos sentiremos familiarizados dado que lo más parecido a un
+Para los trabajos que vamos a realizar, este será el tipo de objeto con
+el que más nos sentiremos familiarizados, dado que lo más parecido a un
 dataframe es una base de datos, ya sea en Excel u otro tipo de programa.
 
-Una de las ventajas que tiene Rstudio es que nos ayuda a fácilmente ver
-la estructura del objeto dataframe, (cuantas variables o columnas y
-cuantas filas u observaciones) también para visualizar el contenido.
+Una de las ventajas que tiene Rstudio es que nos ayuda a ver fácilmente
+la estructura del objeto dataframe, cuantas variables o columnas y
+cuantas filas u observaciones contiene para visualizar el contenido.
 
 \begin{figure}[H]
 
@@ -1401,9 +1405,9 @@ objeto es.}
 \end{figure}%
 
 Para comenzar a usar los \textbf{dataframes} tenemos dos formas de
-hacerlo, primero es creándolo directamente, es decir, a través de
-escribir los datos que usaremos combinando varios vectores como el
-siguiente ejemplo, para crear una pequeña base de datos o tabla:
+hacerlo. Primero, creándolo directamente escribiendo los datos que
+usaremos, combinando varios vectores para crear una tabla como en el
+siguiente ejemplo:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1440,32 +1444,32 @@ que escribirlo.}
 
 \end{figure}%
 
-Entonces si corremos las líneas anteriores vamos a tener como resultado
-un dataframe nuevo con 4 variables y 4 observaciones, \textbf{Ojo}, los
-vectores deben de tener la misma cantidad de elementos o sino vemos el
-siguiente error, \textbf{\emph{``Error in data.frame(nombre = var1, edad
-= var2, sexo = var3, prov = var4) :~ arguments imply differing number of
-rows: 4, 3''}}que significa que uno de los vectores no tiene la misma
-cantidad de elementos.
+Entonces si ejecutamos las líneas anteriores vamos a tener como
+resultado un dataframe nuevo con 4 variables y 4 observaciones.
+\textbf{¡Ojo!} los vectores deben de tener la misma cantidad de
+elementos, de lo contrario, veremos el siguiente error:
+\textbf{\emph{``Error in data.frame(nombre = var1, edad = var2, sexo =
+var3, prov = var4) : arguments imply differing number of rows: 4, 3'',}}
+esto significa que uno de los vectores no tiene la misma cantidad de
+elementos.
 
 Para corregir esto, si el valor es desconocido en el vector que nos
 falta un elemento, solo agregamos un elemento nuevo llamado
 \textbf{\emph{NA,}} sin comillas, que es una forma de decirle a R que el
-valor es desconocido y corremos de nuevo las líneas donde hicimos el
-cambio para actualizar.
+valor es desconocido, posteriormente, ejecutamos de nuevo las líneas
+donde hicimos el cambio para actualizar ¡y listo!
 
 Este abordaje puede ser útil para tablas pequeñas, pero cuando tenemos
 que trabajar con bases de datos que tienen cientos o miles de
-observaciones entonces creamos un dataframe importando los datos desde
+observaciones, entonces creamos un dataframe importando los datos desde
 diferentes fuentes, como archivos de Excel, desde archivos de texto,
-incluso archivos nativos de otros programas de estadísticas como SPSS o
+incluso archivos nativos de otros programas estadísticos como SPSS o
 STATA.
 
-En Rstudio podemos sin necesidad de escribir una expresión o comando
-usando el botón de ``\textbf{import Dataset''} en el panel de ambiente
-de trabajo y al hacer clic se nos despliega un menú para diferentes
-tipos de formatos de bases de datos como Excel, csv o txt, SPSS, SAS,
-Stata.
+En Rstudio podemos, sin necesidad de escribir una expresión o comando,
+usar el botón de ``\textbf{import Dataset''} en el panel de ambiente de
+trabajo, y al hacer clic, se despliega un menú para diferentes tipos de
+formatos de bases de datos como Excel, csv, txt, SPSS, SAS o Stata.
 
 \begin{figure}[H]
 
@@ -1491,60 +1495,73 @@ variables o columnas vamos a incluir además de otros parámetros.
 
 \end{figure}%
 
-Por ejemplo de forma predeterminada en el nombre del objeto o dataframe
-estará el nombre del archivo de la base de datos, puedes cambiarlo a un
-nombre más amigable (ejemplo bd o base) también si estás usando una base
-de Excel y esta contiene varias hojas, puedes especificar cual hoja
-usaras en \textbf{``sheet''}, incluso el rango, es decir, si solo usaras
-hasta ciertas filas, también puedes poner desde que fila se leerá el
-archivo, a veces en las bases de datos de Excel se les coloca títulos y
-los datos se comienzan a digitar a partir de la 3ra o 4ta fila entonces
-puedes en \textbf{``skip''} omitir la filas que no son necesaria.
+De forma predeterminada, en el nombre del objeto o dataframe estará el
+nombre del archivo de la base de datos, y puedes cambiarlo a un nombre
+más amigable (ejemplo bd o base). Si estás usando un archivo de Excel
+que contiene varias hojas, puedes especificar cual hoja usarás
+en~\textbf{``sheet''}, incluso, puedes elegir el rango de filas que
+usarás en caso de que no quieras seleccionar la hoja completa. De igual
+manera, puedes poner desde cuál fila se leerá el archivo, esto es
+importante si la base de datos en Excel tiene títulos y los datos se
+comienzan a partir de la 3ra o 4ta fila, en este caso, puedes
+en~\textbf{``skip''}~omitir la fila o las filas que no son necesarias.
 
 Por último, si este proceso lo vas a usar repetidamente, debes copiar el
 código que está en el campo inferior derecho de la ventana y pegarlo en
-el panel de editor de rutinas para que lo tengas en tu rutina. Incluso
-luego de que lo tengas ya en tu rutina, puedes modificarlo de ser
-necesario (realmente este es un aditamento visual dado que Rstudio está
-generando un código para que no tengas que escribirlo, básicamente
-Rstudio está cargando el paquete readxl, luego usando la función de
-importar archivos de Excel llamada \textbf{read\_excel()}.
+el panel de editor de rutinas, para que lo tengas en tu rutina, y desde
+ahí, puedes modificarlo de ser necesario, pues realmente este es un
+aditamento visual dado que Rstudio está generando un código para que no
+tengas que escribirlo; básicamente, está cargando el paquete
+\textbf{readxl} y usando la función de importar archivos de Excel
+llamada~\textbf{read\_excel()}.
 
-Otra forma para cargar bases de datos muy parecido a lo que vimos
-anteriormente es usando el paquete \textbf{rio (input/output)} y el
-paquete \textbf{here} usando la función \textbf{import()} en combinación
-y la función \textbf{here()} (que nos ahorra escribir toda la ruta del
-archivo de la base de datos cuando estamos en un proyecto en Rstudio) ,
-aquí un ejemplo:
+Otra forma para cargar bases de datos muy parecida a la que vimos
+anteriormente es usando el paquete~\textbf{rio (input/output)}~y el
+paquete~\textbf{here} en combinación con la función~\textbf{import()}~y
+la función~\textbf{here()}, que nos ahorra escribir toda la ruta del
+archivo de la base de datos cuando estamos en un proyecto en Rstudio. A
+continuación, un ejemplo:
 
-La base que voy a importar está ubicada en la carpeta de Base de datos,
-solo necesito saber el nombre del archivo que voy a usar, en este caso
-``base de dato se de datos ejemplo.xlsx''
+La base de datos que vamos a importar está ubicada en la carpeta de Base
+de datos, solo necesitamos saber el nombre del archivo que vamos a usar,
+en este caso, tiene el nombre de ``base de datos ejemplo.xlsx'':
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{mi\_base\_ejemplo }\OtherTok{\textless{}{-}} \FunctionTok{import}\NormalTok{(}\FunctionTok{here}\NormalTok{(}\StringTok{"Bases de datos"}\NormalTok{, }\StringTok{"base de datos ejemplo.xlsx"}\NormalTok{), }\AttributeTok{setclass=}\NormalTok{”tibble”)}
+\NormalTok{pacman}\SpecialCharTok{::}\FunctionTok{p\_load}\NormalTok{(rio) }\CommentTok{\#Para cargar el paquete \{rio\}}
+
+\NormalTok{mi\_base\_ejemplo }\OtherTok{\textless{}{-}} \FunctionTok{import}\NormalTok{(}\FunctionTok{here}\NormalTok{(}\StringTok{"Bases de datos"}\NormalTok{, }\StringTok{"base de datos ejemplo.xlsx"}\NormalTok{), }\AttributeTok{setclass=}\StringTok{"tibble"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-Luego podemos ver la base con la función \textbf{View()} para invocar el
-visor de datos o simplemente \textbf{head()} para ver las primeras
-observaciones del dataframe en la consola. Como buena práctica, después
-de importar la base de datos en un dataframe es ver su estructura para
-determinar si las columnas se importaron bien, podemos hacerlo viendo en
-el panel de ambiente de trabajo desplegando la flecha a la izquierda del
-nombre del dataframe o escribiendo en la consola la función
-\textbf{str()} donde vamos a ver el nombre de la variable, de que clase
-es (chr si es texto, num si es numérico, logi si es lógico (true/false ,
-int si es interger), factor, etc..
+Para ver la base de datos utilizamos la función~\textbf{View()}, con
+ella invocamos el visor de datos, o simplemente utilizamos~la función
+\textbf{head()}~para ver las primeras observaciones del dataframe en la
+consola. Como buena práctica, después de importar la base de datos en un
+dataframe, es ver su estructura para determinar si las columnas se
+importaron correctamente, esto podemos hacerlo viendo en el panel de
+ambiente de trabajo desplegando la flecha a la izquierda del nombre del
+dataframe o escribiendo en la consola la función~\textbf{str()}~donde
+vamos a ver el nombre de la variable, de qué clase es (\emph{chr} si es
+texto, \emph{num} si es numérico, \emph{logi} si es lógico (true/false),
+\emph{int} si es interger, etc.
+
+Cuando sabemos de antemano que una variable es de tipo fecha, pero
+aparece como número luego de importar la base de datos, podemos
+transformarla a su formato original de fecha. Más adelante veremos cómo
+se hace.
+
+En la siguiente tabla se resumen las funciones que nos servirán para
+revisar un dataframe. Al usarlas en la rutina, solo debemos poner el
+nombre del dataframe dentro de los paréntesis.
 
 Si vemos por ejemplo que una variable que sabemos de antemano que es una
 fecha está como tipo numérica, luego podemos transformarla a su tipo
 original. Más adelante veremos cómo se hace.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.2018}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.7982}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
 \caption{\textbf{Funciones que nos sirven para revisar un dataframe
 (solo debemos poner el nombre del dataframe dentro de los
 paréntesis)}}\tabularnewline
@@ -1578,19 +1595,29 @@ names() o colnames() & Nos muestra los nombres de las columnas \\
 \end{longtable}
 
 Los resultados que arrojan estas funciones podemos guardarlas en un
-objeto (ej.vector) por ejemplo si queremos comparar el total de columna
-de un dataframe vs otro (por ejemplo un corte de la base de datos de una
-fecha vs otro corte) podemos crear el vector col\_dataframe\_1
-\textless- ncol(dataframe1) y el vector col\_dataframe\_2 \textless-
-ncol(dataframe2) y luego comparar: col\_dataframe1 ==col\_dataframe2, si
-tenemos el resultado TRUE, pues ambos dataframes tienen la misma
-cantidad de columnas, de lo contrario, uno de los dataframes tiene de
-menos o de más columnas.
+objeto, para fines del ejemplo, lo denominaremos ``vector''. Si queremos
+comparar el total de columnas de un dataframe vs otro (por ejemplo,
+cuando queremos comparar un corte de la base de datos de una fecha vs
+otro corte) podemos crear el vector \textbf{col\_dataframe\_1 \textless-
+ncol(dataframe1)} y el vector \textbf{col\_dataframe\_2 \textless-
+ncol(dataframe2)} y luego comparar: \textbf{col\_dataframe1
+==col\_dataframe2}, si tenemos el resultado TRUE, pues ambos dataframes
+tienen la misma cantidad de columnas, de lo contrario, uno de los
+dataframes tiene columnas de menos o de más.
 
-Por igual se hacemos el mismo ejercicio para ver cuantas filas ha
-crecido una base de datos podemos usar la función nrow() y restar el
-vector del dataframe2 -- dataframe1 para obtener la diferencias de
-filas.
+Por igual, si hacemos el mismo ejercicio para ver cuántas filas ha
+crecido una base de datos podemos usar la función \textbf{nrow()} y
+restar el vector del \textbf{dataframe2 -- dataframe1} para obtener la
+diferencia de filas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{filas\_bd\_1 }\OtherTok{\textless{}{-}} \FunctionTok{nrow}\NormalTok{(dataframe1)}
+\NormalTok{filas\_bd\_2 }\OtherTok{\textless{}{-}} \FunctionTok{nrow}\NormalTok{(dataframe2)}
+
+\NormalTok{diferencias\_filas }\OtherTok{\textless{}{-}}\NormalTok{ filas\_bd\_2}\SpecialCharTok{{-}}\NormalTok{filas\_bd\_1}
+\end{Highlighting}
+\end{Shaded}
 
 Esto es un ejemplo muy sencillo pero muchos procedimientos de
 transformación de datos usamos estas funciones.
@@ -1600,18 +1627,18 @@ transformación de datos usamos estas funciones.
 Otro tipo de objeto que usa R son las listas, que es un tipo de objeto
 recursivo o que admite diferentes formatos de elementos. Las listas
 básicamente son objetos que combinan varios objetos que pueden ser
-matrices, vectores, dataframes sin restricciones. En resumen, las listas
-son mini contenedores, se usan mucho para las funciones cuando
+matrices, vectores, dataframes, sin restricciones. En resumen, las
+listas son mini contenedores, y se usan mucho para las funciones cuando
 necesitamos ``pegar'' o usar objetos de diferentes formatos para obtener
-un solo resultado. También cuando hacemos \textbf{``for loops''} o
-bucles (una forma de hacer tareas repetitivas) se usan mucho las listas.
-El manejo de listas es un poco avanzado para comenzar a trabajar en R,
-pero son muy importantes.
+un solo resultado. También son útiles cuando hacemos~\textbf{``for
+loops''}~o bucles, para hacer tareas repetitivas. El manejo de listas es
+un poco avanzado para comenzar a trabajar en R, pero son muy importantes
+y no pueden ser pasadas por alto en este nivel básico.
 
-Cuando tratamos de visualizar una lista el resultado que vemos en la
-consola son primero el orden del objeto dentro de doble corchete y luego
-el contenido del objeto, así (copia y pega en la consola el siguiente
-texto):
+Cuando tratamos de visualizar una lista, lo primero que vemos es el
+\emph{orden} del objeto dentro de doble corchete y luego el
+\emph{contenido} del objeto. Copia el siguiente texto y pégalo en la
+consola para que veas un ejemplo:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1627,9 +1654,9 @@ texto):
 \end{Highlighting}
 \end{Shaded}
 
-Si desde la misma consola llamamos al objeto lista que creamos (solo
-escribiendo el nombre del objeto, ``lista'' en este caso tendremos el
-siguiente resultado:
+Si desde la misma consola llamamos al objeto \emph{lista} que creamos,
+con solo escribir nombre del objeto, ``lista'' en este caso, tendremos
+el siguiente resultado:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1688,21 +1715,47 @@ Dentro de los ejercicios que vamos a hacer usaremos las listas, por
 ejemplo, con estas podemos cargar múltiples archivos como objetos desde
 una carpeta para facilitar el proceso de importación.
 
+Aquí un escenario de ejemplo:
+
+En la carpeta de \textbf{``datos''} o ``\textbf{Fuente''} dentro del
+proyecto en que se esté trabajando digamos que hay 3 bases de datos en
+formato excel con similar estructura (ejemplo, provincia\_a.xlsx,
+provincia\_b.xlsx, provincia\_c.xlsx) y la tarea es unir estas bases de
+datos en una sola base de datos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Cargando el paquete \{rio\} para importar bases de datos y \{tidyverse\} para manipulación de datos}
+\NormalTok{pacman}\SpecialCharTok{::}\FunctionTok{p\_load}\NormalTok{(rio,      }
+\NormalTok{               tidyverse)  }
+
+\CommentTok{\#para crear un vector con las rutas completa de varios archivos}
+\NormalTok{ruta\_archivos }\OtherTok{\textless{}{-}} \FunctionTok{dir}\NormalTok{(}\StringTok{"datos"}\NormalTok{, }\CommentTok{\#nombre de la carpeta donde están los archivos fuente}
+                     \AttributeTok{pattern =} \StringTok{"xlsx"}\NormalTok{, }\CommentTok{\#patrón presente en todos los archivos a importar}
+                     \AttributeTok{full.names =} \ConstantTok{TRUE} \CommentTok{\#argumento para crear la ruta completa de cada archivo}
+\NormalTok{                     )}
+
+\NormalTok{lista\_bases }\OtherTok{\textless{}{-}} \FunctionTok{map}\NormalTok{(ruta\_archivos, import)}\CommentTok{\# la funcion map (que viene de tidyiverse) va a crear un objeto lista que va a contener cada una de las bases de datos que fueron especificadas en el vector ruta\_archivos}
+
+\FunctionTok{head}\NormalTok{(lista\_bases[[}\DecValTok{1}\NormalTok{]]) }\CommentTok{\#este comando nos permite ver las primeras 5 filas en la base de datos localizada en la posición 1}
+\end{Highlighting}
+\end{Shaded}
+
 \section{Funciones}\label{funciones}
 
-Otro tipo de objeto que no necesariamente almacena datos pero a través
-de esto si creamos objetos de datos son las funciones y si te has dado
-cuenta hasta ahora se han mencionado mucho dado que todo el código que
-vamos a ir escribiendo mayormente se hace con funciones, de hecho, como
+Otro tipo de objeto que no necesariamente almacena datos, pero sí
+podemos crear objetos de datos, son las funciones. Si te has dado
+cuenta, hasta ahora se han mencionado mucho dado que todo el código que
+vamos a ir escribiendo se hace mayormente con funciones, de hecho, como
 se mencionó arriba, la mayoría de los paquetes son una compilación de
 funciones. Nosotros podemos crear funciones que usan funciones ya sean
 de R base o incluso de otros paquetes.
 
-Las funciones nos ayudan a agilizar el trabajo dado que son un set de
-instrucciones dentro de nuestra rutina. Un ejemplo podemos crear una
-función que nos produzca un gráfico de curva epidémica de un periodo y
-un lugar determinados (tenemos un resultado, el gráfico, y dos
-parámetros, el periodo y el lugar).
+Las funciones nos ayudan a agilizar el trabajo porque son un conjunto de
+instrucciones dentro de nuestra rutina. Un ejemplo de esto es que
+podemos crear una función que nos produzca un gráfico de curva epidémica
+de un período y lugar determinados y obtendríamos el resultado, el
+gráfico, y los dos parámetros: el periodo y el lugar.
 
 Para crear una función usamos la siguiente sintaxis:
 
@@ -1732,28 +1785,28 @@ Vamos hacer un ejercicio simple para entender mejor una función:
 [1] "El indice de masa corporal es 35.49"
 \end{verbatim}
 
-Entonces, para entender mejor como trabaja una función, usando el
-ejemplo anterior, luego del nombre de la función y el operador de
-asignación, escribimos la función function()\{ \} y dentro de los
-paréntesis escribimos el nombre que queramos usar para los parámetros,
-separados por comma (como hicimos en el ejemplo anterior, usamos peso y
-altura) luego dentro de las llaves vamos a proceder a escribir las
-expresiones para obtener un resultado, para esta función del cálculo del
-índice de masa corporal creamos un vector que es el resultado de la
-operación de la fórmula del IMC, donde el parámetro 1, el peso es
-dividido entre el parámetro 2, la altura que a su vez es dividida entre
-100 y luego elevada al cuadrado, después la siguiente expresión presenta
-un texto con los parámetros y luego presenta otro texto con el resultado
-del IMC.\\
-De las funciones se pueden escribir libros, hay una vasta documentación
-de como trabajar con ellas, básicamente son el pilar para lo que es la
+Para entender mejor cómo trabaja una función usando el ejemplo anterior,
+escribimos la función \textbf{function()\{ \}} luego del nombre de la
+función y el operador de asignación, y dentro de los paréntesis
+escribimos el nombre que queremos usar para los parámetros separados por
+coma, como hicimos en el ejemplo anterior, usamos peso y altura. Luego,
+dentro de las llaves vamos a proceder a escribir las expresiones para
+obtener un resultado; para esta función que calcula el índice de masa
+corporal (IMC), creamos un vector que es el resultado de la operación de
+la fórmula del IMC, donde el parámetro 1 es el peso que es dividido
+entre el parámetro 2, luego el parámetro 2 que es la altura, que a su
+vez es dividida entre 100 y luego elevada al cuadrado; la siguiente
+expresión presenta un texto con los parámetros y luego presenta otro
+texto con el resultado del IMC.
+
+De las funciones se pueden escribir libros, de hecho, hay una vasta
+documentación de cómo trabajar con ellas, pues son el pilar de la
 programación en R.
 
-Mi gran sugerencia es cuando te sientas más familiarizado y tengas más
-experiencia en R, puedes dedicarle tiempo a aprender sobre como trabajar
-más profundamente con las funciones. Por ahora vamos a enfocarnos en los
-paquetes que tienen funciones que nos facilitan el trabajo para análisis
-de datos.
+Cuando te sientas más familiarizado y tengas más experiencia en R,
+puedes dedicarle tiempo a aprender sobre cómo trabajar más profundamente
+con las funciones. Por ahora, vamos a enfocarnos en los paquetes, que
+tienen funciones que nos facilitan el trabajo para el análisis de datos.
 
 \bookmarksetup{startatroot}
 
@@ -1765,50 +1818,49 @@ usado hojas de cálculo como Microsoft Excel® para hacer tareas comunes
 como tablas, gráficos y cálculos estadísticos de forma general.
 
 Si ya estás trabajando con datos de forma regular, es muy probable que
-también te hayas expuesto a a Excel, o lo usas constantemente en tu día
-a día como parte de las herramientas para procesar datos, analizar y
-presentar datos.
+también te hayas expuesto a Excel, o lo usas constantemente en tu día a
+día como parte de las herramientas para procesar, analizar y presentar
+datos.
 
-En mi caso, incluso sabiendo de la existencia de R me sentía que con
-Excel podía hacer todo, resolver cualquier situación relacionada a los
-datos dado que MS Excel tiene muchas funcionalidades y es una
-herramienta muy completa como hoja de cálculo.
+En nuestro caso, incluso sabiendo de la existencia de R, creíamos que
+con Excel podíamos hacerlo todo, como resolver cualquier situación
+relacionada con los datos, dado que MS Excel tiene muchas
+funcionalidades y es una herramienta muy completa como hoja de cálculo.
 
 A pesar de lo robusto que puede ser Excel u otra hoja de cálculo, hay
-límites donde la funcionalidad de R va más allá, como por ejemplo la
-cantidad de datos que se pueden cargar, en Excel por ejemplo tiene un
-límite de 1,048,576 filas por hoja y 16,384 columnas (aunque se puede
-usar Power Query para tener más filas y columnas), y se hacen muy
-``pesados'' o ``lentos'' para trabajar cuando se usan cierta cantidad de
-filas y/o columnas). R por su parte puede manejar bases mucho más
-grandes más rápidamente, dependiendo de la memoria RAM instalada del PC
-(busca en la web como aumentar la memoria RAM de mi computadora).
+límites donde la funcionalidad de R va más allá, empezando por la
+cantidad de datos que se pueden cargar en un archivo de Excel, el cual
+tiene un límite de 1,048,576 filas por hoja y 16,384 columnas, y aunque
+se puede usar Power Query para tener más filas y columnas, no menos
+cierto es que el archivo se hace muy ``pesado'' o ``lento'' para
+trabajar cuando se usa cierta cantidad de filas y/o columnas. Con R se
+pueden manejar bases de datos más grandes de manera más rápida,
+dependiendo de la memoria RAM instalada de la computadora. Te
+recomendamos que busques en la web cómo aumentar la memoria RAM de tu
+computadora.
 
-Una hoja de cálculo en general es muy intuitivo y fácil de aprender,
-solo con abrir una hoja podemos comenzar a escribir agregando datos,
-escribir funciones para cálculos, gráficos todo en un entorno guiado a
-través de los clics del ratón.
+Volviendo a Excel, una hoja de cálculo en general es muy intuitiva y
+fácil de aprender, solo con abrir una hoja podemos comenzar a escribir
+agregando datos, escribir funciones para cálculos, hacer gráficos, etc.,
+todo en un entorno guiado a través de los clics del ratón.
 
 En cambio, R, como es un lenguaje de programación, es basado en
-comandos, sintaxis, donde mayormente todo debe de ser escrito y
-realmente es poco intuitivo al momento de comenzar a usarlo debido a lo
-complejo que resulta ser aprender un lenguaje nuevo.
+comandos, sintaxis, donde mayormente todo debe de ser escrito, y
+realmente, es poco intuitivo al momento de comenzar a usarlo debido a lo
+complejo que resulta aprender un lenguaje nuevo. Sin embargo, esta forma
+de proceder a través de texto, también tiene sus ventajas cuando vamos a
+realizar una tarea, dado que debemos tener definido, de una forma u
+otra, lo que vamos a hacer y cuáles comandos deben de ser ejecutados
+para lograr la tarea. De hecho, de forma general, así es que debemos de
+trabajar, es decir, primero tener un plan en mente, cómo será ejecutado
+y definir cada paso. La idea es que el cambio de ambiente (pasar de usar
+más el ratón que escribir) puede ser un poco difícil al principio y
+sentirnos frustrados, pero con la constante exposición a un nuevo
+ambiente nos vamos adaptando, y se le hace fácil al cerebro en la medida
+que vamos practicando cada vez más y más.
 
-Esta forma de R de proceder a través de texto mayormente también tiene
-sus ventajas cuando vamos a realizar una tarea dado que debemos tener de
-una forma u otro definido lo que vamos a hacer y cuales comandos deben
-de ser ejecutados para lograr las mismas.
-
-De hecho, de forma general, así es que debemos de trabajar, primero
-tener un plan en mente, como será ejecutado y definir cada paso. La idea
-de lo dicho anterior es que el cambio de ambiente (de usar más el ratón
-que escribir para hacer tareas) puede ser un poco difícil al principio y
-uno sentirse frustrado, pero con la constante exposición a un nuevo
-ambiente, uno se va adaptando, se le hace fácil al cerebro a medida que
-vamos practicando cada vez más y más.
-
-En pocas palabras estar un poco ``abierto'' a cosas nuevas; darse la
-oportunidad de aprender y esforzarse más
+En pocas palabras, es estar un poco ``abierto'' a cosas nuevas y darse
+la oportunidad de aprender y esforzarse más.
 
 \section{Tareas que se realizan en Excel (u otras hojas de cálculos) y
 su equivalente en
@@ -1839,41 +1891,44 @@ varios comandos.
 
 \end{figure}%
 
-Se pudiera ver que en R es más complicado porque hay que escribir lo que
-se va a realizar, pero tomando en cuenta que nuestro trabajo de día a
-día como investigadores hacemos muchas tablas resúmenes, en Excel hacer
-varias tablas resúmenes, o actualizar realmente toma tiempo, sin
-embargo, en R quizás solo nos tome tiempo hacer la primera tabla
-resumen, pero luego podemos reusar el código solo cambiando algunos
-parámetros (como las variables) y nos ahorra mucho tiempo.
+A simple vista se pudiera ver que en R es más complicado porque hay que
+escribir lo que se va a realizar, pero tomando en cuenta que en nuestro
+trabajo del día a día como investigadores hacemos muchas tablas
+resúmenes en Excel o tenemos que actualizarlas, y esto realmente toma
+mucho tiempo, sin embargo, en R solo nos tome tiempo hacer la primera
+tabla resumen, y posteriormente, tendríamos la ventaja de reusar el
+código solo cambiando algunos parámetros (como las variables),
+ahorrándonos mucho tiempo al no tener que repetir la misma tarea una y
+otra vez.
 
 En Excel también usamos mucho las funciones y fórmulas para hacer
 cálculos, un ejemplo común es crear grupos de edades a partir de una
-variable numérica que representa edad, (que de una forma u otra usar
-funciones es escribir códigos, para que veas que ya tienes experiencia
-codificando); en R, gracias a la disponibilidad de tantos paquetes (como
-por ejemplo el \textbf{epikit}) tenemos funciones que son
-específicamente para esto que se requiere menos esfuerzo.
+variable numérica que representa la edad. De una forma u otra, usar
+funciones o fórmulas en Excel es similar a escribir códigos, y si puedes
+hacer fórmulas en Excel, entonces significa que ¡ya tienes experiencia
+codificando! En R, gracias a la disponibilidad de tantos paquetes (como
+el~\textbf{epikit}), tenemos funciones que son específicamente para esto
+que se requiere menos esfuerzo.
 
-En resumen, hay una vasta documentación disponible sobre como adaptarse
+En resumen, hay una vasta documentación disponible sobre cómo adaptarse
 al uso de R para usuarios de Excel, cuáles son las diferencias entre R y
-Excel y como se complementan. Cuando veamos sobre exportación de datos,
-veremos un buen ejemplo de usar Excel.
+Excel y cómo se complementan. Cuando veamos sobre exportación de datos,
+veremos un buen ejemplo de esto.
 
-En la web hay mucha documentación acerca de como acostumbrarse a
-realizar analisis de datos con R para usuarios de otros programas, te
-recomiendo que hagas una búsqueda sobre el tema para que vayas
-adaptandote.
+En la web hay mucha documentación acerca de cómo acostumbrarse a
+realizar análisis de datos con R para usuarios de otros programas;
+recomendamos que hagas una búsqueda sobre el tema para que vayas
+adaptándote.
 
-Mi mayor recomendación es que comiences a practicar con R haciendo lo
-que ya sabes hacer con Excel. También puedes fácilmente ver la
+Nuestra mayor recomendación es que comiences a practicar con R haciendo
+lo que ya sabes hacer con Excel. También puedes fácilmente ver la
 documentación de una función ecribiendo el signo de interrogración
-(\textbf{?}) delaante de la función que quieres así : \textbf{?sum()} y
-luego en el panel de ayuda vas a ver cuales son los argumentos y también
-un ejemplo. En caso de no entender, busca en internet (probablemente te
-has dado cuenta de que hago mucho enfasís en \textbf{\emph{``Buscar en
-la web''}} esa es la mayor ventaja que tiene R como lenguaje de
-programación para análisis de datos, la comunidad de apoyo.
+(\textbf{?}) delante de la función que quieres:~\textbf{?sum()}~y luego
+en el panel de ayuda vas a ver cuáles son los argumentos y también un
+ejemplo. En caso de no entender, busca en internet. ¿Te has dado cuenta
+de que hacemos mucho enfasís en~\textbf{\emph{``Buscar en la web''}}? Es
+porque esa es la mayor ventaja que tiene R como lenguaje de programación
+para análisis de datos, la comunidad de apoyo.
 
 \hyperref[_ftnref1]{{[}1{]}} mtcars es una base de datos que trae R
 internamente como ejemplo sobre carros, para saber más de esta escribe

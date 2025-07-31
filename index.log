@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.29)  29 JUL 2025 15:17
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.29)  31 JUL 2025 07:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -425,7 +425,7 @@ File: svgnam.def 2024/09/29 v3.02 Predefined colors according to SVG 1.1 (UK)
 ) (c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/x11nam.def
 File: x11nam.def 2024/09/29 v3.02 Predefined colors according to Unix/X11 (UK)
 ) (c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
-Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
+Package: fancyvrb 2025/07/28 4.6 verbatim text (tvz,hv)
 \FV@CodeLineNo=\count310
 \FV@InFile=\read2
 \FV@TabBox=\box57
@@ -1209,122 +1209,122 @@ File: imagenes/01rutinas2.png Graphic file (type bmp)
 [22]
 chapter 4.
 
-Overfull \hbox (13.66269pt too wide) in paragraph at lines 1190--1191
+Overfull \hbox (13.66269pt too wide) in paragraph at lines 1192--1193
 []\TU/lmr/m/n/10.95 Tipo  
  []
 
 
-Overfull \hbox (32.33682pt too wide) in paragraph at lines 1192--1193
+Overfull \hbox (32.33682pt too wide) in paragraph at lines 1194--1195
 []\TU/lmr/m/n/10.95 Operador  
  []
 
 
-Overfull \hbox (42.92108pt too wide) in paragraph at lines 1202--1202
+Overfull \hbox (42.92108pt too wide) in paragraph at lines 1204--1204
 []|\TU/lmr/m/n/10.95 Asignación|  
  []
 
 
-Overfull \hbox (42.92108pt too wide) in paragraph at lines 1209--1209
+Overfull \hbox (42.92108pt too wide) in paragraph at lines 1211--1211
 []|\TU/lmr/m/n/10.95 Asignación|  
  []
 
 
-Overfull \hbox (43.01964pt too wide) in paragraph at lines 1213--1213
+Overfull \hbox (43.01964pt too wide) in paragraph at lines 1215--1215
 []|\TU/lmr/m/n/10.95 Evaluación|  
  []
 
 
-Overfull \hbox (3.97632pt too wide) in paragraph at lines 1213--1213
+Overfull \hbox (3.97632pt too wide) in paragraph at lines 1215--1215
 []|\TU/lmr/m/n/10.95 ==|  
  []
 
 
-Overfull \hbox (43.01964pt too wide) in paragraph at lines 1216--1216
+Overfull \hbox (43.01964pt too wide) in paragraph at lines 1218--1218
 []|\TU/lmr/m/n/10.95 Evaluación|  
  []
 
 
-Overfull \hbox (43.01964pt too wide) in paragraph at lines 1219--1219
+Overfull \hbox (43.01964pt too wide) in paragraph at lines 1221--1221
 []|\TU/lmr/m/n/10.95 Evaluación|  
  []
 
 
-Overfull \hbox (7.02042pt too wide) in paragraph at lines 1219--1219
+Overfull \hbox (7.02042pt too wide) in paragraph at lines 1221--1221
 \TU/lmr/m/n/10.95 >=, 
  []
 
 
-Overfull \hbox (3.97632pt too wide) in paragraph at lines 1219--1219
+Overfull \hbox (3.97632pt too wide) in paragraph at lines 1221--1221
 \TU/lmr/m/n/10.95 <=|  
  []
 
 
-Overfull \hbox (43.01964pt too wide) in paragraph at lines 1228--1228
+Overfull \hbox (43.01964pt too wide) in paragraph at lines 1230--1230
 []|\TU/lmr/m/n/10.95 Evaluación|  
  []
 
 
-Overfull \hbox (14.31313pt too wide) in paragraph at lines 1228--1228
+Overfull \hbox (14.31313pt too wide) in paragraph at lines 1230--1230
 []|\TU/lmr/m/n/10.95 %in%|  
  []
 
 
-Overfull \hbox (23.12349pt too wide) in paragraph at lines 1234--1234
+Overfull \hbox (23.12349pt too wide) in paragraph at lines 1236--1236
 []|\TU/lmr/m/n/10.95 Acceso|  
  []
 
 
-Overfull \hbox (23.12349pt too wide) in paragraph at lines 1240--1240
+Overfull \hbox (23.12349pt too wide) in paragraph at lines 1242--1242
 []|\TU/lmr/m/n/10.95 Acceso|  
  []
 
 
-Overfull \hbox (34.79619pt too wide) in paragraph at lines 1249--1249
+Overfull \hbox (34.79619pt too wide) in paragraph at lines 1251--1251
 []|\TU/lmr/m/n/10.95 Booleano|  
  []
 
 
-Overfull \hbox (34.79619pt too wide) in paragraph at lines 1254--1254
+Overfull \hbox (34.79619pt too wide) in paragraph at lines 1256--1256
 []|\TU/lmr/m/n/10.95 Booleano|  
  []
 
 
-Overfull \hbox (46.58932pt too wide) in paragraph at lines 1258--1258
+Overfull \hbox (46.58932pt too wide) in paragraph at lines 1260--1260
 []|\TU/lmr/m/n/10.95 Aritméticos|  
  []
 
 
-Overfull \hbox (4.58952pt too wide) in paragraph at lines 1258--1258
+Overfull \hbox (4.58952pt too wide) in paragraph at lines 1260--1260
 \TU/lmr/m/n/10.95 /,^, 
  []
 
 
-Overfull \hbox (17.70323pt too wide) in paragraph at lines 1269--1269
+Overfull \hbox (17.70323pt too wide) in paragraph at lines 1271--1271
 []|\TU/lmr/m/n/10.95 Otros|  
  []
 
 
-Overfull \hbox (17.70323pt too wide) in paragraph at lines 1275--1275
+Overfull \hbox (17.70323pt too wide) in paragraph at lines 1277--1277
 []|\TU/lmr/m/n/10.95 Otros|  
  []
 
 
-Overfull \hbox (13.69992pt too wide) in paragraph at lines 1275--1275
+Overfull \hbox (13.69992pt too wide) in paragraph at lines 1277--1277
 []|\TU/lmr/m/n/10.95 %>% 
  []
 
 
-Overfull \hbox (17.66382pt too wide) in paragraph at lines 1275--1275
+Overfull \hbox (17.66382pt too wide) in paragraph at lines 1277--1277
 \TU/lmr/m/n/10.95 “pipe”|  
  []
 
 
-Overfull \hbox (14.65913pt too wide) in paragraph at lines 1287--1287
+Overfull \hbox (14.65913pt too wide) in paragraph at lines 1289--1289
 []|\TU/lmr/m/n/10.95 otros|  
  []
 
 
-Overfull \hbox (29.51172pt too wide) in paragraph at lines 1287--1287
+Overfull \hbox (29.51172pt too wide) in paragraph at lines 1289--1289
 \TU/lmr/m/n/10.95 (comma)|  
  []
 
@@ -1346,7 +1346,7 @@ File: imagenes/05vector2.png Graphic file (type bmp)
 File: imagenes/05matrix.png Graphic file (type bmp)
 <imagenes/05matrix.png>
 
-Overfull \hbox (10.97147pt too wide) in paragraph at lines 1363--1364
+Overfull \hbox (10.97147pt too wide) in paragraph at lines 1366--1367
 [][] 
  []
 
@@ -1369,110 +1369,115 @@ File: imagenes/05importdatagrame2.png Graphic file (type bmp)
 <imagenes/05importdatagrame2.png>
 
 
-[30] [31]
+[30]
+
+[31]
 
 [32]
-Overfull \hbox (13.13986pt too wide) in paragraph at lines 1658--1658
+Overfull \hbox (13.13986pt too wide) in paragraph at lines 1685--1685
 [] \TU/lmtt/m/n/10.95 [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s"[] 
  []
 
+
+
+[33]
 File: imagenes/05listas.png Graphic file (type bmp)
 <imagenes/05listas.png>
 
 
-[33]
+[34]
 File: imagenes/05funcion.png Graphic file (type bmp)
 <imagenes/05funcion.png>
 
-
-[34]
-Overfull \hbox (10.96234pt too wide) in paragraph at lines 1709--1710
+Overfull \hbox (10.96234pt too wide) in paragraph at lines 1762--1763
 [][] 
  []
 
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1716.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1769.
 
 
 [35]
+
+[36]
 chapter 6.
 
 
-[36
+[37
 
 ]
 
-LaTeX Warning: Hyper reference `_ftn1' on page 37 undefined on input line 1823.
+LaTeX Warning: Hyper reference `_ftn1' on page 38 undefined on input line 1875.
 
 File: imagenes/06pivottables.png Graphic file (type bmp)
 <imagenes/06pivottables.png>
 
 
-[37]
-
-LaTeX Warning: Hyper reference `_ftnref1' on page 38 undefined on input line 1878.
-
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 1882.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 1882.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 1882.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 9.00082pt on input line 1882.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00055pt on input line 1882.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 1882.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 8.99904pt on input line 1882.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 1882.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 1882.
-
-
 [38]
+
+LaTeX Warning: Hyper reference `_ftnref1' on page 39 undefined on input line 1933.
+
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 9.0pt on input line 1937.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 6.0pt on input line 1937.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 5.0pt on input line 1937.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 9.00082pt on input line 1937.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 6.00055pt on input line 1937.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00046pt on input line 1937.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 8.99904pt on input line 1937.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 5.99936pt on input line 1937.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line 1937.
+
+
+[39]
 chapter 7.
 
 
-[39
+[40
 
 ]
 File: imagenes/07estructuraex.png Graphic file (type bmp)
 <imagenes/07estructuraex.png>
 
 
-[40]
-
 [41]
+
+[42]
 File: imagenes/07cargarbase.png Graphic file (type bmp)
 <imagenes/07cargarbase.png>
 
-Overfull \hbox (10.9492pt too wide) in paragraph at lines 2079--2080
+Overfull \hbox (10.9492pt too wide) in paragraph at lines 2134--2135
 [][] 
  []
 
 
 
-[42]
-Overfull \hbox (13.13986pt too wide) in paragraph at lines 2298--2298
+[43]
+Overfull \hbox (13.13986pt too wide) in paragraph at lines 2353--2353
 []\TU/lmtt/m/n/10.95 -- Variable type: character ----------------------------------------------------[] 
  []
 
 
 
-[43]
-
 [44]
-Overfull \hbox (13.13986pt too wide) in paragraph at lines 2298--2298
+
+[45]
+Overfull \hbox (13.13986pt too wide) in paragraph at lines 2353--2353
 []\TU/lmtt/m/n/10.95 -- Variable type: logical ------------------------------------------------------[] 
  []
 
 
 
-[45]
-Overfull \hbox (13.13986pt too wide) in paragraph at lines 2298--2298
+[46]
+Overfull \hbox (13.13986pt too wide) in paragraph at lines 2353--2353
 []\TU/lmtt/m/n/10.95 -- Variable type: numeric ------------------------------------------------------[] 
  []
 
@@ -1533,7 +1538,7 @@ Missing character: There is no ▅ (U+2585) in font [lmmono10-regular]:!
 Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
 
 
-[46]
+[47]
 Missing character: There is no ▅ (U+2585) in font [lmmono10-regular]:!
 Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
 Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
@@ -1580,7 +1585,7 @@ Missing character: There is no ▂ (U+2582) in font [lmmono10-regular]:!
 Missing character: There is no ▅ (U+2585) in font [lmmono10-regular]:!
 Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
 
-Overfull \hbox (13.13986pt too wide) in paragraph at lines 2298--2298
+Overfull \hbox (13.13986pt too wide) in paragraph at lines 2353--2353
 []\TU/lmtt/m/n/10.95 -- Variable type: POSIXct ------------------------------------------------------[] 
  []
 
@@ -1588,14 +1593,14 @@ File: imagenes/07skimr2.png Graphic file (type bmp)
 <imagenes/07skimr2.png>
 
 
-[47]
+[48]
 
-LaTeX Warning: File `.pdf' not found on input line 2330.
+LaTeX Warning: File `.pdf' not found on input line 2385.
 
 ! Unable to load picture or PDF file '.pdf'.
 <to be read again> 
                    }
-l.2330 ...\includegraphics[keepaspectratio]{.pdf}}
+l.2385 ...\includegraphics[keepaspectratio]{.pdf}}
                                                   
 The requested image couldn't be read because
 it was not a recognized image format.
@@ -1604,9 +1609,9 @@ it was not a recognized image format.
 Here is how much of TeX's memory you used:
  22957 strings out of 470473
  446046 string characters out of 5489892
- 1143985 words of memory out of 5000000
+ 1144982 words of memory out of 5000000
  50945 multiletter control sequences out of 15000+600000
  636201 words of font info for 114 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  108i,10n,114p,10900b,519s stack positions out of 10000i,1000n,20000p,200000b,200000s
-Output written on index.pdf (47 pages).
+Output written on index.pdf (48 pages).
