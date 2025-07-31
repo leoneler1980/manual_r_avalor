@@ -1,20 +1,20 @@
 # Análisis de datos usando R
 
-## Tareas que se deben de hacer para llevar a cabo un proyecto de analisis de datos
+## Tareas que se deben de hacer para llevar a cabo un proyecto de análisis de datos
 
-Es posible que ya tienes conocimiento sobre la estructura del documento que debes desarrollar sobre analizar datos ya sea para toma de decisiones, u otros tipos como el trabajo final, aquí nos enfocaremos en la sección de resultados, donde tienes que realizar tablas, gráficos y análisis estadísticos. Aquí un listado de los elementos requeridos en la sección de resultado (ejemplos):
+Es posible que ya tengas conocimiento sobre la estructura del documento que debes desarrollar para analizar tus datos, ya sea para toma de decisiones o para elaborar un trabajo final. En esta sección nos enfocaremos en la generación de resultados o salidas de R, donde tienes que realizar tablas, gráficos y análisis estadísticos. A continuación, te mostramos un listado de los elementos requeridos en la sección de resultados partiendo de un contexto clínico o epidemiológico:
 
--   Proporciona número de casos, incidencia o prevalencia del evento
+-   Proporciona número de casos, incidencia o prevalencia de un evento.
 
--   Características clínicas, por ejemplo, síntomas comunes, porcentaje de hospitalizados o fallecidos, resultados de laboratorio como porcentaje de confirmados o distribución por especie o subtipo (generalmente presentados en una tabla)
+-   Características clínicas, por ejemplo, síntomas comunes, porcentaje de hospitalizados o fallecidos, resultados de laboratorio como porcentaje de confirmados o distribución por especie o subtipo (generalmente presentados en una tabla).
 
--   Tiempo, por ejemplo, casos por año, mes, semana u otro intervalo apropiado, para mostrar patrones o cambios a lo largo del tiempo. Puede estratificarse por grupo de edad, sexo, región o característica de persona o lugar (generalmente se presenta en un gráfico). Señale cambios importantes, tendencias estacionales, aberraciones (p. Ej., Brotes) u otros patrones inusuales.
+-   Tiempo: casos por año, mes, semana u otro intervalo apropiado, para mostrar patrones o cambios a lo largo de un período determinado. Puede estratificarse por grupos de edad, sexo, región o características de persona; lugar (generalmente se presenta en un gráfico). Señale cambios importantes, tendencias estacionales, aberraciones (Ej., Brotes) u otros patrones inusuales.
 
--   Lugar, por ejemplo, por área geográfica (generalmente se presenta con un mapa o una tabla). Los números y las tasas son igualmente importantes.
+-   Lugar: como el área geográfica donde ocurre el evento. Esto, generalmente, se presenta con un mapa o una tabla.
 
--   Persona, por ejemplo, por grupo de edad, sexo y otras características relevantes (generalmente presentadas en una tabla). Los números y las tasas son importantes.
+-   Persona, por ejemplo, por grupo de edad, sexo y otras características relevantes (generalmente presentadas en una tabla).
 
--   Otros resultados destacados que no se incluyen en las categorías enumeradas anteriormente. Por ejemplo, muchos informes resumidos de vigilancia incluyen datos sobre la integridad y puntualidad de los informes de cada fuente de informes.
+Existen otros resultados destacados que no se incluyen en las categorías enumeradas anteriormente. Por ejemplo, muchos informes resumidos de vigilancia epidemiológica incluyen datos sobre la integridad y puntualidad de los informes de cada fuente de informes.
 
 Con una base de datos de ejemplo vamos a realizar los pasos en R para producir los requerimientos sugeridos anteriormente. Vamos a usar como fuente de datos para este ejercicio una base de datos de casos de VIH positivos notificados. (Esta base está disponible en el siguiente **link**).
 
@@ -24,7 +24,7 @@ Esta base de datos (o la que vayas a usar) debes de colocarla en la subcarpeta d
 
 ### Organización general antes de comenzar
 
-Como refrescamiento, antes de comenzar recuerda crear el proyecto (ver la sección de Comenzar a trabajar con R y la interfaz de Rstudio)\@ref(comenzar-a-trabajar-con-r-y-la-interfaz-de-rstudio).
+Como refrescamiento, antes de comenzar recuerda crear el proyecto (ver la sección de Comenzar a trabajar con R y la interfaz de Rstudio)
 
 **Procesamiento de datos (cargar, editar, transformar *dataframes*)**
 
@@ -52,7 +52,7 @@ Como refrescamiento, antes de comenzar recuerda crear el proyecto (ver la secci�
 
 8.  [**gtsummary**](https://www.danieldsjoberg.com/gtsummary/ "gtsummary") (para hacer tablas presentables y cálculos que usamos con frecuencia en epidemiología)
 
-Para cargar estos paquetes procedemos a usar la función de p_load del paquete pacman, luego de terminar la instalación de pacman, en el panel editor de rutinas, en la nueva rutina escribes la siguiente función:
+Para cargar estos paquetes procedemos a usar la función **p_load()** del paquete *{pacman}*, en el panel de editor de rutinas, escribes el siguiente comando:
 
 ```{r 16, echo=TRUE, eval=FALSE, message=FALSE, warning=FALSE}
 install.packages("pacman") #para instalar el paquete pacman (solo una vez)
@@ -70,18 +70,27 @@ pacman::p_load(rio,
                gtsummary) #para instalar y cargar los paquetes necesarios
 ```
 
+Luego de copiar o de introducir el código, preciona **Ctrl+ENTER** al final de la línea de código o en “run” para ejecutarlo.
 
-Algo a tomar en cuenta que para instalar estos paquetes debes tener internet, después que estén instalados no se necesita instalar de nuevo (al menos que re-instales o actualices Rstudio).
+Otra alternativa para cargar los paquetes es con la función de R base **library()**. Al igual que con p_load() de pacman, escribes el nombre o los nombres de los paquetes separados por coma. **Ojo,** esta función solo carga los paquetes, si el paquete no está instalado, te dará error.
 
-Luego cargar todos los paquetes puedes hacerlo desde una sola línea de código o de forma individual con la función de R base **library()**.
+NOTA: Debes tener conexión a internet para poder descargar estos paquetes.
 
-Antes de continuar, presiona **Ctrl+S** para guardar el archivo de rutina en la carpeta de tu proyecto "rutinas" o ya sea en el icono de guardar o desde file, recuerda, **Ctrl+R** al final de la línea de cógido o en "run" para ejecutarlo.
+Después de instalar los paquetes no necesitarás instalarlos de nuevo, a menos que re-instales o actualices Rstudio.
 
-Ahora para cargar la base de datos al panel de área de trabajo tenemos dos formas, escribiendo directamente o como vimos cuando explicamos los **dataframes** en el capítulo de objetos de R \@ref(objetos-en-r) usando la interfaz de rstudio o simplemente por comandos.
+Antes de continuar, guarda la rutina en la carpeta de tu proyecto “rutinas” utilizando cualquiera de estas opciones:
 
-Recuerda tener tus bases de datos en la carpeta de "datos" dentro de tu carpeta del proyecto, esto es muy importante para facilitar el trabajo.
+-   Presionando la combinación de teclas **Ctrl+S** 
 
-De todas formas, vamos a ver como sería el código para cargar un archivo Excel:
+-   Haciendo clic en el icono de guardar
+
+-   Desde el menú: File -\> Save
+
+El próximo paso es cargar la base de datos, y esto lo podemos hacer de dos formas: escribiendo directamente en la rutina o en la consola, tal como vimos cuando explicamos los **dataframes** en el capítulo 5 de objetos de R, o bien, usando la interfaz de Rstudio.
+
+Recuerda tener tus bases de datos en la carpeta de “datos” dentro de tu carpeta del proyecto, esto es muy importante para facilitar el trabajo.
+
+Vamos a ver cómo sería el código para cargar un archivo de Excel:
 
 ```{r 17, echo=TRUE, warning=FALSE}
 
@@ -91,9 +100,9 @@ base <- import(here("datos", "sinave_vih.xlsx")) %>%
 
 ```
 
-Explicando un poco el código anterior, estamos creando un nuevo objeto llamado **"base",** a través de la función de **import** del paquete **rio**, que sirve para cargar archivos tipo .xls, .xlsx. y con la finalidad de localizar la ruta del archivo de la forma más sencilla posible usamos la función **here()** del paquete **here** escribiendo los parámetros de la sub-carpeta donde está la base de datos y el segundo parámetro, después de una coma, el nombre del archivo (ambos parámetros dentro de comillas). Luego sigue un operador pipe (%\>%) que significa "luego" a través de la función **clean_names()** del paquete **janitor** con el propósito de "normalizar" los nombres de las columnas o variables (poner todas en minúsculas, quitar caracteres poco comunes y espacios).
+Explicando un poco el código anterior: estamos creando un nuevo objeto llamado **“base”,** a través de la función de **import** del paquete **rio**, que sirve para cargar archivos tipo .xls, .xlsx., y con la finalidad de localizar la ruta del archivo de la forma más sencilla posible, usamos la función **here()** del paquete **here** escribiendo los parámetros de la sub-carpeta, es decir, agregando entre comillas el nombre de la carpeta donde está la base de datos (primer parámetro: “datos), y después de una coma se agrega el segundo parámetro que es el nombre del archivo, en este ejemplo, el archivo se denomina *sinave_vih.xlsx*. Luego sigue un operador pipe (%\>%) que significa “luego” y a través de la función **clean_names()** del paquete **janitor** podremos “normalizar” los nombres de las columnas o variables de la base de datos importada. Esta normalización consiste, por ejemplo, en estandarizar los nombres de las variables poniéndolas todas en minúsculas, quitar caracteres poco comunes o espacios, entre otros ajustes que consideremos importantes.
 
-Si hiciste los pasos correctamente debes de tener una imagen similar:
+Si estás utilizando la misma base de datos del ejemplo, y si hiciste los pasos correctamente, debes de tener una imagen similar a la de la Figura 23, donde puedes ver a la derecha que ya tienes un objeto *dataframe* cargado (es decir, la base de datos) que contiene 25,227 filas y 71 variables o columnas.
 
 ![](imagenes/07cargarbase.png)
 
@@ -101,15 +110,15 @@ Donde puedes ver a la derecha que ya tienes un objeto dataframe cargado (la base
 
 #### **Exploración de la base de datos, (ver la base de datos antes de comenzar el procesamiento).**
 
-Entonces, primera pregunta, ¿Cuál es el próximo paso por seguir? Realmente debería ser el análisis, pero primero, seria bueno revisar la base para ver los datos "malos" es decir, por ejemplo, valores anormales, campos vacíos o datos que se cargaron mal, como pasa a veces con las fechas.
+Entonces, la primera pregunta que te hacemos es; ¿Cuál es el próximo paso por seguir? Realmente debería ser el análisis, pero primero, sería bueno revisar la base de datos para ver los datos “malos” es decir, hacer una exploración para identificar valores anormales, campos vacíos o datos que se cargaron mal, como pasa a veces con las fechas.
 
-El paquete de **rio** con la fórmula de **import()** hace un intento de determinar el tipo de variable que carga desde el archivo de Excel, pero a veces falla y es usualmente con las fechas porque sin querer había una fecha escrita en un formato no reconocido y el resto como número.
+El paquete de **rio** con la fórmula de **import()** hace un intento de determinar los tipos de variables que se cargan desde el archivo de Excel, pero a veces falla y es, usualmente, con las fechas, porque sin querer había una fecha escrita en un formato no reconocido y el resto como número.
 
-Para "explorar" la base de datos podemos hacerlo de forma directa haciendo clic en el panel de ambiente de trabajo en el objeto base (o el nombre que le hayas dado) o puedes escribir en la consola de comandos **View(base)** para cargar el visor de datos.
+Para explorar la base de datos, podemos hacerlo de forma directa haciendo clic en el panel de ambiente de trabajo en el objeto base (o el nombre que le hayas dado), o puedes escribir en la consola de comandos **View(base)** para cargar el visor de datos.
 
-Otra forma más completa de explorar la base de datos es a través de la función **skim()** o **skim_tee()** (ambas producen el mismo reporte) del paquete **skimr** [@waring2022], para proveernos un resumen de cada variable, que tipo de variable es y nos muestra el total de campos vacíos, valores únicos por ejemplo.
+Otra forma más completa de explorar la base de datos es a través de la función **skim()** o **skim_tee()** del paquete **skimr** ([Waring et al. 2022](file:///C:/Users/Virginia/OneDrive/Documentos/Avalor%20360/Curso%20R/Material%20did%C3%A1ctico/manual_r_basico/an%C3%A1lisis-de-datos-usando-r.html#ref-waring2022)), puedes utilizar cualquiera de las dos porque ambas producen el mismo reporte. Con estas funciones obtendremos un resumen de cada variable, qué tipo de variable es cada una y muestra el total de campos vacíos, valores únicos, entre otros detalles importantes.
 
-Ya estamos entrando de lleno en el análisis, siempre el primer paso es ver, verificar los datos, valores extremos, datos faltantes, esto es una buena práctica (obligatoria diría yo) cuando estamos haciendo análisis, luego viene la limpieza de los datos.
+Con estos simples pasos, ya estamos entrando de lleno en el análisis. Recuerda, siempre el primer paso es verificar los datos, si hay valores extremos, datos faltantes, etc., esta es una buena práctica (diríamos que obligatoria) cuando estamos haciendo análisis, luego viene la limpieza de los datos.
 
 Luego de escribir en tu rutina el último comando, debes tener escrito el siguiente código y obtener este resultado:
 
@@ -129,37 +138,39 @@ En el ejemplo anterior:
 
 -   ¿Hay variables que se importaron incorrectamente? Variables que son de un formato y se importaron de otro tipo (fechas que se importan como texto o número por ejemplo)
 
-Estas son las preguntas que debemos hacernos a partir de este resumen para ir viendo la data y hacer la limpieza de datos como por ejemplo excluir columnas o variables, filtrar valores extremos o editarlos, cambiar o corregir el formato.
+Estas son las preguntas que debemos hacernos a partir de este resumen, para ir viendo la data y hacer la limpieza de datos, excluir columnas o variables, filtrar valores extremos o editarlos, cambiar o corregir el formato, etc.
 
-En el ejemplo anterior vemos que tenemos 4 tablas de tipo de variables ("Column type frequency:")
+En el ejemplo anterior vemos que vemos que el resultado arrojó 4 tablas con un tipo de variable cada una. La reproducimos aquí para visualizarla mejor:
 
 ![](imagenes/07skimr2.png)
 
-Luego debajo veremos en detalle por cada tipo de variable una tabla con el nombre de la variable, el total de campos vacíos, la tasa de completitud, valores mínimos, máximos, promedios y valores únicos.
+Debajo de “*Column type frequency*” veremos en detalle cuatro tablas consecutivas, una conteniendo las variables de tipo “caracter”, la que sigue muestra las variables de tipo “lógico”, y así sucesivamente. Puedes notar el detalle dentro de cada tabla donde se indica el nombre de cada variable, el total de campos vacíos, la tasa de completitud, valores mínimos, máximos, promedios y valores únicos. Este resultado ofrece un resumen que nos facilita la exploración rápida de la base de datos.
+
+A continuación, podemos ver resaltado los detalles que la función skim() nos brinda, como es un inventario de las variables de un dataframe por tipo de variable.
 
 ![]()
 
 ![Resaltado podemos ver los detalles que la función skim() nos brinda como es un inventario de las variables de un dataframe por tipo de variable.](imagenes/07skimr.png)
 
-En general, después de este resumen se pueden definir próximos pasos para el análisis, incluir en tu reporte, en anexos, un resumen como este, añade más "confianza" a tus hallazgos y conclusiones porque estás mostrando de forma rápida la "salud" de tus datos.
+En general, después de este resumen se pueden definir los próximos pasos para el análisis, incluso lo puedes incluir en tu reporte como anexo para añadir más “confianza” a tus hallazgos y conclusiones, porque estás mostrando de forma rápida la “salud” de tus datos.
 
-Esta exploración inicial de datos puedes hacerlo de diferentes maneras, te muestro esta de usar el paquete **skimr** porque es más "amigable", detallada y rápida.
+Esta exploración inicial puedes hacerla de diferentes maneras, sin embargo, usar el paquete **skimr** es la manera más amigable, detallada y rápida.
 
-A medida que vamos avanzando con este ejercicio, vamos a explicar en más detalles los tipos de campos/variables que identifica R.
+A medida que vamos avanzando con este ejercicio, explicararemos con más detalles los tipos de campos y variables que identifica R.
 
 #### Limpieza /re-structuración de datos
 
-Este paso vamos a tomar la base original y modificarla para preparar nuestro análisis. Tomando en cuenta que debes de preparar un plan de análisis y que este se enfocará en un análisis tipo descriptivo (en tiempo, lugar y persona) y hacer los siguientes pasos:
+En este paso vamos a modificar la base de datos para prepararla antes de iniciar con nuestro análisis. Tomando en cuenta que debes de preparar un plan de análisis y que este se enfocará en un análisis tipo descriptivo (en tiempo, lugar y persona), vamos a ejecutar los siguientes pasos:
 
--   Vamos a revisar el listado de variables que obtuvimos del resumen del ejercicio anterior (resumen de variables) y seleccionar las que necesitamos para el análisis.
+-   Vamos a revisar el listado de variables que obtuvimos del resumen del ejercicio anterior para seleccionar las que necesitamos para el análisis.
 
--   Vamos a re-codificar variables que necesiten cambios o hacer ajustes.
+-   Vamos a re-codificar variables que necesiten cambios o ajustes.
 
 -   Vamos a excluir o modificar los valores de las variables de interés.
 
-Una de las características "poderosas" y deseadas de R es que puedes crear un nuevo objeto a partir de otro, dado que puedes hacer múltiples versiones del original.
+Una de las características poderosas y deseadas de R es que puedes crear un nuevo objeto a partir de otro, dado que puedes hacer múltiples versiones del original.
 
-Particularmente para este análisis vamos a crear un nuevo objeto dataframe (lo podemos llamar base_arreglada) donde este solo tendrá las variables o columnas para nuestro análisis y trataremos de excluir los valores no deseados y crear nuevas variables a partir de las que tenemos.
+Para este análisis vamos a crear un nuevo objeto dataframe que podemos llamar base_arreglada, en la que solo tendremos las variables o columnas que necesitaremos para nuestro análisis, y trataremos de excluir los valores no deseados creando nuevas variables a partir de las que ya tenemos.
 
 Agrega a tu rutina el siguiente código:
 
@@ -193,21 +204,28 @@ base_arreglada <- base %>% #creamos un nuevo elemento
          provincia_caso=str_sub(provincia, 4,-1L), #crear una nueva variable de provincia del caso pero sin la numeracion)
          diagnosticado_misma_prov=case_when(
               provincia_caso==provincia_establecimiento~1,
-                                            TRUE~0))
+                                            TRUE~0)) %>% 
+  distinct() #para remover filas duplicadas
   
   head(base_arreglada) #para ver un ejemplo de la nueva base
 
 ```
 
-Vamos a explicar el código anterior, el primer paso crear un nuevo objeto (base_arregada)  a partir del dataframe "base" usando el operador de asignación y luego o "entonces" (operador pipe o %\>%) usamos la función **select()** de **tidyverse** para especificar las variables que vamos a usar en el análisis, luego (operador pipe) usamos la función **filter** para excluir aquellas observaciones que no tienen edad a través del operador ! (operador de negación) y la función **is.na()**  de R base. Luego vamos usamos la función de **mutate()** para renombrar variable de *provincia_establecimiento*  y también la variable *provincia_caso*  para poder fusionar las áreas de salud en provincia a través de la función **case_when()** de **tidyverse**.  Después para ver el nuevo dataframe (base_arreglada) usamos la función **head()** de **utils** para ver las primeras 6 observaciones.
+Vamos a explicar el código anterior, el primer paso crear un nuevo objeto (base_arregada)  a partir del dataframe "base" usando el operador de asignación y luego o "entonces" (operador pipe o %\>%) usamos la función **select()** de **tidyverse** para especificar las variables que vamos a usar en el análisis, luego (operador pipe) usamos la función **filter** para excluir aquellas observaciones que no tienen edad a través del operador ! (operador de negación) y la función **is.na()**  de R base. Luego vamos usamos la función de **mutate()** para renombrar variable de *provincia_establecimiento*  y también la variable *provincia_caso*  para poder fusionar las áreas de salud en provincia a través de la función **case_when()** de **tidyverse**. Por último pasamos la función **distinct()** para remover filas que sean duplicadas.
+
+Después para ver el nuevo dataframe (base_arreglada) usamos la función **head()** de **utils** para ver las primeras 6 observaciones.
 
 Ya con este nuevo dataframe podemos comenzar a trabajar en nuestro análisis.
 
 ## Análisis de tiempo
 
-Ahora vamos a comenzar a hacer tablas usando algunas de las funciones de **janitor** para hacer nuestra exploración de datos.
+Ahora vamos a comenzar a hacer tablas usando algunas de las funciones de **janitor** para hacer nuestra exploración (y análisis) de datos. Mientras, vamos explicando los diferentes tipos de formatos de las variables o campos.
 
-Recordando que vamos a ir explicando los diferentes tipos de formatos de las variables o campos, en esta sección vamos a ver un formato muy común que son las fechas, las cual usamos para poder ver en el tiempo el comportamiento de algún evento. Cuando usamos la función de **import()** del paquete **rio** esta hace lo mejor posible de detectar que tiempo de campo es en base a su contenido, de forma predeterminada como formato o clase *POCIXct* o tiempo calendario,que es un formato especial de R para almacenar números en formato de fecha desde 1970-01-01. A veces los campos de fechas pueden importarse como texto y por lo tanto debemos transformar estos para poder hacer cálculos usando fechas. También para los gráficos la clase *Date* es mejor (veremos más con el uso del paquete **ggplot**) por lo que una recomendación es transformar los campos de fecha POCIXct a Date (si se importaron correctamente claro). Una forma para ver de forma rápida e individuar a que formato o clase pertenece una variable podemos usar la función **class()** de R base, por ejemplo: **class(*base_arreglada\$fecha_atencion)*** si la queremos transformar puedes incluir en el ejercicio anterior, dentro de la función de **mutate** el cambio de las variable de fecha usando la función **as.Date**(). Para ver que clase o formato son todas las variables (muy parecido al uso de la función **skim()** ) de forma rápida, podemos usar la función **str()** de R base.
+En esta sección vamos a ver un formato muy común que son las *fechas*, las cuales usamos para poder ver el comportamiento de algún evento en el tiempo. Cuando usamos la función de **import()** del paquete **rio**, esta función hace lo mejor posible para detectar que tipo de tiempo es con base a su contenido. De forma predeterminada, asume el campo como formato o clase *POCIXct* o tiempo calendario, que es un formato especial de R para almacenar números en formato de fecha desde 1970-01-01. A veces los campos de fechas pueden importarse como texto y, por tanto, debemos transformar estos campos para poder hacer cálculos usando fechas.
+
+Para los gráficos, la clase *Date* es mejor de utilizar, y para ello, recomendamos transformar los campos de fecha POCIXct a Date. Veremos más sobre la clase Date más adelante con el uso del paquete **ggplot**.
+
+Para ver de forma rápida e individual a cuál formato o clase pertenece una variable, podemos usar la función **class()** de R base: **class(*base_arreglada\$fecha_atencion)****.* Para transformarla puedes incluir en el código anterior dentro de la función de **mutate** el cambio de las variables de fecha usando la función **as.Date**(). Para ver qué clase o formato son todas las variables de forma rápida, podemos usar la función **str()** de R base, que es muy parecida a la función **skim()**. Te mostramos cómo hacerlo a continuación:
 
 ```{r 20, echo=TRUE, warning=FALSE}
 
@@ -248,9 +266,9 @@ base_arreglada <- base %>%
 
 ```
 
-Para este análisis nos interesaría ver el comportamiento mensual de cada año de los casos reportados y aunque ya tenemos esta variables, mes y año de reporte y estas se pueden "fusionar" a veces es mejor hacer una transformación del formato dado que hacer esta fusión de la variable año y mes puede alterar el orden si no se hace de forma correcta. Con menos cantidad de código es más fácil transformar una fecha a otro tipo de presentación.
+Para este análisis nos interesaría ver el comportamiento mensual de cada año de los casos reportados, y aunque ya tenemos las variables mes y año de reporte, estas se pueden fusionar. A veces es mejor hacer una transformación del formato, dado que hacer esta fusión de las variables año y mes, puede alterar el orden si no se hace de forma correcta. Con menos cantidad de código es más fácil transformar una fecha a otro tipo de presentación.
 
-Veamos en acción lo que acabo de explicar:
+Veamos en acción lo que acabamos de explicar:
 
 ```{r 21, echo=TRUE, warning=FALSE}
 
@@ -262,7 +280,7 @@ base_arreglada %>%
 
 ```
 
-Como podemos ver en la salida anterior tenemos 5 años completos y el primer mes del 2022, si vamos a centrarnos en los últimos 3 años y podemos hacerlo con la función **filter()**:
+Como podemos ver en la salida anterior, tenemos cinco años completos y el primer mes del 2022. Nos vamos a centrar en los últimos tres años filtrando los datos con la función **filter()**:
 
 ```{r 22, echo=TRUE, warning=FALSE}
 
@@ -285,7 +303,7 @@ tabla_01 <- base_arreglada %>%  #Nuevo objeto
  
    filter(fecha_atencion>="2019-01-01", fecha_atencion<"2022-01-01") %>% 
   
-  tabyl(a_mes_atencion)
+tabyl(a_mes_atencion)
 
 
 ```
@@ -305,8 +323,7 @@ tabla_01 <- base_arreglada %>%
   adorn_totals(c("col", "row")) %>% #A partir de esta línea, se usan funciones de "adorn_" para agregar detalles a la tabla
   adorn_percentages() %>% 
   adorn_pct_formatting() %>% 
-  adorn_ns()
-  
+  adorn_ns() 
 
 tabla_01
 ```
