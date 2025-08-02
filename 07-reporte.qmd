@@ -98,7 +98,7 @@ datos_pacientes <- read_excel("datos_hospital_2024.xlsx")
 glimpse(datos_pacientes)
 ```
 
-En la plantilla que creaste ahora, inserta varios segmentos de códigos para que copies de los scripts que has creado lo vayas poniendo dentro de estos, Ejemplo, en el primer segmento de código que tiene esta plantilla, 
+En la plantilla que creaste ahora, inserta varios segmentos de códigos para que copies de los scripts que has creado lo vayas poniendo dentro de estos, Ejemplo, en el primer segmento de código que tiene esta plantilla,
 
 ```{r setup, eval=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -106,7 +106,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 pon el código para cargar los paquetes y también el código para cargar las bases de datos.
 
-En los demás segmentos, ve agregando las tablas que creaste usando gtsummary o tabyl, los gráficos con ggplot. 
+En los demás segmentos, ve agregando las tablas que creaste usando gtsummary o tabyl, los gráficos con ggplot.
 
 ### 3. Texto narrativo en markdown
 
@@ -134,8 +134,6 @@ Los factores de riesgo analizados incluyen:
 - Actividad física
 ```
 
-
-
 ## Buenas prácticas para RMarkdown en investigación de salud
 
 1.  **Organiza tu código**: Usa chunks con nombres descriptivos y agrúpalos lógicamente.
@@ -155,5 +153,3 @@ Para aprender más sobre RMarkdown en el contexto de análisis de datos en salud
 -   [RStudio RMarkdown Cheatsheet](https://www.rstudio.com/resources/cheatsheets/)
 -   [Reproducible Medical Research with R](https://bookdown.org/pdr_higgins/rmrwr/)
 -   [R para epidemiólogos (capítulo de RMarkdown)](https://www.epirhandbook.com/en/new_pages/rmarkdown.html)
-
-

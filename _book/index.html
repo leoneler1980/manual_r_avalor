@@ -22,7 +22,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -151,6 +171,18 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./07-reporte.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Preparación de reporte (integración de las salidas en un documento)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-analisisEstadistico.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Apendice</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Referencias</span></a>
   </div>
@@ -230,7 +262,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p><strong>Paquete:</strong> Son varios archivos que contienen funciones, documentación, bases de datos. Son fundamentales para añadir funcionalidad a R. También es la vía como se comparte códigos re-producibles (funciones). A modo de analogía un paquete vendría siendo una herramienta (destornillador, martillo) y R sería la mesa de trabajo, donde cada vez que necesitas una herramienta (paquete) la traes a la mesa de trabajo.</p></li>
 <li><p><strong>Proyecto:</strong> “Un proyecto es una carpeta de trabajo designado con un archivo .RProj. Al abrir un proyecto (usando Archivo -&gt; Abrir proyecto en RStudio o haciendo doble clic en el archivo .Rproj fuera de R), la carpeta de trabajo se establecerá automáticamente en el directorio donde se encuentra el archivo .RProj.</p></li>
 <li><p><strong>Bases de datos</strong> en diferentes formatos, preferiblemente en .csv, pero en Excel u otros formatos comunes se pueden trabajar)</p></li>
-<li><p><strong>Operadores :</strong> Según en el libro de R para principiantes de Juan Bosco Mendoza <span class="citation" data-cites="vega">(<a href="references.html#ref-vega" role="doc-biblioref"><strong>vega?</strong></a>)</span>: <em>“Son los símbolos que le indican a R que debe realizar una tarea. Combinando datos y operadores es que logramos que R haga su trabajo. Existen operadores específicos para cada tipo de tarea. Los tipos de operadores principales son los siguientes: Aritméticos, Relacionales, Lógicos y De asignación.”</em></p></li>
+<li><p><strong>Operadores :</strong> Según en el libro de R para principiantes de Juan Bosco Mendoza <span class="citation" data-cites="vega">(<a href="#ref-vega" role="doc-biblioref">Vega, n.d.</a>)</span>: <em>“Son los símbolos que le indican a R que debe realizar una tarea. Combinando datos y operadores es que logramos que R haga su trabajo. Existen operadores específicos para cada tipo de tarea. Los tipos de operadores principales son los siguientes: Aritméticos, Relacionales, Lógicos y De asignación.”</em></p></li>
 <li><p><strong>Expresión:</strong> En programación, una expresión es una combinación de constantes, variables o funciones, que es interpretada de acuerdo a las normas particulares de precedencia y asociación para un lenguaje de programación en particular.</p></li>
 <li><p><strong>Código:</strong> son los signos y símbolos que tienen un significado o en sus diferentes combinaciones se pueden interpretar como un lenguaje</p></li>
 <li><p><strong>Función:</strong> es un bloque de código reutilizable que realiza una tarea específica, tomando argumentos como entrada y devolviendo un resultado, lo que facilita la organización y reutilización del código.</p></li>
@@ -239,6 +271,11 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-vega" class="csl-entry" role="listitem">
+Vega, Juan Bosco Mendoza. n.d. <em>R Para Principiantes</em>. <a href="https://bookdown.org/jboscomendoza/r-principiantes4/">https://bookdown.org/jboscomendoza/r-principiantes4/</a>.
+</div>
+</div>
 </section>
 </section>
 

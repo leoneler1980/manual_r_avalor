@@ -54,7 +54,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -184,6 +204,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./07-reporte.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Preparación de reporte (integración de las salidas en un documento)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-analisisEstadistico.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Apendice</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Referencias</span></a>
   </div>
@@ -301,7 +333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="instalación-de-paquetes-librerías-de-funciones" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="instalación-de-paquetes-librerías-de-funciones"><span class="header-section-number">2.3</span> Instalación de Paquetes (librerías de funciones)</h2>
-<p>Los paquetes son extensiones para añadir más funcionalidades a R. Es quizás la razón por la cual R es ahora mismo una de las mejores herramientas para trabajar con datos dada la cantidad de paquetes específicos para realizar tareas como hacer tablas por ejemplo. En la literatura, los paquetes se identifican con { }, ejemplo: <strong>{tidyverse}</strong> y los logos son una figura dentro de un hexágono.</p>
+<p>Los paquetes son extensiones para añadir más funcionalidades a R. Es quizás la razón por la cual R es ahora mismo una de las mejores herramientas para trabajar con datos dada la cantidad de paquetes específicos para realizar tareas como hacer tablas por ejemplo. En la literatura, los paquetes se identifican con { }, ejemplo: <span class="citation" data-cites="wickham_tidyverse_2023">(<a href="#ref-wickham_tidyverse_2023" role="doc-biblioref">Wickham and RStudio 2023</a>)</span><strong>{tidyverse}</strong> y los logos son una figura dentro de un hexágono.</p>
 <p>Con respecto a la instalación de paquetes, usualmente estos deben estar publicados en CRAN (<a href="https://cran.r-project.org/web/packages/">Aquí el enlace</a>) y se instalan desde el panel de paquetes (“Packages”).</p>
 <p><img src="imagenes/01packages3.png" class="img-fluid"></p>
 </section>
@@ -310,7 +342,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Después de instalar R, Rstudio solo tenemos las funcionalidades que trae <strong>R base</strong>, que nos permiten hacer muchas cosas sin tener que instalar nada más, pero podemos hacer que R sea más completo, ahora vamos a ver que es un paquete y su importancia.</p>
 <p>Como R es un lenguaje de programación por lo tanto podemos crear programas o conjunto de funciones y estos programas podemos exportarlos para luego usarlos más adelante.</p>
 <p>Estos programas o complementos aumentan la capacidad de R a través de funciones o comandos, por ejemplo, <strong>R base</strong>, no nos permite exportar directamente los resultados o salidas en formato Excel o crear tablas con formato de forma directa. Por lo tanto, los paquetes o subprogramas hacen que R sea más que solo un lenguaje de programación.</p>
-<p>Hay paquetes creados por epidemiólogos, para epidemiólogos como el <strong>epitools</strong> (Tomas J. Aragon) <span class="citation" data-cites="aragon2020">(<a href="references.html#ref-aragon2020" role="doc-biblioref"><strong>aragon2020?</strong></a>)</span> o <strong>epikit</strong> (Zhian N. Kamvar)<span class="citation" data-cites="spina2023">(<a href="references.html#ref-spina2023" role="doc-biblioref"><strong>spina2023?</strong></a>)</span> que nos permiten con pocos comando o funciones hacer tareas como calcular medidas de asociación (OR, Riesgo relativo) y facilitar los análisis en epidemiología y otros paquetes que hacen las tareas de análisis de datos como son el <strong>openxlsx</strong> (Philipp Schauberger)<span class="citation" data-cites="schauberger2023">(<a href="references.html#ref-schauberger2023" role="doc-biblioref"><strong>schauberger2023?</strong></a>)</span> para manipular y crear archivos de Excel o el muy famoso y aclamado paquete <strong>tidyverse</strong> (Hadley Wickham)<span class="citation" data-cites="wickham2023">(<a href="references.html#ref-wickham2023" role="doc-biblioref"><strong>wickham2023?</strong></a>)</span>del cual hay este paquete hay libros escritos para el procesamiento y manejo de datos por mencionar algunos.</p>
+<p>Hay paquetes creados por epidemiólogos, para epidemiólogos como el {<strong>epitools}</strong> <span class="citation" data-cites="aragon_epitools_2020">(<a href="#ref-aragon_epitools_2020" role="doc-biblioref">Aragon et al. 2020</a>)</span> o {<strong>epikit}</strong> <span class="citation" data-cites="spina_epikit_2023">(<a href="#ref-spina_epikit_2023" role="doc-biblioref">Spina et al. 2023</a>)</span> que nos permiten con pocos comando o funciones hacer tareas como calcular medidas de asociación (OR, Riesgo relativo) y facilitar los análisis en epidemiología y otros paquetes que hacen las tareas de análisis de datos como son el {<strong>openxlsx}</strong> <span class="citation" data-cites="schauberger_openxlsx_2023">(<a href="#ref-schauberger_openxlsx_2023" role="doc-biblioref">Schauberger et al. 2023</a>)</span> para manipular y crear archivos de Excel o el muy famoso y aclamado paquete <strong>tidyverse</strong> <span class="citation" data-cites="wickham_tidyverse_2023">(<a href="#ref-wickham_tidyverse_2023" role="doc-biblioref">Wickham and RStudio 2023</a>)</span>del cual hay este paquete hay libros escritos para el procesamiento y manejo de datos por mencionar algunos.</p>
 <p>Los paquetes nos permiten mejorar sobremanera nuestra productividad en general. Cada vez que iniciamos una sesión con Rstudio, en nuestras rutinas debemos cargar los paquetes que vamos a usar.</p>
 <p>Dado que R es una plataforma colaborativa, cuando un paquete es creado pasa por un proceso de validación antes de ser publicados en el repositorio de R. Es por esto que, para su instalación debemos saber si están disponibles. Los paquetes, usualmente, después de ya ser validados, son publicados en el repositorio de R (The Comprehensive R Archive Network o <a href="https://cran.r-project.org/web/packages/">CRAN</a>) que es la página donde descargamos R. También pueden estar disponibles en otras páginas donde podemos descargarlos e instalarlos manualmente. Después de instalar un paquete solo es necesario verificar si ha sido actualizado, tal como haces con cualquier otro programa.</p>
 <p>Usualmente los autores de los paquetes tienen tutoriales o páginas llamadas “Vignettes” o viñetas donde podemos ver las funcionalidades y tutoriales. Por ejemplo, ejemplo ingresa en la barra de búsqueda en tu explorador estas palabras: “R package epitools”, y aparecerán muchos resultados para diferentes tareas. Sigue estos pasos para verificar si un paquete existe buscando directamente desde RStudio:</p>
@@ -370,6 +402,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Los dos capítulos siguientes son muy importantes. Debes familiarizarte con ellos porque son los fundamentos para poder trabajar en R, veremos ejemplos de las sintaxis de las expresiones, los diferentes tipos de objetos de datos, y a medida que vayamos practicando se irá haciendo más fácil entender el código, las funciones y las operaciones que hacemos. Te recomendamos que, aparte de este manual, abundes más sobre los temas que verás a continuación para que agilices tu proceso de aprendizaje con R.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-aragon_epitools_2020" class="csl-entry" role="listitem">
+Aragon, Tomas J., Michael P. Fay, Daniel Wollschlaeger, and Adam Omidpanah. 2020. <span>“Epitools: <span>Epidemiology</span> <span>Tools</span>.”</span> <a href="https://cran.r-project.org/web/packages/epitools/index.html">https://cran.r-project.org/web/packages/epitools/index.html</a>.
+</div>
+<div id="ref-schauberger_openxlsx_2023" class="csl-entry" role="listitem">
+Schauberger, Philipp, Alexander Walker, Luca Braglia, Joshua Sturm, Jan Marvin Garbuszus, and Jordan Mark Barbone. 2023. <span>“Openxlsx: <span>Read</span>, <span>Write</span> and <span>Edit</span> Xlsx <span>Files</span>.”</span> <a href="https://cran.r-project.org/web/packages/openxlsx/index.html">https://cran.r-project.org/web/packages/openxlsx/index.html</a>.
+</div>
+<div id="ref-spina_epikit_2023" class="csl-entry" role="listitem">
+Spina, Alexander, Zhian N. Kamvar, Dirk Schumacher, and Kate Doyle. 2023. <span>“Epikit: <span>Miscellaneous</span> <span>Helper</span> <span>Tools</span> for <span>Epidemiologists</span>.”</span> <a href="https://cran.r-project.org/web/packages/epikit/index.html">https://cran.r-project.org/web/packages/epikit/index.html</a>.
+</div>
+<div id="ref-wickham_tidyverse_2023" class="csl-entry" role="listitem">
+Wickham, Hadley, and RStudio. 2023. <span>“Tidyverse: <span>Easily</span> <span>Install</span> and <span>Load</span> the ’<span>Tidyverse</span>’.”</span> <a href="https://cran.r-project.org/web/packages/tidyverse/index.html">https://cran.r-project.org/web/packages/tidyverse/index.html</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

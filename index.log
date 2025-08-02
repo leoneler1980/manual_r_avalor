@@ -1,15 +1,11 @@
-<<<<<<< HEAD
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.29)  31 JUL 2025 07:46
-=======
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.29)  29 JUL 2025 15:17
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.2)  2 AUG 2025 12:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **index.tex
 (./index.tex
 LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-07-19>
+L3 programming layer <2025-07-20>
 (c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrreprt.cls
 Document Class: scrreprt 2025/06/04 v3.45 KOMA-Script document class (report)
 (c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/koma-script/scrkbase.sty
@@ -200,7 +196,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 )) (c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ) (c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math.sty (c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2025-07-19 L3 programming layer (loader) 
+Package: expl3 2025-07-20 L3 programming layer (loader) 
 (c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2025-06-09 L3 backend support: XeTeX
 \g__graphics_track_int=\count293
@@ -754,70 +750,137 @@ Package caption Info: wrapfig package is loaded.
 Invalid UTF-8 byte or sequence at line 3 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 3 replaced by U+FFFD.
 Package: anyfontsize 2007/11/22 anyfontsize.sty by pts
+) (c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2025-06-23 v0.14 Display of landscape pages in PDF
+(c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
+Package: pdflscape-nometadata 2025-06-23 v0.14 Display of landscape pages in PDF (HO)
+(c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 98.
+)) (c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tabu/tabu.sty
+Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
+(c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box117
+\sift@deathcycles=\count356
+\@vwid@loff=\dimen268
+\@vwid@roff=\dimen269
+)
+==> First Aid for varwidth.sty applied!
+\c@taburow=\count357
+\tabu@nbcols=\count358
+\tabu@cnt=\count359
+\tabu@Xcol=\count360
+\tabu@alloc=\count361
+\tabu@nested=\count362
+\tabu@target=\dimen270
+\tabu@spreadtarget=\dimen271
+\tabu@naturalX=\dimen272
+\tabucolX=\dimen273
+\tabu@Xsum=\dimen274
+\extrarowdepth=\dimen275
+\abovetabulinesep=\dimen276
+\belowtabulinesep=\dimen277
+\tabustrutrule=\dimen278
+\tabu@thebody=\toks29
+\tabu@footnotes=\toks30
+\tabu@box=\box118
+\tabu@arstrutbox=\box119
+\tabu@hleads=\box120
+\tabu@vleads=\box121
+\tabu@cellskip=\skip89
+) (c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttable/threeparttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box122
+) (c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttablex/threeparttablex.sty
+Package: threeparttablex 2013/07/23 v0.3 by daleif
+(c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+(c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\TPTL@width=\skip90
+) (c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box123
+\UL@hyphenbox=\box124
+\UL@skip=\skip91
+\UL@hook=\toks31
+\UL@height=\dimen279
+\UL@pe=\count363
+\UL@pixel=\dimen280
+\ULC@box=\box125
+Package: ulem 2019/11/18
+\ULdepth=\dimen281
+) (c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen282
+\c@nlinenum=\count364
+\TeXr@lab=\toks32
 ) (c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
 (c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/bkm-dvipdfm.def
 File: bkm-dvipdfm.def 2023-12-10 v1.31 bookmark driver for dvipdfm (HO)
-\BKM@id=\count356
+\BKM@id=\count365
 ))
-\@float@every@codelisting=\toks29
-\c@codelisting=\count357
+\@float@every@codelisting=\toks33
+\c@codelisting=\count366
 (c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
 Package caption Info: New subtype `subfigure' on input line 238.
-\c@subfigure=\count358
+\c@subfigure=\count367
 Package caption Info: New subtype `subtable' on input line 238.
-\c@subtable=\count359
+\c@subtable=\count368
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 243.
+Package hyperref Info: Option `colorlinks' set `true' on input line 250.
 No file index.aux.
 \openout1 = `index.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-Package scrbase Info: activating english \abstractname on input line 251.
-Package scrbase Info: activating english \partname on input line 251.
-Package scrbase Info: activating english \chaptername on input line 251.
-Package scrbase Info: activating english \appendixname on input line 251.
-Package scrbase Info: activating english \figurename on input line 251.
-Package scrbase Info: activating english \tablename on input line 251.
-Package scrbase Info: activating english \contentsname on input line 251.
-Package scrbase Info: activating english \listfigurename on input line 251.
-Package scrbase Info: activating english \listtablename on input line 251.
-Package scrbase Info: activating english \bibname on input line 251.
-Package scrbase Info: activating english \indexname on input line 251.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+Package scrbase Info: activating english \abstractname on input line 258.
+Package scrbase Info: activating english \partname on input line 258.
+Package scrbase Info: activating english \chaptername on input line 258.
+Package scrbase Info: activating english \appendixname on input line 258.
+Package scrbase Info: activating english \figurename on input line 258.
+Package scrbase Info: activating english \tablename on input line 258.
+Package scrbase Info: activating english \contentsname on input line 258.
+Package scrbase Info: activating english \listfigurename on input line 258.
+Package scrbase Info: activating english \listtablename on input line 258.
+Package scrbase Info: activating english \bibname on input line 258.
+Package scrbase Info: activating english \indexname on input line 258.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 251.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 258.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 251.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 258.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 251.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 258.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 251.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 258.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 251.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 258.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 251.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 258.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 251.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 258.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 0.9999967668407183.
@@ -845,7 +908,7 @@ Package fontspec Info:
 (fontspec)             <->s*[0.9999967668407183]"[latinmodern-math.otf]/OT:script=math;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 251.
+(Font)              scaled to size 10.95pt on input line 258.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 0.9999967668407183.
@@ -881,15 +944,15 @@ Package fontspec Info:
 (fontspec)             <->s*[0.9999967668407183]"[latinmodern-math.otf]/OT:script=math;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 251.
+(Font)              scaled to size 10.95pt on input line 258.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 251.
+(Font)              `operators' in the math version `normal' on input line 258.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 251.
+(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 258.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 251.
+(Font)              `operators' in the math version `bold' on input line 258.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 251.
+(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 258.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 0.9999967668407183.
@@ -955,13 +1018,13 @@ Package fontspec Info:
 (fontspec)             <->s*[1.000096766517402]"[latinmodern-math.otf]/OT:script=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 251.
+(Font)              `symbols' in the math version `normal' on input line 258.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 251.
+(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 258.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 251.
+(Font)              `symbols' in the math version `bold' on input line 258.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 251.
+(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 258.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 0.9999967668407183.
@@ -1021,50 +1084,51 @@ Package fontspec Info:
 (fontspec)             <->s*[0.9998967671640342]"[latinmodern-math.otf]/OT:script=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 251.
+(Font)              `largesymbols' in the math version `normal' on input line 258.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 251.
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 258.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 251.
+(Font)              `largesymbols' in the math version `bold' on input line 258.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 251.
-Package hyperref Info: Link coloring ON on input line 251.
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 258.
+Package hyperref Info: Link coloring ON on input line 258.
 
 Package hyperref Warning: Rerun to get /PageLabels entry.
 
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: threeparttable package is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 253.
+(Font)              scaled to size 14.4pt on input line 260.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 253.
+(Font)              scaled to size 10.0pt on input line 260.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 253.
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 253.
+(Font)              scaled to size 7.0pt on input line 260.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 260.
 (c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 14.4013pt on input line 253.
+(Font)              scaled to size 14.4013pt on input line 260.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00092pt on input line 253.
+(Font)              scaled to size 10.00092pt on input line 260.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00064pt on input line 253.
+(Font)              scaled to size 7.00064pt on input line 260.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 14.39845pt on input line 253.
+(Font)              scaled to size 14.39845pt on input line 260.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 253.
+(Font)              scaled to size 9.99893pt on input line 260.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 253.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 253.
+(Font)              scaled to size 6.99925pt on input line 260.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 260.
 (c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 253.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 260.
 (c:/Users/llere/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (124.4925pt too wide) in paragraph at lines 253--253
+Overfull \hbox (124.4925pt too wide) in paragraph at lines 260--260
  [][] 
  []
 
@@ -1096,21 +1160,21 @@ chapter 1.
 [5]
 chapter 2.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.665pt on input line 426.
+(Font)              scaled to size 7.665pt on input line 433.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.475pt on input line 426.
+(Font)              scaled to size 5.475pt on input line 433.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.95099pt on input line 426.
+(Font)              scaled to size 10.95099pt on input line 433.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.66568pt on input line 426.
+(Font)              scaled to size 7.66568pt on input line 433.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.4755pt on input line 426.
+(Font)              scaled to size 5.4755pt on input line 433.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 10.94882pt on input line 426.
+(Font)              scaled to size 10.94882pt on input line 433.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.66417pt on input line 426.
+(Font)              scaled to size 7.66417pt on input line 433.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.47441pt on input line 426.
+(Font)              scaled to size 5.47441pt on input line 433.
 File: imagenes/01rwebpage.png Graphic file (type bmp)
 <imagenes/01rwebpage.png>
 File: imagenes/01consolar.png Graphic file (type bmp)
@@ -1130,7 +1194,7 @@ File: imagenes/01rtools.png Graphic file (type bmp)
 File: imagenes/01interfazrstudio.png Graphic file (type bmp)
 <imagenes/01interfazrstudio.png>
 
-Overfull \hbox (36.5632pt too wide) in paragraph at lines 538--539
+Overfull \hbox (36.5632pt too wide) in paragraph at lines 545--546
  [][] 
  []
 
@@ -1144,7 +1208,7 @@ File: imagenes/01figura06.png Graphic file (type bmp)
 File: imagenes/01menurstudio.png Graphic file (type bmp)
 <imagenes/01menurstudio.png>
 
-Overfull \hbox (166.11519pt too wide) in paragraph at lines 629--630
+Overfull \hbox (166.11519pt too wide) in paragraph at lines 636--637
  [][] 
  []
 
@@ -1154,7 +1218,7 @@ Overfull \hbox (166.11519pt too wide) in paragraph at lines 629--630
 File: imagenes/01packages3.png Graphic file (type bmp)
 <imagenes/01packages3.png>
 
-Overfull \hbox (10.94707pt too wide) in paragraph at lines 652--653
+Overfull \hbox (10.94707pt too wide) in paragraph at lines 660--661
 [][] 
  []
 
@@ -1190,7 +1254,7 @@ File: imagenes/01proyectonuevo.png Graphic file (type bmp)
 File: imagenes/01rstudiointerfazinicial.png Graphic file (type bmp)
 <imagenes/01rstudiointerfazinicial.png>
 
-Overfull \hbox (0.58748pt too wide) in paragraph at lines 939--940
+Overfull \hbox (0.58748pt too wide) in paragraph at lines 946--947
  [][] 
  []
 
@@ -1213,218 +1277,122 @@ File: imagenes/01rutinas2.png Graphic file (type bmp)
 [22]
 chapter 4.
 
-<<<<<<< HEAD
-Overfull \hbox (13.66269pt too wide) in paragraph at lines 1192--1193
-=======
-Overfull \hbox (13.66269pt too wide) in paragraph at lines 1190--1191
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (13.66269pt too wide) in paragraph at lines 1199--1200
 []\TU/lmr/m/n/10.95 Tipo  
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (32.33682pt too wide) in paragraph at lines 1194--1195
-=======
-Overfull \hbox (32.33682pt too wide) in paragraph at lines 1192--1193
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (32.33682pt too wide) in paragraph at lines 1201--1202
 []\TU/lmr/m/n/10.95 Operador  
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (42.92108pt too wide) in paragraph at lines 1204--1204
-=======
-Overfull \hbox (42.92108pt too wide) in paragraph at lines 1202--1202
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
-[]|\TU/lmr/m/n/10.95 Asignación|  
- []
-
-
-<<<<<<< HEAD
 Overfull \hbox (42.92108pt too wide) in paragraph at lines 1211--1211
-=======
-Overfull \hbox (42.92108pt too wide) in paragraph at lines 1209--1209
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
 []|\TU/lmr/m/n/10.95 Asignación|  
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (43.01964pt too wide) in paragraph at lines 1215--1215
-=======
-Overfull \hbox (43.01964pt too wide) in paragraph at lines 1213--1213
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (42.92108pt too wide) in paragraph at lines 1218--1218
+[]|\TU/lmr/m/n/10.95 Asignación|  
+ []
+
+
+Overfull \hbox (43.01964pt too wide) in paragraph at lines 1222--1222
 []|\TU/lmr/m/n/10.95 Evaluación|  
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (3.97632pt too wide) in paragraph at lines 1215--1215
-=======
-Overfull \hbox (3.97632pt too wide) in paragraph at lines 1213--1213
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (3.97632pt too wide) in paragraph at lines 1222--1222
 []|\TU/lmr/m/n/10.95 ==|  
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (43.01964pt too wide) in paragraph at lines 1218--1218
-=======
-Overfull \hbox (43.01964pt too wide) in paragraph at lines 1216--1216
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (43.01964pt too wide) in paragraph at lines 1225--1225
 []|\TU/lmr/m/n/10.95 Evaluación|  
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (43.01964pt too wide) in paragraph at lines 1221--1221
-=======
-Overfull \hbox (43.01964pt too wide) in paragraph at lines 1219--1219
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (43.01964pt too wide) in paragraph at lines 1228--1228
 []|\TU/lmr/m/n/10.95 Evaluación|  
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (7.02042pt too wide) in paragraph at lines 1221--1221
-=======
-Overfull \hbox (7.02042pt too wide) in paragraph at lines 1219--1219
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (7.02042pt too wide) in paragraph at lines 1228--1228
 \TU/lmr/m/n/10.95 >=, 
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (3.97632pt too wide) in paragraph at lines 1221--1221
-=======
-Overfull \hbox (3.97632pt too wide) in paragraph at lines 1219--1219
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (3.97632pt too wide) in paragraph at lines 1228--1228
 \TU/lmr/m/n/10.95 <=|  
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (43.01964pt too wide) in paragraph at lines 1230--1230
-=======
-Overfull \hbox (43.01964pt too wide) in paragraph at lines 1228--1228
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (43.01964pt too wide) in paragraph at lines 1237--1237
 []|\TU/lmr/m/n/10.95 Evaluación|  
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (14.31313pt too wide) in paragraph at lines 1230--1230
-=======
-Overfull \hbox (14.31313pt too wide) in paragraph at lines 1228--1228
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (14.31313pt too wide) in paragraph at lines 1237--1237
 []|\TU/lmr/m/n/10.95 %in%|  
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (23.12349pt too wide) in paragraph at lines 1236--1236
-=======
-Overfull \hbox (23.12349pt too wide) in paragraph at lines 1234--1234
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (23.12349pt too wide) in paragraph at lines 1243--1243
 []|\TU/lmr/m/n/10.95 Acceso|  
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (23.12349pt too wide) in paragraph at lines 1242--1242
-=======
-Overfull \hbox (23.12349pt too wide) in paragraph at lines 1240--1240
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (23.12349pt too wide) in paragraph at lines 1249--1249
 []|\TU/lmr/m/n/10.95 Acceso|  
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (34.79619pt too wide) in paragraph at lines 1251--1251
-=======
-Overfull \hbox (34.79619pt too wide) in paragraph at lines 1249--1249
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (34.79619pt too wide) in paragraph at lines 1258--1258
 []|\TU/lmr/m/n/10.95 Booleano|  
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (34.79619pt too wide) in paragraph at lines 1256--1256
-=======
-Overfull \hbox (34.79619pt too wide) in paragraph at lines 1254--1254
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (34.79619pt too wide) in paragraph at lines 1263--1263
 []|\TU/lmr/m/n/10.95 Booleano|  
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (46.58932pt too wide) in paragraph at lines 1260--1260
-=======
-Overfull \hbox (46.58932pt too wide) in paragraph at lines 1258--1258
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (46.58932pt too wide) in paragraph at lines 1267--1267
 []|\TU/lmr/m/n/10.95 Aritméticos|  
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (4.58952pt too wide) in paragraph at lines 1260--1260
-=======
-Overfull \hbox (4.58952pt too wide) in paragraph at lines 1258--1258
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (4.58952pt too wide) in paragraph at lines 1267--1267
 \TU/lmr/m/n/10.95 /,^, 
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (17.70323pt too wide) in paragraph at lines 1271--1271
-=======
-Overfull \hbox (17.70323pt too wide) in paragraph at lines 1269--1269
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (17.70323pt too wide) in paragraph at lines 1278--1278
 []|\TU/lmr/m/n/10.95 Otros|  
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (17.70323pt too wide) in paragraph at lines 1277--1277
-=======
-Overfull \hbox (17.70323pt too wide) in paragraph at lines 1275--1275
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (17.70323pt too wide) in paragraph at lines 1284--1284
 []|\TU/lmr/m/n/10.95 Otros|  
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (13.69992pt too wide) in paragraph at lines 1277--1277
-=======
-Overfull \hbox (13.69992pt too wide) in paragraph at lines 1275--1275
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (13.69992pt too wide) in paragraph at lines 1284--1284
 []|\TU/lmr/m/n/10.95 %>% 
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (17.66382pt too wide) in paragraph at lines 1277--1277
-=======
-Overfull \hbox (17.66382pt too wide) in paragraph at lines 1275--1275
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (17.66382pt too wide) in paragraph at lines 1284--1284
 \TU/lmr/m/n/10.95 “pipe”|  
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (14.65913pt too wide) in paragraph at lines 1289--1289
-=======
-Overfull \hbox (14.65913pt too wide) in paragraph at lines 1287--1287
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (14.65913pt too wide) in paragraph at lines 1296--1296
 []|\TU/lmr/m/n/10.95 otros|  
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (29.51172pt too wide) in paragraph at lines 1289--1289
-=======
-Overfull \hbox (29.51172pt too wide) in paragraph at lines 1287--1287
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (29.51172pt too wide) in paragraph at lines 1296--1296
 \TU/lmr/m/n/10.95 (comma)|  
  []
 
@@ -1446,11 +1414,7 @@ File: imagenes/05vector2.png Graphic file (type bmp)
 File: imagenes/05matrix.png Graphic file (type bmp)
 <imagenes/05matrix.png>
 
-<<<<<<< HEAD
-Overfull \hbox (10.97147pt too wide) in paragraph at lines 1366--1367
-=======
-Overfull \hbox (10.97147pt too wide) in paragraph at lines 1363--1364
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (10.97147pt too wide) in paragraph at lines 1373--1374
 [][] 
  []
 
@@ -1478,11 +1442,7 @@ File: imagenes/05importdatagrame2.png Graphic file (type bmp)
 [31]
 
 [32]
-<<<<<<< HEAD
-Overfull \hbox (13.13986pt too wide) in paragraph at lines 1685--1685
-=======
-Overfull \hbox (13.13986pt too wide) in paragraph at lines 1658--1658
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (13.13986pt too wide) in paragraph at lines 1692--1692
 [] \TU/lmtt/m/n/10.95 [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s"[] 
  []
 
@@ -1497,30 +1457,17 @@ File: imagenes/05listas.png Graphic file (type bmp)
 File: imagenes/05funcion.png Graphic file (type bmp)
 <imagenes/05funcion.png>
 
-<<<<<<< HEAD
-Overfull \hbox (10.96234pt too wide) in paragraph at lines 1762--1763
-=======
-
-[34]
-Overfull \hbox (10.96234pt too wide) in paragraph at lines 1709--1710
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
+Overfull \hbox (10.96234pt too wide) in paragraph at lines 1769--1770
 [][] 
  []
 
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
-<<<<<<< HEAD
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1769.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1776.
 
 
 [35]
 
 [36]
-=======
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1716.
-
-
-[35]
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a
 chapter 6.
 
 
@@ -1528,7 +1475,7 @@ chapter 6.
 
 ]
 
-LaTeX Warning: Hyper reference `_ftn1' on page 38 undefined on input line 1875.
+LaTeX Warning: Hyper reference `_ftn1' on page 38 undefined on input line 1882.
 
 File: imagenes/06pivottables.png Graphic file (type bmp)
 <imagenes/06pivottables.png>
@@ -1536,26 +1483,26 @@ File: imagenes/06pivottables.png Graphic file (type bmp)
 
 [38]
 
-LaTeX Warning: Hyper reference `_ftnref1' on page 39 undefined on input line 1933.
+LaTeX Warning: Hyper reference `_ftnref1' on page 39 undefined on input line 1940.
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 1937.
+(Font)              scaled to size 9.0pt on input line 1944.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 1937.
+(Font)              scaled to size 6.0pt on input line 1944.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 1937.
+(Font)              scaled to size 5.0pt on input line 1944.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 9.00082pt on input line 1937.
+(Font)              scaled to size 9.00082pt on input line 1944.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00055pt on input line 1937.
+(Font)              scaled to size 6.00055pt on input line 1944.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 1937.
+(Font)              scaled to size 5.00046pt on input line 1944.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 8.99904pt on input line 1937.
+(Font)              scaled to size 8.99904pt on input line 1944.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 1937.
+(Font)              scaled to size 5.99936pt on input line 1944.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 1937.
+(Font)              scaled to size 4.99947pt on input line 1944.
 
 
 [39]
@@ -1572,33 +1519,29 @@ File: imagenes/07estructuraex.png Graphic file (type bmp)
 [41]
 
 [42]
+
+LaTeX Warning: Reference `fig-bdimportada' on page 43 undefined on input line 2160.
+
 File: imagenes/07cargarbase.png Graphic file (type bmp)
 <imagenes/07cargarbase.png>
 
-Overfull \hbox (10.9492pt too wide) in paragraph at lines 2134--2135
-[][] 
- []
-
-
 
 [43]
-Overfull \hbox (13.13986pt too wide) in paragraph at lines 2353--2353
+
+[44]
+Overfull \hbox (13.13986pt too wide) in paragraph at lines 2333--2333
 []\TU/lmtt/m/n/10.95 -- Variable type: character ----------------------------------------------------[] 
  []
 
 
 
-[44]
-
 [45]
-Overfull \hbox (13.13986pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (13.13986pt too wide) in paragraph at lines 2333--2333
 []\TU/lmtt/m/n/10.95 -- Variable type: logical ------------------------------------------------------[] 
  []
 
 
-
-[46]
-Overfull \hbox (13.13986pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (13.13986pt too wide) in paragraph at lines 2333--2333
 []\TU/lmtt/m/n/10.95 -- Variable type: numeric ------------------------------------------------------[] 
  []
 
@@ -1627,86 +1570,71 @@ Missing character: There is no ▁ (U+2581) in font [lmmono10-regular]:!
 Missing character: There is no ▁ (U+2581) in font [lmmono10-regular]:!
 Missing character: There is no ▁ (U+2581) in font [lmmono10-regular]:!
 Missing character: There is no ▁ (U+2581) in font [lmmono10-regular]:!
-Missing character: There is no ▂ (U+2582) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
 Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-Missing character: There is no ▅ (U+2585) in font [lmmono10-regular]:!
-Missing character: There is no ▃ (U+2583) in font [lmmono10-regular]:!
-Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-Missing character: There is no ▅ (U+2585) in font [lmmono10-regular]:!
-Missing character: There is no ▅ (U+2585) in font [lmmono10-regular]:!
-Missing character: There is no ▅ (U+2585) in font [lmmono10-regular]:!
-Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-Missing character: There is no ▅ (U+2585) in font [lmmono10-regular]:!
-Missing character: There is no ▅ (U+2585) in font [lmmono10-regular]:!
-Missing character: There is no ▅ (U+2585) in font [lmmono10-regular]:!
-Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-
-
-[47]
-Missing character: There is no ▅ (U+2585) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-Missing character: There is no ▅ (U+2585) in font [lmmono10-regular]:!
-Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▅ (U+2585) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-Missing character: There is no ▁ (U+2581) in font [lmmono10-regular]:!
-Missing character: There is no ▁ (U+2581) in font [lmmono10-regular]:!
-Missing character: There is no ▁ (U+2581) in font [lmmono10-regular]:!
-Missing character: There is no ▁ (U+2581) in font [lmmono10-regular]:!
-Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
-Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-Missing character: There is no ▃ (U+2583) in font [lmmono10-regular]:!
-Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-Missing character: There is no ▃ (U+2583) in font [lmmono10-regular]:!
 Missing character: There is no ▁ (U+2581) in font [lmmono10-regular]:!
 Missing character: There is no ▂ (U+2582) in font [lmmono10-regular]:!
+Missing character: There is no ▁ (U+2581) in font [lmmono10-regular]:!
+Missing character: There is no ▁ (U+2581) in font [lmmono10-regular]:!
+Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
+Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
+Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
+Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
+Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
+Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
+Missing character: There is no ▅ (U+2585) in font [lmmono10-regular]:!
+Missing character: There is no ▅ (U+2585) in font [lmmono10-regular]:!
 Missing character: There is no ▅ (U+2585) in font [lmmono10-regular]:!
 Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
-Missing character: There is no ▃ (U+2583) in font [lmmono10-regular]:!
+Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
+Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
+Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
+Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
+Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
+Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
+Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
+Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
+Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
+Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
+
+
+[46]
+Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
+Missing character: There is no ▅ (U+2585) in font [lmmono10-regular]:!
+Missing character: There is no ▅ (U+2585) in font [lmmono10-regular]:!
+Missing character: There is no ▅ (U+2585) in font [lmmono10-regular]:!
+Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
+Missing character: There is no ▅ (U+2585) in font [lmmono10-regular]:!
+Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
+Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
+Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
+Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
+Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
+Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
+Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
+Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
+Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
+Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
+Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
+Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
+Missing character: There is no ▅ (U+2585) in font [lmmono10-regular]:!
+Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
+Missing character: There is no ▁ (U+2581) in font [lmmono10-regular]:!
 Missing character: There is no ▁ (U+2581) in font [lmmono10-regular]:!
 Missing character: There is no ▂ (U+2582) in font [lmmono10-regular]:!
+Missing character: There is no ▂ (U+2582) in font [lmmono10-regular]:!
+Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
+Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
+Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
+Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
+Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
+Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
 Missing character: There is no ▅ (U+2585) in font [lmmono10-regular]:!
+Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
+Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
+Missing character: There is no ▆ (U+2586) in font [lmmono10-regular]:!
 Missing character: There is no ▇ (U+2587) in font [lmmono10-regular]:!
 
-Overfull \hbox (13.13986pt too wide) in paragraph at lines 2353--2353
+Overfull \hbox (13.13986pt too wide) in paragraph at lines 2333--2333
 []\TU/lmtt/m/n/10.95 -- Variable type: POSIXct ------------------------------------------------------[] 
  []
 
@@ -1714,29 +1642,25 @@ File: imagenes/07skimr2.png Graphic file (type bmp)
 <imagenes/07skimr2.png>
 
 
-[48]
+[47]
 
-LaTeX Warning: File `.pdf' not found on input line 2385.
+LaTeX Warning: File `.pdf' not found on input line 2375.
 
 ! Unable to load picture or PDF file '.pdf'.
 <to be read again> 
                    }
-l.2385 ...\includegraphics[keepaspectratio]{.pdf}}
+l.2375 ...\includegraphics[keepaspectratio]{.pdf}}
                                                   
 The requested image couldn't be read because
 it was not a recognized image format.
 
  
 Here is how much of TeX's memory you used:
- 22957 strings out of 470473
- 446046 string characters out of 5489892
- 1144982 words of memory out of 5000000
- 50945 multiletter control sequences out of 15000+600000
- 636201 words of font info for 114 fonts, out of 8000000 for 9000
+ 24135 strings out of 470458
+ 465662 string characters out of 5489551
+ 1167670 words of memory out of 5000000
+ 52096 multiletter control sequences out of 15000+600000
+ 636307 words of font info for 115 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 108i,10n,114p,10900b,519s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<<<<<<< HEAD
-Output written on index.pdf (48 pages).
-=======
+ 108i,10n,114p,10900b,521s stack positions out of 10000i,1000n,20000p,200000b,200000s
 Output written on index.pdf (47 pages).
->>>>>>> 53cf4f066a8e8d3de24bf0bd28918a50a537018a

@@ -54,7 +54,7 @@ Si vas al menú principal de RStudio, puedes entrar en la sección que dice **�
 
 ## Instalación de Paquetes (librerías de funciones)
 
-Los paquetes son extensiones para añadir más funcionalidades a R. Es quizás la razón por la cual R es ahora mismo una de las mejores herramientas para trabajar con datos dada la cantidad de paquetes específicos para realizar tareas como hacer tablas por ejemplo. En la literatura, los paquetes se identifican con { }, ejemplo: **{tidyverse}** y los logos son una figura dentro de un hexágono.
+Los paquetes son extensiones para añadir más funcionalidades a R. Es quizás la razón por la cual R es ahora mismo una de las mejores herramientas para trabajar con datos dada la cantidad de paquetes específicos para realizar tareas como hacer tablas por ejemplo. En la literatura, los paquetes se identifican con { }, ejemplo: [@wickham_tidyverse_2023]**{tidyverse}** y los logos son una figura dentro de un hexágono.
 
 Con respecto a la instalación de paquetes, usualmente estos deben estar publicados en CRAN ([Aquí el enlace](https://cran.r-project.org/web/packages/)) y se instalan desde el panel de paquetes ("Packages").
 
@@ -68,7 +68,7 @@ Como R es un lenguaje de programación por lo tanto podemos crear programas o co
 
 Estos programas o complementos aumentan la capacidad de R a través de funciones o comandos, por ejemplo, **R base**, no nos permite exportar directamente los resultados o salidas en formato Excel o crear tablas con formato de forma directa. Por lo tanto, los paquetes o subprogramas hacen que R sea más que solo un lenguaje de programación.
 
-Hay paquetes creados por epidemiólogos, para epidemiólogos como el **epitools** (Tomas J. Aragon) [@aragon2020] o **epikit** (Zhian N. Kamvar)[@spina2023] que nos permiten con pocos comando o funciones hacer tareas como calcular medidas de asociación (OR, Riesgo relativo) y facilitar los análisis en epidemiología y otros paquetes que hacen las tareas de análisis de datos como son el **openxlsx** (Philipp Schauberger)[@schauberger2023] para manipular y crear archivos de Excel o el muy famoso y aclamado paquete **tidyverse** (Hadley Wickham)[@wickham2023]del cual hay este paquete hay libros escritos para el procesamiento y manejo de datos por mencionar algunos.
+Hay paquetes creados por epidemiólogos, para epidemiólogos como el {**epitools}** [@aragon_epitools_2020] o {**epikit}** [@spina_epikit_2023] que nos permiten con pocos comando o funciones hacer tareas como calcular medidas de asociación (OR, Riesgo relativo) y facilitar los análisis en epidemiología y otros paquetes que hacen las tareas de análisis de datos como son el {**openxlsx}** [@schauberger_openxlsx_2023] para manipular y crear archivos de Excel o el muy famoso y aclamado paquete **tidyverse** [@wickham_tidyverse_2023]del cual hay este paquete hay libros escritos para el procesamiento y manejo de datos por mencionar algunos.
 
 Los paquetes nos permiten mejorar sobremanera nuestra productividad en general. Cada vez que iniciamos una sesión con Rstudio, en nuestras rutinas debemos cargar los paquetes que vamos a usar.
 

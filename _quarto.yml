@@ -14,6 +14,8 @@ book:
     - 04-objetosenr.qmd
     - 05-excel_a_R_intro.qmd
     - 06-analisisresultados.qmd
+    - 07-reporte.qmd
+    - 08-analisisEstadistico.qmd
     - references.qmd
 
     
