@@ -2,15 +2,17 @@
 
 ## Como se instala R y Rstudio®
 
+Si has instalado programas en tu computadora por tu propia cuenta, puedes saltarte esta sección, ya que el proceso de instalación de R es muy intuitivo. Si necesitas ayuda para la instalación, continúa leyendo.
+
 El primer paso para esta tarea es descargar el programa R, que se encuentra en la página web <https://cran.r-project.org/> . en esta hay varias versiones dependiendo que sistema operativo estás usando, ya sea Windows, macOS o Linux.
 
 ![En esta página trata de descargar la versión más actualizada](imagenes/01rwebpage.png "Figura 1.")
 
 Luego de descargarlo puedes instalarlo inmediatamente usando el ejecutable (para Windows y macOS) o la forma como se instalan software in Linux. Para este manual estamos en un ambiente de Windows, luego de instalar podemos acceder a la ***consola*** de R (una pantalla con un cursor parpadeando donde podemos escribir)
 
-![Este es la consola de R, aquí podemos comenzar a usar R, pero es un poco complejo usar solamente la consola](imagenes/01consolar.png "Figura 2.")
+![Si seguiste las instrucciones paso a paso, debería aparecer en el escritorio de tu computadora el ícono de R. Inmediatamente abres el programa, te aparecerá la **consola de R**](imagenes/01consolar.png "Figura 2.")
 
-Aunque ya hayamos instalado R, al menos que seamos muy expertos en su uso, que conozcamos bien las sintaxis de las funciones, que ***objetos*** (más tarde veremos lo que son los objetos) están cargados en la memoria, entre otras cosas (¡también se puede usar como una simple calculadora!), es muy complicado usar solamente la consola, por lo que tenemos disponible aditamentos o accesorios que nos permiten trabajar más fácil con R, así como su aprendizaje. Para este manual el aditamento que usaremos es **Rstudio** de [Posit®](https://posit.co/ "Página web donde descargar Rstudio").
+Esta es la consola de R, aquí podemos comenzar a usar el programa. Como notarás, es un poco complejo y se ve poco atractivo usar solamente la consola, por suerte tenemos disponible aditamentos o accesorios que nos permiten trabajar más fácil con R y hacer de su aprendizaje un proceso más amigable. Para estos fines, usaremos **RStudio** de [Posit®](https://posit.co/ "Página web donde descargar Rstudio")
 
 ### Descargar e instalar Rstudio
 

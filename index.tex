@@ -292,12 +292,13 @@ exportar reportes, etc.; todo esto a un nivel introductorio.
 
 El mundo de R es bien grande, (¡y qué bueno que es así!) y al principio
 pudiera ser tedioso para ti aprender a usarlo, sin embargo, desde que se
-comiences a producir resultados, notarás lo rápido que avanzarás. Una de
-las razones por las que R es una solución muy robusta para el análisis
-de grandes volúmenes de datos y para la elaboración de reportes, es que
-hay una comunidad muy vasta de personas que van aportando sus
-conocimientos y experiencia para hacer más fácil el aprendizaje y el uso
-de R.
+comiences a producir resultados, notarás lo rápido que avanzarás.
+
+Una de las razones por las que R es una solución muy robusta para el
+análisis de grandes volúmenes de datos y para la elaboración de
+reportes, es que hay una comunidad muy vasta de personas que van
+aportando sus conocimientos y experiencia para hacer más fácil el
+aprendizaje y el uso de R.
 
 En nuestros inicios, antes de ser instructores, fueron muchos intentos
 de ensayo y error, es decir, era agotador buscar en la web, ``googlear''
@@ -309,24 +310,24 @@ hacerlo con una base de datos bien grande, Excel colapsa mientras que
 con R es más rápido); otra tarea de apoyo en nuestros inicios era leer
 tutoriales, aplicarlos, obtener resultados erróneos, corregir,
 preguntar\ldots{} en fin, dar muchas vueltas hasta dar con lo que
-andábamos buscando.
+andábamos buscando. Este tipo de esfuerzos en la actualidad es muy
+diferente actualmente debido al uso de la inteligencia artificial como
+una plataforma que provee facilidades para avanzar rápido con el
+aprendizaje de cualquier lenguaje informático.
 
-Este tipo de esfuerzos en la actualidad es muy diferente actualmente
-debido al uso de la inteligencia artificial como una plataforma que
-provee facilidades para avanzar rápido con el aprendizaje de cualquier
-lenguaje informático. Lo que ha sido un común denominador es que siempre
-hay respuestas, y muchas, de cómo hacerlo de diferentes formas,
-cualquier cosa (¡Relacionada al análisis de datos!). En pocas palabras,
-cualquier problema o tarea que quieras hacer en R es muy probable que ya
-alguien la haya hecho.
+Lo que ha sido un común denominador es que siempre hay respuestas, y
+muchas, de cómo hacerlo de diferentes formas, cualquier cosa
+(¡Relacionada al análisis de datos!). En pocas palabras, cualquier
+problema o tarea que quieras hacer en R es muy probable que ya alguien
+la haya hecho. Este manual es un ejemplo de eso, pues aprendimos a usar
+este lenguaje que literalmente es difícil, sin embargo, lo hemos
+simplificado para ti, ayudándote a reducir considerablemente el tiempo
+de búsqueda en tutoriales y Chat GPT, combinando el lenguaje de R y el
+lenguaje clínico.\hyperref[_msocom_2]{{[}VV2{]}}
 
-Este manual es un ejemplo de eso, pues aprendimos a usar este lenguaje
-que literalmente es difícil, sin embargo, lo hemos simplificado para ti,
-ayudándote a reducir considerablemente el tiempo de búsqueda en
-tutoriales y Chat GPT, combinando el lenguaje de R y el lenguaje
-clínico. Lo más interesante de aprender a usar R con este estilo de
-ensayo y error es que aprendimos cosas que no teníamos la menor idea de
-que existían, por ejemplo, la teoría de los colores, la gramática de los
+Lo más interesante de aprender a usar R con este estilo de ensayo y
+error es que aprendimos cosas que no teníamos la menor idea de que
+existían, por ejemplo, la teoría de los colores, la gramática de los
 gráficos, ejercicios estadísticos que pensábamos eran imposibles hacer
 en R, sin embargo, por la cantidad de tutoriales, ayudas, videos, cursos
 (la gran mayoría gratuitos o de muy bajo costo), hemos tenido la
@@ -342,24 +343,26 @@ ciencia de datos, que es muy usada en muchas profesiones incluyendo la
 epidemiología, y ha facilitado mucho el proceso de difundir información,
 como las publicaciones de artículos. Entonces, como parte de la
 experiencia de comenzar a usar R es el autoaprendizaje, te invitamos
-como primera tarea o ejercicio a que ``busques'' qué es R, quiénes lo
-crearon, para qué lo crearon, y haciendo esta actividad te vas a dar
-cuenta lo mencionado en las líneas anteriores sobre la vasta cantidad de
-información disponible en cuanto al uso de R para la gestión de datos.
+como primera tarea o ejercicio a que \textbf{``busques''} qué es R,
+quiénes lo crearon, para qué lo crearon, y haciendo esta actividad te
+vas a dar cuenta lo mencionado en las líneas anteriores sobre la vasta
+cantidad de información disponible en cuanto al uso de R para la gestión
+de datos.
 
 Por último, el ingrediente principal para aprender este lenguaje es
 tener en qué usarlo, es decir, una necesidad, en este caso, sobre
-procesamiento, análisis y reporte de datos. Esperamos que te motives a
-implementar esta herramienta y que te sea de provecho este manual, para
-que puedas seguir aprendiendo más de lo que esperas aprender durante
-este curso.
+procesamiento, análisis y reporte de datos.
+
+Esperamos que te motives a implementar esta herramienta y que te sea de
+provecho este manual, para que puedas seguir aprendiendo más de lo que
+esperas aprender durante este curso.
 
 \subsection{Definiciones claves}\label{definiciones-claves}
 
 \begin{itemize}
 \item
   \textbf{Objetos:} Son elementos que almacenan información y pueden ser
-  de diferentes tipos como un valor simple (numérico o caracter), un
+  de diferentes tipos como un valor simple (numérico o carácter), un
   dataframe, un vector, una función, una lista, gráficos entre otros. De
   forma abstracta un objeto es un contenedor que puede almacenar uno o
   varios elementos. Estos se ``almacenan'' en el ambiente de trabajo que
@@ -406,17 +409,18 @@ este curso.
   las normas particulares de precedencia y asociación para un lenguaje
   de programación en particular.
 \item
-  \textbf{Código:} son los signos y símbolos que tienen un significado o
+  \textbf{Código:} Son los signos y símbolos que tienen un significado o
   en sus diferentes combinaciones se pueden interpretar como un lenguaje
 \item
-  \textbf{Función:} es un bloque de código reutilizable que realiza una
+  \textbf{Función:} Es un bloque de código re utilizable que realiza una
   tarea específica, tomando argumentos como entrada y devolviendo un
-  resultado, lo que facilita la organización y reutilización del código.
+  resultado, lo que facilita la organización y re utilización del
+  código.
 \item
-  \textbf{Argumento:} es un valor o variable que se pasa a una función
+  \textbf{Argumento:} Es un valor o variable que se pasa a una función
   para que la función pueda realizar su tarea específica
 \item
-  \textbf{Variable:} es un nombre que se le asigna a un valor o objeto,
+  \textbf{Variable:} Es un nombre que se le asigna a un valor o objeto,
   que puede ser de diferentes tipos (números, texto, etc.) y que se
   almacena en la memoria de la computadora.
 \end{itemize}
@@ -428,6 +432,10 @@ trabajo}\label{preparaciuxf3n-del-ambiente-de-trabajo}
 
 \section{Como se instala R y
 Rstudio®}\label{como-se-instala-r-y-rstudio}
+
+Si has instalado programas en tu computadora por tu propia cuenta,
+puedes saltarte esta sección, ya que el proceso de instalación de R es
+muy intuitivo. Si necesitas ayuda para la instalación, continúa leyendo.
 
 El primer paso para esta tarea es descargar el programa R, que se
 encuentra en la página web \url{https://cran.r-project.org/} . en esta
@@ -456,20 +464,18 @@ con un cursor parpadeando donde podemos escribir)
 
 }
 
-\caption{Este es la consola de R, aquí podemos comenzar a usar R, pero
-es un poco complejo usar solamente la consola}
+\caption{Si seguiste las instrucciones paso a paso, debería aparecer en
+el escritorio de tu computadora el ícono de R. Inmediatamente abres el
+programa, te aparecerá la \textbf{consola de R}}
 
 \end{figure}%
 
-Aunque ya hayamos instalado R, al menos que seamos muy expertos en su
-uso, que conozcamos bien las sintaxis de las funciones, que
-\textbf{\emph{objetos}} (más tarde veremos lo que son los objetos) están
-cargados en la memoria, entre otras cosas (¡también se puede usar como
-una simple calculadora!), es muy complicado usar solamente la consola,
-por lo que tenemos disponible aditamentos o accesorios que nos permiten
-trabajar más fácil con R, así como su aprendizaje. Para este manual el
-aditamento que usaremos es \textbf{Rstudio} de
-\href{https://posit.co/}{Posit®}.
+Esta es la consola de R, aquí podemos comenzar a usar el programa. Como
+notarás, es un poco complejo y se ve poco atractivo usar solamente la
+consola, por suerte tenemos disponible aditamentos o accesorios que nos
+permiten trabajar más fácil con R y hacer de su aprendizaje un proceso
+más amigable. Para estos fines,
+usaremos~\textbf{RStudio}~de~\href{https://posit.co/}{Posit®}
 
 \subsection{Descargar e instalar
 Rstudio}\label{descargar-e-instalar-rstudio}
