@@ -418,7 +418,7 @@ resumen_med_tend_cent <- base_arreglada %>%  #nuevo objeto, un dataframe
 resumen_med_tend_cent
 ```
 
-El código anterior pudiera parecer cargado (y lo es) pero es una buena forma de ver los detalles de los valores que queremos obtener y también el uso de otras funciones que tienen mucho peso cuando manejamos datos como es **reframe()**, **pivot_()** de **tidyverse** que sirven para crear objetos con resumen de nuestros datos.
+El código anterior pudiera parecer cargado (y lo es) pero es una buena forma de ver los detalles de los valores que queremos obtener y también el uso de otras funciones que tienen mucho peso cuando manejamos datos como es **reframe()**, **pivot\_()** de **tidyverse** que sirven para crear objetos con resumen de nuestros datos.
 
 Con el objeto *resumen_med_ten_cent* podemos ver que el promedio de casos totales por mes fue de `r resumen_med_tend_cent[7,2]` casos reportados, con un mínimo de `r resumen_med_tend_cent[6,2]` casos y un máximo de `r resumen_med_tend_cent[10,2]`.
 
@@ -730,7 +730,7 @@ casos_por_ann
 
 ```
 
-Como podemos ver tenemos una nueva tabla que tiene dos columnas, la de los años (ano_atencion o variable independiente) y la del total de casos (n o variable dependiente). Ahora vamos a construir un nuevo objeto que tendrá el resumen del análisis de la regresión lineal, para esto vamos a usar la función **lm()** del paquete {base} de R. Los argumentos para esta formula son la base de datos, la variable independiente seguida del simbolo "~" o virgulilla y luego las variables independientes, cada una separada por el simbolo "+" en caso de ser más de una variable independiente. Luego de crear el objeto de regresión lineal o lm, para ver los resultados usamos la función **summary()** para ver los resultados con más detalles del modelo de regresión.
+Como podemos ver tenemos una nueva tabla que tiene dos columnas, la de los años (ano_atencion o variable independiente) y la del total de casos (n o variable dependiente). Ahora vamos a construir un nuevo objeto que tendrá el resumen del análisis de la regresión lineal, para esto vamos a usar la función **lm()** del paquete {base} de R. Los argumentos para esta formula son la base de datos, la variable independiente seguida del simbolo "\~" o virgulilla y luego las variables independientes, cada una separada por el simbolo "+" en caso de ser más de una variable independiente. Luego de crear el objeto de regresión lineal o lm, para ver los resultados usamos la función **summary()** para ver los resultados con más detalles del modelo de regresión.
 
 ```{r 39, eval=TRUE, warning=FALSE, echo=TRUE}
 
